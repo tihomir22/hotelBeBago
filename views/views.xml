@@ -1,0 +1,162 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="hotels_be_bago.city">
+      <field name="name">BeBago City List</field>
+      <field name="model">hotels_be_bago.city</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="ubication"/>
+          <field name="country"/>
+            <field name="hotellist"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="hotels_be_bago.action_window">
+      <field name="name">BeBago City Window</field>
+      <field name="res_model">hotels_be_bago.city</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+      <!-- UNA CLASE -->
+
+      <record model="ir.ui.view" id="hotels_be_bago.hotel">
+      <field name="name">BeBago Hotel</field>
+      <field name="model">hotels_be_bago.hotel</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="roomlist"/>
+          <field name="valoraciones"/>
+            <field name="listaServicios"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="hotels_be_bago.action_window2">
+      <field name="name">BeBago Hotel Window</field>
+      <field name="res_model">hotels_be_bago.hotel</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+<!-- UNA CLASE -->
+
+      <record model="ir.ui.view" id="hotels_be_bago.habitacion">
+      <field name="name">BeBago Room</field>
+      <field name="model">hotels_be_bago.habitacion</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="hotel"/>
+          <field name="name"/>
+          <field name="camas"/>
+          <field name="precios"/>
+            <field name="descripcion"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="hotels_be_bago.action_window3">
+      <field name="name">BeBago Room Window</field>
+      <field name="res_model">hotels_be_bago.habitacion</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+<!-- UNA CLASE -->
+
+      <record model="ir.ui.view" id="hotels_be_bago.reserva">
+      <field name="name">BeBago Booking</field>
+      <field name="model">hotels_be_bago.reserva</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="fechaInicio"/>
+          <field name="fechaFinal"/>
+          <field name="habitaciones"/>
+          <field name="clientes"/>
+
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="hotels_be_bago.action_window4">
+      <field name="name">BeBago Booking Window</field>
+      <field name="res_model">hotels_be_bago.reserva</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+<!-- UNA CLASE -->
+
+      <record model="ir.ui.view" id="hotels_be_bago.fotos">
+      <field name="name">BeBago Photos</field>
+      <field name="model">hotels_be_bago.fotos</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="foto"/>
+
+
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="hotels_be_bago.action_window5">
+      <field name="name">BeBago Photos Window</field>
+      <field name="res_model">hotels_be_bago.fotos</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+<!-- UNA CLASE -->
+      <record model="ir.ui.view" id="hotels_be_bago.servicis">
+      <field name="name">BeBago Services</field>
+      <field name="model">hotels_be_bago.servicis</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="tipo"/>
+            <field name="imageser" widget="image" class="oe_left oe_avatar"/>
+
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="hotels_be_bago.action_window6">
+      <field name="name">BeBago Services Window</field>
+      <field name="res_model">hotels_be_bago.servicis</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="beBago" id="hotels_be_bago.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Menu 1" id="hotels_be_bago.menu_1" parent="hotels_be_bago.menu_root"/>
+    <menuitem name="Menu 2" id="hotels_be_bago.menu_2" parent="hotels_be_bago.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="List City" id="hotels_be_bago.menu_1_list" parent="hotels_be_bago.menu_1"
+              action="hotels_be_bago.action_window"/>
+      <menuitem name="List Hotel" id="hotels_be_bago.menu_1_list2" parent="hotels_be_bago.menu_1"
+              action="hotels_be_bago.action_window2"/>
+      <menuitem name="List Room" id="hotels_be_bago.menu_1_list3" parent="hotels_be_bago.menu_1"
+              action="hotels_be_bago.action_window3"/>
+       <menuitem name="List Bookings" id="hotels_be_bago.menu_1_list4" parent="hotels_be_bago.menu_1"
+              action="hotels_be_bago.action_window4"/>
+      <menuitem name="List Photos" id="hotels_be_bago.menu_1_list5" parent="hotels_be_bago.menu_1"
+              action="hotels_be_bago.action_window5"/>
+      <menuitem name="List Services" id="hotels_be_bago.menu_1_list6" parent="hotels_be_bago.menu_1"
+              action="hotels_be_bago.action_window6"/>
+
+    <!--
+    <menuitem name="Server to list" id="nueva_vista" parent="nueva_vista.menu_2"
+              action="nueva_vista.action_server"/>-->
+
+  </data>
+</odoo>
