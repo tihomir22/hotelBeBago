@@ -14,10 +14,10 @@ class city(models.Model):
      class hotel(models.Model):
          _name = 'hotels_be_bago.hotel'
          name = fields.Char()
-         galeriaFotos = fields.Many2many("hotels_be_bago.fotos")
+         galeriaFotos = fields.Many2many("hotels_be_bago.hotelfotos")
          description = fields.Text()
          roomlist = fields.Many2many("hotels_be_bago.habitacion")
-         valoraciones = fields.Integer()
+         valoraciones = fields.Selection([('1', '⭐'), ('2', '⭐⭐'), ('3', '⭐⭐⭐'), ('4', '⭐⭐⭐⭐'), ('5', '⭐⭐⭐⭐⭐')])
          listaServicios = fields.Many2many("hotels_be_bago.reserva")
 
      class habitacion(models.Model):
@@ -25,7 +25,7 @@ class city(models.Model):
          hotel = fields.Many2many("hotels_be_bago.hotel", "Hotel")
          name = fields.Char()
          camas = fields.Integer()
-         fotos = fields.Many2many("hotels_be_bago.fotos")
+         fotos = fields.Many2many("hotels_be_bago.roomfotos")
          precios = fields.Integer()
          descripcion = fields.Text()
 
@@ -36,8 +36,13 @@ class city(models.Model):
          habitaciones = fields.Many2one("papito.habitacion", "Habitacion a reservar")
          clientes = fields.Many2one("res.partner", "Nombre del cliente")
 
-     class fotos(models.Model):
-         _name = 'hotels_be_bago.fotos'
+     class hotelfotos(models.Model):
+         _name = 'hotels_be_bago.hotelfotos'
+         name = fields.Char("Nombre de la foto")
+         foto = fields.Binary("Seleccione una foto para agregar")
+
+     class roomfotos(models.Model):
+         _name = 'hotels_be_bago.roomfotos'
          name = fields.Char("Nombre de la foto")
          foto = fields.Binary("Seleccione una foto para agregar")
 
