@@ -96,7 +96,7 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <field name="foto"/>
+          <field name="foto" widget="image" class="oe_left oe_avatar"/>
 
 
         </tree>

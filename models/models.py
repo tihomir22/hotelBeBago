@@ -2,6 +2,7 @@
 
 from odoo import models, fields, api
 
+
 class city(models.Model):
 
      _name = 'hotels_be_bago.city'
@@ -22,12 +23,13 @@ class city(models.Model):
 
      class habitacion(models.Model):
          _name = 'hotels_be_bago.habitacion'
-         hotel = fields.Many2many("hotels_be_bago.hotel", "Hotel")
+         #hotel = fields.Many2many("hotels_be_bago.hotel", "Hotel")
+         hotel=fields.Many2one("hotels_be_bago.hotel","Hotel");
          name = fields.Char()
-         camas = fields.Integer()
+         camas = fields.Selection([('1', 'Cama Solitaria'), ('2', 'Cama Matrimonio'), ('3', 'Cama Familiar'), ('4', 'Cama Infantil con matrimonio'), ('5', 'Distribución numerosa')])
          fotos = fields.Many2many("hotels_be_bago.roomfotos")
-         precios = fields.Integer()
-         descripcion = fields.Text()
+         precios = fields.Integer(default=20)
+         descripcion = fields.Text(default="Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.")
 
      class reserva(models.Model):
          _name = 'hotels_be_bago.reserva'
@@ -52,3 +54,11 @@ class city(models.Model):
          tipo = fields.Selection([('1', 'Higiene personal'), ('2', 'Higiene animal'), ('3', 'Cuidado del vehiculo'),
                                   ('3', 'Cuidado del vehiculo'), ('4', 'Descanso'), ('5', 'Comidas y refrigerios')])
          imageser = fields.Binary("Seleccione una foto para el servicio")
+
+
+
+
+
+
+
+

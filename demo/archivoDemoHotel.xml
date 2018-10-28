@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data noupdate="1">
+		<record model="hotels_be_bago.hotel" id="hotel1">
+			<field name="name">Hotel Number 9</field>
+			<field name="description">Extra dip.</field>
+			<field name="valoraciones">⭐</field>
+		</record>
+		<record model="hotels_be_bago.hotel" id="hotel2">
+			<field name="name">Hotel Number 6</field>
+			<field name="description">CJ and Big smoke</field>
+			<field name="ubication">⭐⭐⭐</field>
+		</record>
+	</data>
+</odoo>

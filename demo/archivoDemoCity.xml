@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data noupdate="1">
+		<record model="hotels_be_bago.city" id="ciudad1">
+			<field name="name">Valencia</field>
+			<field name="description">En esta ciudad vas a olvidar quien eres y renaceras como un ave fenix.</field>
+			<field name="ubication">Valencia</field>
+		</record>
+		<record model="hotels_be_bago.city" id="ciudad2">
+			<field name="name">Sofia</field>
+			<field name="description">En esta ciudad no hay error</field>
+			<field name="ubication">Bulgaria ESte</field>
+		</record>
+	</data>
+</odoo>
