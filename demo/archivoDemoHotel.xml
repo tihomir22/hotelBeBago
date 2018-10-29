@@ -1,15 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-	<data noupdate="1">
+	<data>
 		<record model="hotels_be_bago.hotel" id="hotel1">
 			<field name="name">Hotel Number 9</field>
 			<field name="description">Extra dip.</field>
-			<field name="valoraciones">⭐</field>
+			<!-- para Many2One-->
+			<field name="ciudad" ref="hotels_be_bago.ciudad1"></field>
+			<!-- para Many2Many -->
+<!--
+			<field name="listaServicios" eval="[(6, 0, [ref('hotels_be_bago.servici1')])]" /></field>-->
+
+			<field name="valoraciones">5</field>
+			
 		</record>
 		<record model="hotels_be_bago.hotel" id="hotel2">
 			<field name="name">Hotel Number 6</field>
 			<field name="description">CJ and Big smoke</field>
-			<field name="ubication">⭐⭐⭐</field>
+			<field name="ciudad" ref="hotels_be_bago.ciudad2"></field>
+			<field name="valoraciones">3</field>
+		</record>
+
+		<record model="hotels_be_bago.hotel" id="hotel3">
+			<field name="name">Hotel Babushka</field>
+			<field name="description">Hotel de la mafia rusa</field>
+			<field name="ciudad" ref="hotels_be_bago.ciudad1"></field>
+			<field name="valoraciones">4</field>
+		</record>
+
+		<record model="hotels_be_bago.hotel" id="hotel4">
+			<field name="name">Hotel Andreu 1 Estrella</field>
+			<field name="description">No entres mejor</field>
+			<field name="ciudad" ref="hotels_be_bago.ciudad2"></field>
+			<field name="valoraciones">1</field>
 		</record>
 	</data>
 </odoo>

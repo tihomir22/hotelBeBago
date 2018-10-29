@@ -27,8 +27,10 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+	'demo/archivoDemoServicis.xml',
 	'demo/archivoDemoCity.xml',
 	'demo/archivoDemoHotel.xml',
+	
     ],
     # only loaded in demonstration mode
     'demo': [

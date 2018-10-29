@@ -15,6 +15,7 @@ class city(models.Model):
      class hotel(models.Model):
          _name = 'hotels_be_bago.hotel'
          name = fields.Char()
+         ciudad = fields.Many2one("hotels_be_bago.city", "City");
          galeriaFotos = fields.Many2many("hotels_be_bago.hotelfotos")
          description = fields.Text()
          roomlist = fields.Many2many("hotels_be_bago.habitacion")
@@ -52,7 +53,7 @@ class city(models.Model):
          _name = 'hotels_be_bago.servicis'
          name = fields.Char("Nombre del servicio")
          tipo = fields.Selection([('1', 'Higiene personal'), ('2', 'Higiene animal'), ('3', 'Cuidado del vehiculo'),
-                                  ('3', 'Cuidado del vehiculo'), ('4', 'Descanso'), ('5', 'Comidas y refrigerios')])
+                                  ('4', 'Descanso'), ('5', 'Comidas y refrigerios')])
          imageser = fields.Binary("Seleccione una foto para el servicio")
 
 

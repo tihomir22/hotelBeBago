@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-	<data noupdate="1">
+	<data>
 		<record model="hotels_be_bago.city" id="ciudad1">
 			<field name="name">Valencia</field>
 			<field name="description">En esta ciudad vas a olvidar quien eres y renaceras como un ave fenix.</field>
 			<field name="ubication">Valencia</field>
+			<field name="country" ref="base.es"></field>
+			<field name="hotellist" eval="[(6,0,[ref('hotels_be_bago.hotel1'),ref('hotels_be_bago.hotel2'),ref('hotels_be_bago.hotel3')] )]" />
 		</record>
 		<record model="hotels_be_bago.city" id="ciudad2">
 			<field name="name">Sofia</field>
 			<field name="description">En esta ciudad no hay error</field>
 			<field name="ubication">Bulgaria ESte</field>
+			<field name="country" ref="base.bg"></field>
+<field name="hotellist" eval="[(6,0,[ref('hotels_be_bago.hotel1'),ref('hotels_be_bago.hotel2')] )]" />
 		</record>
 	</data>
 </odoo>
