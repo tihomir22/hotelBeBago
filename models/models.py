@@ -15,18 +15,18 @@ class city(models.Model):
      class hotel(models.Model):
          _name = 'hotels_be_bago.hotel'
          name = fields.Char()
-         ciudad = fields.Many2one("hotels_be_bago.city", "City");
+         ciudad = fields.Many2one("hotels_be_bago.city", "City")
          galeriaFotos = fields.Many2many("hotels_be_bago.hotelfotos")
          description = fields.Text()
          roomlist = fields.Many2many("hotels_be_bago.habitacion")
          valoraciones = fields.Selection([('1', '⭐'), ('2', '⭐⭐'), ('3', '⭐⭐⭐'), ('4', '⭐⭐⭐⭐'), ('5', '⭐⭐⭐⭐⭐')])
-         listaServicios = fields.Many2many("hotels_be_bago.reserva")
+         listaServicios = fields.Many2many("hotels_be_bago.servicis")
 
      class habitacion(models.Model):
          _name = 'hotels_be_bago.habitacion'
          #hotel = fields.Many2many("hotels_be_bago.hotel", "Hotel")
          hotel=fields.Many2one("hotels_be_bago.hotel","Hotel");
-         name = fields.Char()
+         name = fields.Text()
          camas = fields.Selection([('1', 'Cama Solitaria'), ('2', 'Cama Matrimonio'), ('3', 'Cama Familiar'), ('4', 'Cama Infantil con matrimonio'), ('5', 'Distribución numerosa')])
          fotos = fields.Many2many("hotels_be_bago.roomfotos")
          precios = fields.Integer(default=20)
@@ -36,8 +36,10 @@ class city(models.Model):
          _name = 'hotels_be_bago.reserva'
          fechaInicio = fields.Date()
          fechaFinal = fields.Date()
-         habitaciones = fields.Many2one("papito.habitacion", "Habitacion a reservar")
+         habitaciones = fields.Many2one("hotels_be_bago.habitacion", "Habitacion a reservar")
          clientes = fields.Many2one("res.partner", "Nombre del cliente")
+         nombrehotel = fields.Char(string='Nombre del hotel', related='habitaciones.hotel.name',readOnly="true")
+         ciudad = fields.Char(string='Ciudad del hotel', related='habitaciones.hotel.ciudad.name', readOnly="true")
 
      class hotelfotos(models.Model):
          _name = 'hotels_be_bago.hotelfotos'

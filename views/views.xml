@@ -78,6 +78,8 @@
           <field name="fechaFinal"/>
           <field name="habitaciones"/>
           <field name="clientes"/>
+            <field name="nombrehotel"/>
+          <field name="ciudad"/>
 
         </tree>
       </field>
@@ -118,8 +120,7 @@
         <tree>
           <field name="name"/>
           <field name="tipo"/>
-            <field name="imageser" widget="image" class="oe_left oe_avatar"/>
-
+          <field name="imageser" widget="image" class="oe_left oe_avatar"/>
         </tree>
       </field>
     </record>
