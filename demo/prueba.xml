@@ -1,0 +1,4407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<record model="hotels_be_bago.habitacion" id="habitacion0">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 0></field>
+			<field name="camas">3</field>
+			<field name="precios">388</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion1">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 1></field>
+			<field name="camas">5</field>
+			<field name="precios">76</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion2">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 2></field>
+			<field name="camas">1</field>
+			<field name="precios">434</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion3">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 3></field>
+			<field name="camas">2</field>
+			<field name="precios">565</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion4">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 4></field>
+			<field name="camas">4</field>
+			<field name="precios">162</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion5">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 5></field>
+			<field name="camas">5</field>
+			<field name="precios">434</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion6">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 6></field>
+			<field name="camas">2</field>
+			<field name="precios">976</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion7">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 7></field>
+			<field name="camas">5</field>
+			<field name="precios">921</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion8">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 8></field>
+			<field name="camas">2</field>
+			<field name="precios">37</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion9">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 9></field>
+			<field name="camas">1</field>
+			<field name="precios">550</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion10">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 10></field>
+			<field name="camas">5</field>
+			<field name="precios">492</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion11">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 11></field>
+			<field name="camas">5</field>
+			<field name="precios">222</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion12">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 12></field>
+			<field name="camas">5</field>
+			<field name="precios">393</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion13">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 13></field>
+			<field name="camas">2</field>
+			<field name="precios">935</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion14">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 14></field>
+			<field name="camas">2</field>
+			<field name="precios">112</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion15">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 15></field>
+			<field name="camas">4</field>
+			<field name="precios">81</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion16">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 16></field>
+			<field name="camas">2</field>
+			<field name="precios">875</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion17">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 17></field>
+			<field name="camas">4</field>
+			<field name="precios">497</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion18">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 18></field>
+			<field name="camas">2</field>
+			<field name="precios">1008</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion19">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 19></field>
+			<field name="camas">3</field>
+			<field name="precios">20</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion20">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 20></field>
+			<field name="camas">2</field>
+			<field name="precios">475</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion21">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 21></field>
+			<field name="camas">3</field>
+			<field name="precios">253</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion22">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 22></field>
+			<field name="camas">4</field>
+			<field name="precios">689</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion23">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 23></field>
+			<field name="camas">1</field>
+			<field name="precios">322</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion24">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 24></field>
+			<field name="camas">1</field>
+			<field name="precios">648</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion25">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 25></field>
+			<field name="camas">2</field>
+			<field name="precios">680</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion26">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 26></field>
+			<field name="camas">2</field>
+			<field name="precios">157</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion27">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 27></field>
+			<field name="camas">1</field>
+			<field name="precios">362</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion28">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 28></field>
+			<field name="camas">5</field>
+			<field name="precios">703</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion29">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 29></field>
+			<field name="camas">5</field>
+			<field name="precios">544</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion30">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 30></field>
+			<field name="camas">3</field>
+			<field name="precios">563</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion31">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 31></field>
+			<field name="camas">4</field>
+			<field name="precios">87</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion32">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 32></field>
+			<field name="camas">1</field>
+			<field name="precios">528</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion33">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 33></field>
+			<field name="camas">4</field>
+			<field name="precios">926</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion34">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 34></field>
+			<field name="camas">4</field>
+			<field name="precios">315</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion35">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 35></field>
+			<field name="camas">5</field>
+			<field name="precios">418</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion36">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 36></field>
+			<field name="camas">1</field>
+			<field name="precios">162</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion37">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 37></field>
+			<field name="camas">4</field>
+			<field name="precios">479</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion38">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 38></field>
+			<field name="camas">2</field>
+			<field name="precios">146</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion39">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 39></field>
+			<field name="camas">4</field>
+			<field name="precios">955</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion40">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 40></field>
+			<field name="camas">1</field>
+			<field name="precios">258</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion41">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 41></field>
+			<field name="camas">1</field>
+			<field name="precios">270</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion42">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 42></field>
+			<field name="camas">5</field>
+			<field name="precios">825</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion43">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 43></field>
+			<field name="camas">2</field>
+			<field name="precios">725</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion44">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 44></field>
+			<field name="camas">1</field>
+			<field name="precios">114</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion45">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 45></field>
+			<field name="camas">4</field>
+			<field name="precios">862</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion46">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 46></field>
+			<field name="camas">3</field>
+			<field name="precios">359</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion47">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 47></field>
+			<field name="camas">1</field>
+			<field name="precios">934</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion48">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 48></field>
+			<field name="camas">3</field>
+			<field name="precios">518</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion49">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 49></field>
+			<field name="camas">1</field>
+			<field name="precios">980</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion50">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 50></field>
+			<field name="camas">3</field>
+			<field name="precios">780</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion51">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 51></field>
+			<field name="camas">1</field>
+			<field name="precios">29</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion52">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 52></field>
+			<field name="camas">3</field>
+			<field name="precios">94</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion53">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 53></field>
+			<field name="camas">1</field>
+			<field name="precios">1018</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion54">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 54></field>
+			<field name="camas">4</field>
+			<field name="precios">774</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion55">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 55></field>
+			<field name="camas">3</field>
+			<field name="precios">497</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion56">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 56></field>
+			<field name="camas">1</field>
+			<field name="precios">176</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion57">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 57></field>
+			<field name="camas">3</field>
+			<field name="precios">850</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion58">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 58></field>
+			<field name="camas">2</field>
+			<field name="precios">426</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion59">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 59></field>
+			<field name="camas">3</field>
+			<field name="precios">470</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion60">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 60></field>
+			<field name="camas">3</field>
+			<field name="precios">565</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion61">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 61></field>
+			<field name="camas">5</field>
+			<field name="precios">592</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion62">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 62></field>
+			<field name="camas">3</field>
+			<field name="precios">884</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion63">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 63></field>
+			<field name="camas">5</field>
+			<field name="precios">964</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion64">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 64></field>
+			<field name="camas">5</field>
+			<field name="precios">588</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion65">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 65></field>
+			<field name="camas">5</field>
+			<field name="precios">92</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion66">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 66></field>
+			<field name="camas">4</field>
+			<field name="precios">264</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion67">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 67></field>
+			<field name="camas">3</field>
+			<field name="precios">176</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion68">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 68></field>
+			<field name="camas">1</field>
+			<field name="precios">918</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion69">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 69></field>
+			<field name="camas">4</field>
+			<field name="precios">243</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion70">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 70></field>
+			<field name="camas">1</field>
+			<field name="precios">26</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion71">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 71></field>
+			<field name="camas">3</field>
+			<field name="precios">647</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion72">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 72></field>
+			<field name="camas">2</field>
+			<field name="precios">661</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion73">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 73></field>
+			<field name="camas">5</field>
+			<field name="precios">123</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion74">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 74></field>
+			<field name="camas">5</field>
+			<field name="precios">788</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion75">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 75></field>
+			<field name="camas">3</field>
+			<field name="precios">539</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion76">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 76></field>
+			<field name="camas">3</field>
+			<field name="precios">987</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion77">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 77></field>
+			<field name="camas">3</field>
+			<field name="precios">846</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion78">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 78></field>
+			<field name="camas">4</field>
+			<field name="precios">497</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion79">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 79></field>
+			<field name="camas">5</field>
+			<field name="precios">964</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion80">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 80></field>
+			<field name="camas">4</field>
+			<field name="precios">639</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion81">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 81></field>
+			<field name="camas">5</field>
+			<field name="precios">730</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion82">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 82></field>
+			<field name="camas">5</field>
+			<field name="precios">52</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion83">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 83></field>
+			<field name="camas">1</field>
+			<field name="precios">152</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion84">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 84></field>
+			<field name="camas">1</field>
+			<field name="precios">760</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion85">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 85></field>
+			<field name="camas">2</field>
+			<field name="precios">41</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion86">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 86></field>
+			<field name="camas">1</field>
+			<field name="precios">947</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion87">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 87></field>
+			<field name="camas">4</field>
+			<field name="precios">182</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion88">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 88></field>
+			<field name="camas">5</field>
+			<field name="precios">335</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion89">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 89></field>
+			<field name="camas">2</field>
+			<field name="precios">54</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion90">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 90></field>
+			<field name="camas">2</field>
+			<field name="precios">851</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion91">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 91></field>
+			<field name="camas">2</field>
+			<field name="precios">438</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion92">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 92></field>
+			<field name="camas">5</field>
+			<field name="precios">684</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion93">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 93></field>
+			<field name="camas">3</field>
+			<field name="precios">744</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion94">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 94></field>
+			<field name="camas">5</field>
+			<field name="precios">801</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion95">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 95></field>
+			<field name="camas">4</field>
+			<field name="precios">666</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion96">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 96></field>
+			<field name="camas">4</field>
+			<field name="precios">335</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion97">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 97></field>
+			<field name="camas">2</field>
+			<field name="precios">833</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion98">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 98></field>
+			<field name="camas">3</field>
+			<field name="precios">670</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion99">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 99></field>
+			<field name="camas">1</field>
+			<field name="precios">873</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion100">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 100></field>
+			<field name="camas">4</field>
+			<field name="precios">673</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion101">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 101></field>
+			<field name="camas">5</field>
+			<field name="precios">604</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion102">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 102></field>
+			<field name="camas">2</field>
+			<field name="precios">546</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion103">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 103></field>
+			<field name="camas">1</field>
+			<field name="precios">677</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion104">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 104></field>
+			<field name="camas">5</field>
+			<field name="precios">153</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion105">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 105></field>
+			<field name="camas">4</field>
+			<field name="precios">485</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion106">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 106></field>
+			<field name="camas">1</field>
+			<field name="precios">54</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion107">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 107></field>
+			<field name="camas">3</field>
+			<field name="precios">688</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion108">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 108></field>
+			<field name="camas">4</field>
+			<field name="precios">196</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion109">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 109></field>
+			<field name="camas">5</field>
+			<field name="precios">702</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion110">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 110></field>
+			<field name="camas">1</field>
+			<field name="precios">988</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion111">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 111></field>
+			<field name="camas">1</field>
+			<field name="precios">169</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion112">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 112></field>
+			<field name="camas">2</field>
+			<field name="precios">886</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion113">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 113></field>
+			<field name="camas">2</field>
+			<field name="precios">696</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion114">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 114></field>
+			<field name="camas">1</field>
+			<field name="precios">649</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion115">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 115></field>
+			<field name="camas">2</field>
+			<field name="precios">93</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion116">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 116></field>
+			<field name="camas">2</field>
+			<field name="precios">829</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion117">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 117></field>
+			<field name="camas">5</field>
+			<field name="precios">292</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion118">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 118></field>
+			<field name="camas">1</field>
+			<field name="precios">1006</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion119">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 119></field>
+			<field name="camas">1</field>
+			<field name="precios">916</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion120">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 120></field>
+			<field name="camas">3</field>
+			<field name="precios">789</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion121">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 121></field>
+			<field name="camas">1</field>
+			<field name="precios">518</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion122">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 122></field>
+			<field name="camas">2</field>
+			<field name="precios">118</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion123">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 123></field>
+			<field name="camas">5</field>
+			<field name="precios">859</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion124">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 124></field>
+			<field name="camas">5</field>
+			<field name="precios">891</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion125">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 125></field>
+			<field name="camas">3</field>
+			<field name="precios">104</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion126">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 126></field>
+			<field name="camas">4</field>
+			<field name="precios">456</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion127">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 127></field>
+			<field name="camas">2</field>
+			<field name="precios">137</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion128">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 128></field>
+			<field name="camas">2</field>
+			<field name="precios">291</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion129">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 129></field>
+			<field name="camas">5</field>
+			<field name="precios">224</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion130">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 130></field>
+			<field name="camas">3</field>
+			<field name="precios">690</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion131">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 131></field>
+			<field name="camas">2</field>
+			<field name="precios">88</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion132">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 132></field>
+			<field name="camas">3</field>
+			<field name="precios">734</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion133">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 133></field>
+			<field name="camas">1</field>
+			<field name="precios">58</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion134">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 134></field>
+			<field name="camas">5</field>
+			<field name="precios">789</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion135">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 135></field>
+			<field name="camas">3</field>
+			<field name="precios">76</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion136">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 136></field>
+			<field name="camas">1</field>
+			<field name="precios">809</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion137">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 137></field>
+			<field name="camas">4</field>
+			<field name="precios">127</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion138">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 138></field>
+			<field name="camas">4</field>
+			<field name="precios">418</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion139">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 139></field>
+			<field name="camas">1</field>
+			<field name="precios">564</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion140">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 140></field>
+			<field name="camas">5</field>
+			<field name="precios">844</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion141">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 141></field>
+			<field name="camas">3</field>
+			<field name="precios">43</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion142">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 142></field>
+			<field name="camas">1</field>
+			<field name="precios">895</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion143">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 143></field>
+			<field name="camas">3</field>
+			<field name="precios">526</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion144">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 144></field>
+			<field name="camas">3</field>
+			<field name="precios">493</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion145">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 145></field>
+			<field name="camas">5</field>
+			<field name="precios">846</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion146">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 146></field>
+			<field name="camas">4</field>
+			<field name="precios">463</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion147">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 147></field>
+			<field name="camas">2</field>
+			<field name="precios">806</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion148">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 148></field>
+			<field name="camas">5</field>
+			<field name="precios">62</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion149">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 149></field>
+			<field name="camas">3</field>
+			<field name="precios">372</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion150">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 150></field>
+			<field name="camas">3</field>
+			<field name="precios">217</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion151">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 151></field>
+			<field name="camas">2</field>
+			<field name="precios">453</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion152">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 152></field>
+			<field name="camas">1</field>
+			<field name="precios">826</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion153">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 153></field>
+			<field name="camas">5</field>
+			<field name="precios">595</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion154">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 154></field>
+			<field name="camas">2</field>
+			<field name="precios">950</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion155">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 155></field>
+			<field name="camas">4</field>
+			<field name="precios">1007</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion156">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 156></field>
+			<field name="camas">2</field>
+			<field name="precios">33</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion157">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 157></field>
+			<field name="camas">2</field>
+			<field name="precios">668</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion158">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 158></field>
+			<field name="camas">1</field>
+			<field name="precios">689</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion159">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 159></field>
+			<field name="camas">5</field>
+			<field name="precios">656</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion160">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 160></field>
+			<field name="camas">5</field>
+			<field name="precios">597</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion161">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 161></field>
+			<field name="camas">2</field>
+			<field name="precios">699</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion162">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 162></field>
+			<field name="camas">3</field>
+			<field name="precios">453</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion163">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 163></field>
+			<field name="camas">5</field>
+			<field name="precios">579</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion164">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 164></field>
+			<field name="camas">3</field>
+			<field name="precios">77</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion165">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 165></field>
+			<field name="camas">1</field>
+			<field name="precios">800</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion166">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 166></field>
+			<field name="camas">5</field>
+			<field name="precios">375</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion167">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 167></field>
+			<field name="camas">2</field>
+			<field name="precios">588</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion168">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 168></field>
+			<field name="camas">1</field>
+			<field name="precios">298</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion169">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 169></field>
+			<field name="camas">3</field>
+			<field name="precios">619</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion170">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 170></field>
+			<field name="camas">5</field>
+			<field name="precios">335</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion171">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 171></field>
+			<field name="camas">5</field>
+			<field name="precios">696</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion172">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 172></field>
+			<field name="camas">1</field>
+			<field name="precios">843</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion173">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 173></field>
+			<field name="camas">4</field>
+			<field name="precios">404</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion174">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 174></field>
+			<field name="camas">2</field>
+			<field name="precios">816</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion175">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 175></field>
+			<field name="camas">4</field>
+			<field name="precios">361</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion176">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 176></field>
+			<field name="camas">5</field>
+			<field name="precios">796</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion177">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 177></field>
+			<field name="camas">4</field>
+			<field name="precios">855</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion178">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 178></field>
+			<field name="camas">5</field>
+			<field name="precios">29</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion179">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 179></field>
+			<field name="camas">5</field>
+			<field name="precios">409</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion180">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 180></field>
+			<field name="camas">4</field>
+			<field name="precios">503</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion181">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 181></field>
+			<field name="camas">2</field>
+			<field name="precios">992</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion182">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 182></field>
+			<field name="camas">5</field>
+			<field name="precios">748</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion183">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 183></field>
+			<field name="camas">1</field>
+			<field name="precios">131</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion184">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 184></field>
+			<field name="camas">3</field>
+			<field name="precios">829</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion185">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 185></field>
+			<field name="camas">3</field>
+			<field name="precios">105</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion186">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 186></field>
+			<field name="camas">4</field>
+			<field name="precios">511</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion187">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 187></field>
+			<field name="camas">1</field>
+			<field name="precios">326</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion188">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 188></field>
+			<field name="camas">3</field>
+			<field name="precios">569</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion189">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 189></field>
+			<field name="camas">2</field>
+			<field name="precios">801</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion190">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 190></field>
+			<field name="camas">2</field>
+			<field name="precios">736</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion191">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 191></field>
+			<field name="camas">3</field>
+			<field name="precios">957</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion192">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 192></field>
+			<field name="camas">1</field>
+			<field name="precios">493</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion193">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 193></field>
+			<field name="camas">2</field>
+			<field name="precios">987</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion194">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 194></field>
+			<field name="camas">3</field>
+			<field name="precios">982</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion195">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 195></field>
+			<field name="camas">4</field>
+			<field name="precios">546</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion196">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 196></field>
+			<field name="camas">2</field>
+			<field name="precios">594</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion197">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 197></field>
+			<field name="camas">2</field>
+			<field name="precios">557</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion198">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 198></field>
+			<field name="camas">2</field>
+			<field name="precios">453</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion199">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 199></field>
+			<field name="camas">2</field>
+			<field name="precios">446</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion200">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 200></field>
+			<field name="camas">2</field>
+			<field name="precios">605</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion201">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 201></field>
+			<field name="camas">5</field>
+			<field name="precios">219</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion202">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 202></field>
+			<field name="camas">3</field>
+			<field name="precios">643</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion203">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 203></field>
+			<field name="camas">2</field>
+			<field name="precios">860</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion204">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 204></field>
+			<field name="camas">2</field>
+			<field name="precios">596</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion205">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 205></field>
+			<field name="camas">4</field>
+			<field name="precios">467</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion206">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 206></field>
+			<field name="camas">2</field>
+			<field name="precios">178</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion207">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 207></field>
+			<field name="camas">4</field>
+			<field name="precios">208</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion208">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 208></field>
+			<field name="camas">5</field>
+			<field name="precios">162</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion209">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 209></field>
+			<field name="camas">4</field>
+			<field name="precios">1000</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion210">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 210></field>
+			<field name="camas">1</field>
+			<field name="precios">187</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion211">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 211></field>
+			<field name="camas">3</field>
+			<field name="precios">307</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion212">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 212></field>
+			<field name="camas">4</field>
+			<field name="precios">167</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion213">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 213></field>
+			<field name="camas">4</field>
+			<field name="precios">988</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion214">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 214></field>
+			<field name="camas">3</field>
+			<field name="precios">370</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion215">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 215></field>
+			<field name="camas">2</field>
+			<field name="precios">501</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion216">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 216></field>
+			<field name="camas">5</field>
+			<field name="precios">376</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion217">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 217></field>
+			<field name="camas">3</field>
+			<field name="precios">844</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion218">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 218></field>
+			<field name="camas">3</field>
+			<field name="precios">546</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion219">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 219></field>
+			<field name="camas">3</field>
+			<field name="precios">996</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion220">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 220></field>
+			<field name="camas">1</field>
+			<field name="precios">928</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion221">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 221></field>
+			<field name="camas">1</field>
+			<field name="precios">723</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion222">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 222></field>
+			<field name="camas">1</field>
+			<field name="precios">826</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion223">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 223></field>
+			<field name="camas">3</field>
+			<field name="precios">369</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion224">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 224></field>
+			<field name="camas">5</field>
+			<field name="precios">359</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion225">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 225></field>
+			<field name="camas">1</field>
+			<field name="precios">184</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion226">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 226></field>
+			<field name="camas">4</field>
+			<field name="precios">863</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion227">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 227></field>
+			<field name="camas">1</field>
+			<field name="precios">487</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion228">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 228></field>
+			<field name="camas">5</field>
+			<field name="precios">1011</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion229">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 229></field>
+			<field name="camas">4</field>
+			<field name="precios">422</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion230">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 230></field>
+			<field name="camas">4</field>
+			<field name="precios">79</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion231">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 231></field>
+			<field name="camas">2</field>
+			<field name="precios">920</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion232">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 232></field>
+			<field name="camas">5</field>
+			<field name="precios">890</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion233">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 233></field>
+			<field name="camas">3</field>
+			<field name="precios">828</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion234">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 234></field>
+			<field name="camas">3</field>
+			<field name="precios">123</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion235">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 235></field>
+			<field name="camas">5</field>
+			<field name="precios">819</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion236">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 236></field>
+			<field name="camas">5</field>
+			<field name="precios">633</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion237">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 237></field>
+			<field name="camas">1</field>
+			<field name="precios">915</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion238">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 238></field>
+			<field name="camas">3</field>
+			<field name="precios">109</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion239">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 239></field>
+			<field name="camas">5</field>
+			<field name="precios">998</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion240">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 240></field>
+			<field name="camas">2</field>
+			<field name="precios">94</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion241">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 241></field>
+			<field name="camas">3</field>
+			<field name="precios">745</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion242">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 242></field>
+			<field name="camas">5</field>
+			<field name="precios">795</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion243">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 243></field>
+			<field name="camas">5</field>
+			<field name="precios">489</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion244">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 244></field>
+			<field name="camas">1</field>
+			<field name="precios">86</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion245">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 245></field>
+			<field name="camas">3</field>
+			<field name="precios">663</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion246">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 246></field>
+			<field name="camas">3</field>
+			<field name="precios">1014</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion247">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 247></field>
+			<field name="camas">1</field>
+			<field name="precios">618</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion248">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 248></field>
+			<field name="camas">1</field>
+			<field name="precios">175</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion249">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 249></field>
+			<field name="camas">4</field>
+			<field name="precios">999</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion250">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 250></field>
+			<field name="camas">2</field>
+			<field name="precios">712</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion251">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 251></field>
+			<field name="camas">4</field>
+			<field name="precios">784</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion252">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 252></field>
+			<field name="camas">1</field>
+			<field name="precios">515</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion253">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 253></field>
+			<field name="camas">4</field>
+			<field name="precios">213</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion254">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 254></field>
+			<field name="camas">3</field>
+			<field name="precios">425</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion255">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 255></field>
+			<field name="camas">1</field>
+			<field name="precios">905</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion256">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 256></field>
+			<field name="camas">1</field>
+			<field name="precios">359</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion257">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 257></field>
+			<field name="camas">2</field>
+			<field name="precios">105</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion258">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 258></field>
+			<field name="camas">4</field>
+			<field name="precios">863</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion259">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 259></field>
+			<field name="camas">4</field>
+			<field name="precios">913</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion260">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 260></field>
+			<field name="camas">1</field>
+			<field name="precios">780</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion261">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 261></field>
+			<field name="camas">1</field>
+			<field name="precios">286</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion262">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 262></field>
+			<field name="camas">2</field>
+			<field name="precios">976</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion263">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 263></field>
+			<field name="camas">1</field>
+			<field name="precios">184</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion264">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 264></field>
+			<field name="camas">3</field>
+			<field name="precios">207</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion265">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 265></field>
+			<field name="camas">1</field>
+			<field name="precios">590</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion266">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 266></field>
+			<field name="camas">4</field>
+			<field name="precios">922</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion267">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 267></field>
+			<field name="camas">1</field>
+			<field name="precios">955</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion268">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 268></field>
+			<field name="camas">5</field>
+			<field name="precios">588</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion269">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 269></field>
+			<field name="camas">1</field>
+			<field name="precios">443</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion270">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 270></field>
+			<field name="camas">5</field>
+			<field name="precios">836</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion271">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 271></field>
+			<field name="camas">1</field>
+			<field name="precios">554</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion272">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 272></field>
+			<field name="camas">4</field>
+			<field name="precios">131</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion273">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 273></field>
+			<field name="camas">2</field>
+			<field name="precios">502</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion274">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 274></field>
+			<field name="camas">1</field>
+			<field name="precios">891</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion275">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 275></field>
+			<field name="camas">4</field>
+			<field name="precios">1016</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion276">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 276></field>
+			<field name="camas">3</field>
+			<field name="precios">513</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion277">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 277></field>
+			<field name="camas">1</field>
+			<field name="precios">88</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion278">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 278></field>
+			<field name="camas">1</field>
+			<field name="precios">454</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion279">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 279></field>
+			<field name="camas">1</field>
+			<field name="precios">312</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion280">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 280></field>
+			<field name="camas">5</field>
+			<field name="precios">261</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion281">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 281></field>
+			<field name="camas">1</field>
+			<field name="precios">667</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion282">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 282></field>
+			<field name="camas">1</field>
+			<field name="precios">924</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion283">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 283></field>
+			<field name="camas">1</field>
+			<field name="precios">955</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion284">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 284></field>
+			<field name="camas">5</field>
+			<field name="precios">786</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion285">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 285></field>
+			<field name="camas">5</field>
+			<field name="precios">106</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion286">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 286></field>
+			<field name="camas">1</field>
+			<field name="precios">225</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion287">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 287></field>
+			<field name="camas">3</field>
+			<field name="precios">973</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion288">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 288></field>
+			<field name="camas">5</field>
+			<field name="precios">78</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion289">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 289></field>
+			<field name="camas">4</field>
+			<field name="precios">26</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion290">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 290></field>
+			<field name="camas">3</field>
+			<field name="precios">307</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion291">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 291></field>
+			<field name="camas">3</field>
+			<field name="precios">468</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion292">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 292></field>
+			<field name="camas">1</field>
+			<field name="precios">734</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion293">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 293></field>
+			<field name="camas">4</field>
+			<field name="precios">263</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion294">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 294></field>
+			<field name="camas">3</field>
+			<field name="precios">113</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion295">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 295></field>
+			<field name="camas">4</field>
+			<field name="precios">74</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion296">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 296></field>
+			<field name="camas">3</field>
+			<field name="precios">942</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion297">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 297></field>
+			<field name="camas">2</field>
+			<field name="precios">72</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion298">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 298></field>
+			<field name="camas">1</field>
+			<field name="precios">921</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion299">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 299></field>
+			<field name="camas">2</field>
+			<field name="precios">361</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion300">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 300></field>
+			<field name="camas">1</field>
+			<field name="precios">166</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion301">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 301></field>
+			<field name="camas">5</field>
+			<field name="precios">447</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion302">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 302></field>
+			<field name="camas">5</field>
+			<field name="precios">75</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion303">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 303></field>
+			<field name="camas">1</field>
+			<field name="precios">419</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion304">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 304></field>
+			<field name="camas">1</field>
+			<field name="precios">988</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion305">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 305></field>
+			<field name="camas">5</field>
+			<field name="precios">271</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion306">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 306></field>
+			<field name="camas">2</field>
+			<field name="precios">717</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion307">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 307></field>
+			<field name="camas">3</field>
+			<field name="precios">485</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion308">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 308></field>
+			<field name="camas">2</field>
+			<field name="precios">722</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion309">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 309></field>
+			<field name="camas">1</field>
+			<field name="precios">288</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion310">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 310></field>
+			<field name="camas">3</field>
+			<field name="precios">571</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion311">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 311></field>
+			<field name="camas">5</field>
+			<field name="precios">951</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion312">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 312></field>
+			<field name="camas">1</field>
+			<field name="precios">832</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion313">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 313></field>
+			<field name="camas">2</field>
+			<field name="precios">896</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion314">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 314></field>
+			<field name="camas">2</field>
+			<field name="precios">127</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion315">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 315></field>
+			<field name="camas">3</field>
+			<field name="precios">583</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion316">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 316></field>
+			<field name="camas">4</field>
+			<field name="precios">875</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion317">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 317></field>
+			<field name="camas">2</field>
+			<field name="precios">295</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion318">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 318></field>
+			<field name="camas">5</field>
+			<field name="precios">144</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion319">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 319></field>
+			<field name="camas">1</field>
+			<field name="precios">692</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion320">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 320></field>
+			<field name="camas">5</field>
+			<field name="precios">355</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion321">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 321></field>
+			<field name="camas">4</field>
+			<field name="precios">821</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion322">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 322></field>
+			<field name="camas">3</field>
+			<field name="precios">637</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion323">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 323></field>
+			<field name="camas">4</field>
+			<field name="precios">87</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion324">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 324></field>
+			<field name="camas">3</field>
+			<field name="precios">680</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion325">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 325></field>
+			<field name="camas">5</field>
+			<field name="precios">423</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion326">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 326></field>
+			<field name="camas">1</field>
+			<field name="precios">310</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion327">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 327></field>
+			<field name="camas">3</field>
+			<field name="precios">956</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion328">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 328></field>
+			<field name="camas">5</field>
+			<field name="precios">24</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion329">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 329></field>
+			<field name="camas">4</field>
+			<field name="precios">194</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion330">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 330></field>
+			<field name="camas">4</field>
+			<field name="precios">688</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion331">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 331></field>
+			<field name="camas">4</field>
+			<field name="precios">859</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion332">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 332></field>
+			<field name="camas">2</field>
+			<field name="precios">946</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion333">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 333></field>
+			<field name="camas">5</field>
+			<field name="precios">572</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion334">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 334></field>
+			<field name="camas">5</field>
+			<field name="precios">137</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion335">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 335></field>
+			<field name="camas">4</field>
+			<field name="precios">765</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion336">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 336></field>
+			<field name="camas">1</field>
+			<field name="precios">215</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion337">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 337></field>
+			<field name="camas">4</field>
+			<field name="precios">1001</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion338">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 338></field>
+			<field name="camas">1</field>
+			<field name="precios">905</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion339">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 339></field>
+			<field name="camas">4</field>
+			<field name="precios">723</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion340">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 340></field>
+			<field name="camas">3</field>
+			<field name="precios">819</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion341">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 341></field>
+			<field name="camas">2</field>
+			<field name="precios">141</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion342">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 342></field>
+			<field name="camas">1</field>
+			<field name="precios">741</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion343">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 343></field>
+			<field name="camas">5</field>
+			<field name="precios">808</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion344">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 344></field>
+			<field name="camas">1</field>
+			<field name="precios">559</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion345">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 345></field>
+			<field name="camas">4</field>
+			<field name="precios">91</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion346">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 346></field>
+			<field name="camas">5</field>
+			<field name="precios">247</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion347">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 347></field>
+			<field name="camas">4</field>
+			<field name="precios">217</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion348">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 348></field>
+			<field name="camas">4</field>
+			<field name="precios">628</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion349">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 349></field>
+			<field name="camas">1</field>
+			<field name="precios">463</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion350">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 350></field>
+			<field name="camas">2</field>
+			<field name="precios">612</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion351">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 351></field>
+			<field name="camas">2</field>
+			<field name="precios">935</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion352">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 352></field>
+			<field name="camas">4</field>
+			<field name="precios">745</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion353">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 353></field>
+			<field name="camas">5</field>
+			<field name="precios">349</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion354">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 354></field>
+			<field name="camas">4</field>
+			<field name="precios">1008</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion355">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 355></field>
+			<field name="camas">1</field>
+			<field name="precios">197</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion356">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 356></field>
+			<field name="camas">2</field>
+			<field name="precios">58</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion357">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 357></field>
+			<field name="camas">3</field>
+			<field name="precios">708</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion358">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 358></field>
+			<field name="camas">5</field>
+			<field name="precios">288</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion359">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 359></field>
+			<field name="camas">1</field>
+			<field name="precios">424</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion360">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 360></field>
+			<field name="camas">3</field>
+			<field name="precios">161</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion361">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 361></field>
+			<field name="camas">2</field>
+			<field name="precios">538</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion362">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 362></field>
+			<field name="camas">5</field>
+			<field name="precios">101</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion363">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 363></field>
+			<field name="camas">3</field>
+			<field name="precios">729</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion364">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 364></field>
+			<field name="camas">3</field>
+			<field name="precios">122</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion365">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 365></field>
+			<field name="camas">1</field>
+			<field name="precios">794</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion366">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 366></field>
+			<field name="camas">5</field>
+			<field name="precios">586</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion367">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 367></field>
+			<field name="camas">4</field>
+			<field name="precios">900</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion368">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 368></field>
+			<field name="camas">2</field>
+			<field name="precios">245</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion369">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 369></field>
+			<field name="camas">4</field>
+			<field name="precios">290</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion370">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 370></field>
+			<field name="camas">2</field>
+			<field name="precios">506</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion371">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 371></field>
+			<field name="camas">3</field>
+			<field name="precios">917</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion372">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 372></field>
+			<field name="camas">4</field>
+			<field name="precios">141</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion373">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 373></field>
+			<field name="camas">3</field>
+			<field name="precios">57</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion374">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 374></field>
+			<field name="camas">5</field>
+			<field name="precios">65</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion375">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 375></field>
+			<field name="camas">2</field>
+			<field name="precios">190</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion376">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 376></field>
+			<field name="camas">3</field>
+			<field name="precios">53</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion377">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 377></field>
+			<field name="camas">1</field>
+			<field name="precios">668</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion378">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 378></field>
+			<field name="camas">1</field>
+			<field name="precios">906</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion379">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 379></field>
+			<field name="camas">1</field>
+			<field name="precios">846</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion380">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 380></field>
+			<field name="camas">4</field>
+			<field name="precios">827</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion381">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 381></field>
+			<field name="camas">3</field>
+			<field name="precios">534</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion382">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 382></field>
+			<field name="camas">5</field>
+			<field name="precios">255</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion383">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 383></field>
+			<field name="camas">3</field>
+			<field name="precios">989</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion384">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 384></field>
+			<field name="camas">4</field>
+			<field name="precios">677</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion385">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 385></field>
+			<field name="camas">2</field>
+			<field name="precios">552</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion386">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 386></field>
+			<field name="camas">5</field>
+			<field name="precios">599</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion387">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 387></field>
+			<field name="camas">4</field>
+			<field name="precios">558</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion388">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 388></field>
+			<field name="camas">4</field>
+			<field name="precios">388</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto5')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion389">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 389></field>
+			<field name="camas">3</field>
+			<field name="precios">602</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion390">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 390></field>
+			<field name="camas">2</field>
+			<field name="precios">682</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion391">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 391></field>
+			<field name="camas">2</field>
+			<field name="precios">352</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion392">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 392></field>
+			<field name="camas">3</field>
+			<field name="precios">683</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion393">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 393></field>
+			<field name="camas">4</field>
+			<field name="precios">28</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion394">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 394></field>
+			<field name="camas">3</field>
+			<field name="precios">851</field>
+			<field name="descripcion">Una denigrante habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion395">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 395></field>
+			<field name="camas">3</field>
+			<field name="precios">920</field>
+			<field name="descripcion">Una majestuosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto1')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion396">
+			<field name="hotel" ref="hotels_be_bago.hotel3"></field>
+			<field name="name">Habitacion Number 396></field>
+			<field name="camas">5</field>
+			<field name="precios">805</field>
+			<field name="descripcion">Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion397">
+			<field name="hotel" ref="hotels_be_bago.hotel1"></field>
+			<field name="name">Habitacion Number 397></field>
+			<field name="camas">3</field>
+			<field name="precios">775</field>
+			<field name="descripcion">Una primordial habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto2')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion398">
+			<field name="hotel" ref="hotels_be_bago.hotel4"></field>
+			<field name="name">Habitacion Number 398></field>
+			<field name="camas">5</field>
+			<field name="precios">639</field>
+			<field name="descripcion">Una desagradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto3')] )]" />
+			
+		</record>
+		
+
+		<record model="hotels_be_bago.habitacion" id="habitacion399">
+			<field name="hotel" ref="hotels_be_bago.hotel2"></field>
+			<field name="name">Habitacion Number 399></field>
+			<field name="camas">4</field>
+			<field name="precios">191</field>
+			<field name="descripcion">Una fabulosa habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
+<field name="fotos" eval="[(6,0,[ref('hotels_be_bago.roomfoto4')] )]" />
+			
+		</record>
+		
+
+		
+	</data>
+</odoo>
