@@ -27,10 +27,17 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
-	'demo/archivoDemoRooms.xml',
+	'demo/archivoDemoRoomPhotos.xml',
 	'demo/archivoDemoServicis.xml',
 	'demo/archivoDemoHotel.xml',
 	'demo/archivoDemoCity.xml',
+	'demo/archivoDemoRooms.xml',
+	'demo/archivoDemoPhotosHotel.xml',
+	
+	
+	
+	
+	
 	
 	
 	

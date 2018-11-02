@@ -30,7 +30,8 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <field name="ciudad"/>
+          <!--<field name="ciudad"/>-->
+          <field name="galeriaFotos"/>
           <field name="description"/>
           <field name="roomlist"/>
           <field name="valoraciones"/>
@@ -79,7 +80,7 @@
           <field name="habitaciones"/>
           <field name="clientes"/>
             <field name="nombrehotel"/>
-          <field name="ciudad"/>
+         <!-- <field name="ciudad"/>-->
 
         </tree>
       </field>

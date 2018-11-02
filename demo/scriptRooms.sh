@@ -3,9 +3,9 @@
 echo "<?xml version="1.0" encoding="utf-8"?>
 <odoo>
 	<data>"
-i=2;
+i=0;
 
-	while [ $i -gt 0 ] ; do
+	while [ $i -lt 400 ] ; do
 		echo "
 		<record model="hotels_be_bago.hotel" id="hotel1">
 			<field name="name">Hotel Number 9</field>
@@ -17,11 +17,11 @@ i=2;
           <field name="listaServicios" eval="[(6,0,[ref('hotels_be_bago.servici1'),ref('hotels_be_bago.servici2')] )]" />
 
 			<field name="valoraciones">5</field>
-			
+			 <field name="listaServicios" eval="[(6,0,[ref('hotels_be_bago.servici1'),ref('hotels_be_bago.servici2')] )]" />
 		</record>
 		";
 
-	i=$(( $i - 1 ))
+	i=$(( $i + 1 ))
 	done
 echo "
 		</record>

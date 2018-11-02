@@ -15,7 +15,7 @@ class city(models.Model):
      class hotel(models.Model):
          _name = 'hotels_be_bago.hotel'
          name = fields.Char()
-         ciudad = fields.Many2one("hotels_be_bago.city", "City")
+         #ciudad = fields.Many2one("hotels_be_bago.city", "City")
          galeriaFotos = fields.Many2many("hotels_be_bago.hotelfotos")
          description = fields.Text()
          roomlist = fields.Many2many("hotels_be_bago.habitacion")
@@ -39,7 +39,7 @@ class city(models.Model):
          habitaciones = fields.Many2one("hotels_be_bago.habitacion", "Habitacion a reservar")
          clientes = fields.Many2one("res.partner", "Nombre del cliente")
          nombrehotel = fields.Char(string='Nombre del hotel', related='habitaciones.hotel.name',readOnly="true")
-         ciudad = fields.Char(string='Ciudad del hotel', related='habitaciones.hotel.ciudad.name', readOnly="true")
+        # ciudad = fields.Char(string='Ciudad del hotel', related='habitaciones.hotel.ciudad.name', readOnly="true")
 
      class hotelfotos(models.Model):
          _name = 'hotels_be_bago.hotelfotos'
