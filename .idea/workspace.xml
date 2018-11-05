@@ -2,36 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c42d4d4-c9e4-4c08-81c6-f8d14e0fb6bb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/hotels_be_bago.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hotels_be_bago.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/archivoDemoRooms.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo/archivoDemoRooms.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/archivoDemoServicis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo/archivoDemoServicis.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/img/automatic-wash-car.png" beforeDir="false" afterPath="$PROJECT_DIR$/demo/img/automatic-wash-car.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/img/bed.png" beforeDir="false" afterPath="$PROJECT_DIR$/demo/img/bed.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/img/dumbbell.png" beforeDir="false" afterPath="$PROJECT_DIR$/demo/img/dumbbell.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/img/hot-coffee-rounded-cup-on-a-plate-from-side-view.png" beforeDir="false" afterPath="$PROJECT_DIR$/demo/img/hot-coffee-rounded-cup-on-a-plate-from-side-view.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/img/orale" beforeDir="false" afterPath="$PROJECT_DIR$/demo/img/orale" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/img/pexels-photo-26139.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/demo/img/pexels-photo-26139.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/img/pexels-photo-271618.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/demo/img/pexels-photo-271618.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/img/pexels-photo-271619.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/demo/img/pexels-photo-271619.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/img/pexels-photo-271624.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/demo/img/pexels-photo-271624.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/img/pexels-photo-271643.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/demo/img/pexels-photo-271643.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/img/shower.png" beforeDir="false" afterPath="$PROJECT_DIR$/demo/img/shower.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/scriptHotel.sh" beforeDir="false" afterPath="$PROJECT_DIR$/demo/scriptHotel.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/scriptRooms.sh" beforeDir="false" afterPath="$PROJECT_DIR$/demo/scriptRooms.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgs/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgs/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgs/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgs/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgs/5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgs/6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgs/7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/7.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgs/8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/8.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgs/9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/9.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgs/papito.txt" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/papito.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -110,14 +82,35 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="1305556078">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="921" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="921" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="30" column="14" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="14" />
+            <state relative-caret-position="468">
+              <caret line="50" column="58" lean-forward="true" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="58" />
+              <folding>
+                <element signature="e#25#61#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -145,11 +138,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/views.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1845">
-              <caret line="123" column="10" selection-start-line="123" selection-start-column="10" selection-end-line="123" selection-end-column="75" />
+            <state relative-caret-position="585">
+              <caret line="96" column="5" lean-forward="true" selection-start-line="96" selection-start-column="5" selection-end-line="113" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -168,9 +161,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/demo/archivoDemoCity.xml" />
-        <option value="$PROJECT_DIR$/models/models.py" />
         <option value="$PROJECT_DIR$/views/views.xml" />
         <option value="$PROJECT_DIR$/demo/archivoDemoHotel.xml" />
+        <option value="$PROJECT_DIR$/models/models.py" />
       </list>
     </option>
   </component>
@@ -216,7 +209,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="992" y="24" width="928" height="1056" extended-state="4" />
+    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.28097346" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -241,13 +235,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/models/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="30" column="14" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demo/archivoDemoHotel.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
@@ -267,8 +254,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/views.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1845">
-          <caret line="123" column="10" selection-start-line="123" selection-start-column="10" selection-end-line="123" selection-end-column="75" />
+        <state relative-caret-position="585">
+          <caret line="96" column="5" lean-forward="true" selection-start-line="96" selection-start-column="5" selection-end-line="113" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="50" column="58" lean-forward="true" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="58" />
+          <folding>
+            <element signature="e#25#61#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
