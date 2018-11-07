@@ -86,10 +86,22 @@
       </field>
     </record>
 
+     <record model="ir.ui.view" id="calendar1">
+            <field name="name">BeBago Calendar</field>
+            <field name="model">hotels_be_bago.reserva</field>
+            <field name="arch" type="xml">
+                <calendar string="Booking Calendar" date_start="fechaInicio"
+                          date_stop="fechaFinal"
+                          >
+                    <field name="name"/>
+                </calendar>
+            </field>
+        </record>
+
     <record model="ir.actions.act_window" id="hotels_be_bago.action_window4">
       <field name="name">BeBago Booking Window</field>
       <field name="res_model">hotels_be_bago.reserva</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">tree,form,calendar</field>
     </record>
 
 <!-- UNA CLASE -->

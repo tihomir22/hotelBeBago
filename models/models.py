@@ -36,12 +36,22 @@ class habitacion(models.Model):
 
 class reserva(models.Model):
     _name = 'hotels_be_bago.reserva'
-    name=fields.Text(string="Nombre de la reserva",)
+    name=fields.Text(string="Nombre de la reserva",compute='_generar_nombre',readOnly=True)
     fechaInicio = fields.Date()
     fechaFinal = fields.Date()
     habitaciones = fields.Many2one("hotels_be_bago.habitacion", "Habitacion a reservar")
     clientes = fields.Many2one("res.partner", "Nombre del cliente")
-    nombrehotel = fields.Text(string='Nombre del hotel', related='habitaciones.hotel.name', readOnly="true")
+    nombrehotel = fields.Many2one(string='Nombre del hotel', related='habitaciones.hotel', readOnly=True,store=False)
+
+
+    @api.depends('habitaciones','fechaInicio','fechaFinal','clientes')
+    def _generar_nombre(self):
+        for record in self:
+            if record.habitaciones and record.fechaInicio and record.fechaFinal and record.clientes:
+                    record.name=record.habitaciones.name+' '+record.clientes.name+' '+record.fechaInicio+' '+record.fechaFinal
+
+
+
 
 
     @api.constrains('fechaInicio', 'fechaFinal')
@@ -50,11 +60,12 @@ class reserva(models.Model):
             variable = self.search_count([('id', '!=', record.id), ('fechaFinal', '>=', record.fechaInicio), ('fechaInicio','<=', record.fechaFinal)])
             variable2=self.search([('id', '!=', record.id), ('fechaFinal', '>=', record.fechaInicio), ('fechaInicio','<=', record.fechaFinal)])
             for valor in variable2:
-                print(valor.fechaInicio)
+                print(self.name)
+                print(valor.name)
 
-            print('jerk it m8' + str(variable))
+           # print('jerk it m8' + str(variable))
             if variable > 0:
-                raise ValidationError("Se solapan dos habitaciones")
+                raise ValidationError("Se solapan dos habitaciones \n" + self.name + " con  \n"+valor.name)
 
 
 class hotelfotos(models.Model):
