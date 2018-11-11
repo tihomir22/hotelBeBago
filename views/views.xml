@@ -1,6 +1,20 @@
 <odoo>
   <data>
 
+    <record model="ir.ui.view" id="yeaboi2">
+        <field name="name">hotels_be_bago.city.search</field>
+        <field name="model">hotels_be_bago.city</field>
+        <field name="arch" type="xml">
+         <search string="Ciudades">
+              <field name="name"></field>
+              <field name="description"></field>
+            </search>
+            <group string="Agrupar por">
+                <filter name="country" string="Pais" context="{'group_by':'country'}"></filter>
+            </group>
+        </field>
+    </record>
+
     <record model="ir.ui.view" id="hotels_be_bago.city">
       <field name="name">BeBago City List</field>
       <field name="model">hotels_be_bago.city</field>
@@ -74,7 +88,7 @@
       <field name="name">BeBago Booking</field>
       <field name="model">hotels_be_bago.reserva</field>
       <field name="arch" type="xml">
-        <tree>
+        <tree  decoration-danger="fechaInicio&lt;current_date and fechaFinal&lt;current_date" decoration-bf="fechaInicio&lt;current_date and fechaFinal&gt;current_date" decoration-info="fechaInicio&gt;current_date">
           <field name="fechaInicio"/>
           <field name="fechaFinal"/>
           <field name="habitaciones"/>
@@ -91,7 +105,7 @@
             <field name="model">hotels_be_bago.reserva</field>
             <field name="arch" type="xml">
                 <calendar string="Booking Calendar" date_start="fechaInicio"
-                          date_stop="fechaFinal"
+                          date_stop="fechaFinal" color="nombrehotel"
                           >
                     <field name="name"/>
                 </calendar>
