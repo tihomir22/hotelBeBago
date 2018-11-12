@@ -33,6 +33,7 @@
 	'demo/archivoDemoHotel.xml',
 	'demo/archivoDemoCity.xml',
 	'demo/archivoDemoRooms.xml',
+	'demo/archivoDemoComentarios.xml',
 	
 	
 	

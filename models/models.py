@@ -41,10 +41,10 @@ class hotel(models.Model):
                 media=0
                 i=0
                 for comentario in arrayComentarios:
-                    sumaValoracion=sumaValoracion+(comentario.valoracion)
+                    sumaValoracion=int(sumaValoracion)+int(comentario.valoracion)
                     i=i+1
                 media=sumaValoracion/i
-                record.valoraciomedia=str(media)
+                record.valoraciomedia=str(int(media))
             else:
                 print("No tiene comentarios por lo que la media se queda en default,1")
                 record.valoraciomedia='1'

@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c42d4d4-c9e4-4c08-81c6-f8d14e0fb6bb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/demo/archivoDemoHotel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo/archivoDemoHotel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/scriptHotel.sh" beforeDir="false" afterPath="$PROJECT_DIR$/demo/scriptHotel.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/scriptRooms.sh" beforeDir="false" afterPath="$PROJECT_DIR$/demo/scriptRooms.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__manifest__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/views.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,22 +56,23 @@
     <session id="-1018443805">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="1402" />
+          <entry key="py" value="1415" />
           <entry key="xml" value="524" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="1402" />
+          <entry key="Python" value="1415" />
           <entry key="XML" value="524" />
         </counts>
       </usages-collector>
@@ -130,11 +129,10 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/models/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="499">
-                  <caret line="48" column="85" selection-start-line="48" selection-start-column="85" selection-end-line="48" selection-end-column="85" />
+                <state relative-caret-position="289">
+                  <caret line="46" column="53" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
                   <folding>
                     <element signature="e#25#67#0" expanded="true" />
-                    <marker date="1542015347000" expanded="true" signature="4964:5234" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -143,7 +141,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/demo/archivoDemoHotel.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="600">
+                <state relative-caret-position="690">
                   <caret line="46" selection-start-line="46" selection-end-line="46" />
                 </state>
               </provider>
@@ -241,7 +239,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.28097346" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -268,7 +265,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/demo/archivoDemoHotel.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
+        <state relative-caret-position="690">
           <caret line="46" selection-start-line="46" selection-end-line="46" />
         </state>
       </provider>
@@ -292,11 +289,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="48" column="85" selection-start-line="48" selection-start-column="85" selection-end-line="48" selection-end-column="85" />
+        <state relative-caret-position="289">
+          <caret line="46" column="53" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
           <folding>
             <element signature="e#25#67#0" expanded="true" />
-            <marker date="1542015347000" expanded="true" signature="4964:5234" ph="..." />
           </folding>
         </state>
       </provider>

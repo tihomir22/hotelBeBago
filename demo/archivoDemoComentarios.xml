@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record model="hotels_be_bago.comentarios" id="comentario1">
+			<field name="hoteles" ref="hotels_be_bago.hotel1"></field>
+			<field name="descripcion">Me ha parecido un hotel precioso</field>		
+			<field name="valoracion">4</field>
+		</record>
+		
+	</data>
+</odoo>
