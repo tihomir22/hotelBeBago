@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api
+from odoo import models, fields, api,tools
+#ver la importación de tools de odoo, arriba importada
 from odoo.exceptions import ValidationError
 import logging
 from datetime import datetime
@@ -21,9 +22,32 @@ class hotel(models.Model):
     name = fields.Char()
     galeriaFotos = fields.Many2many("hotels_be_bago.hotelfotos")
     description = fields.Text()
+    ciudad=fields.Many2one("hotels_be_bago.city","Ciudad")
+    pais=fields.Char(string='Pais del hotel',related='ciudad.country.name')
     roomlist = fields.Many2many("hotels_be_bago.habitacion")
-    valoraciones = fields.Selection([('1', '⭐'), ('2', '⭐⭐'), ('3', '⭐⭐⭐'), ('4', '⭐⭐⭐⭐'), ('5', '⭐⭐⭐⭐⭐')])
+    estrellas = fields.Selection([('1', '⭐'), ('2', '⭐⭐'), ('3', '⭐⭐⭐'), ('4', '⭐⭐⭐⭐'), ('5', '⭐⭐⭐⭐⭐')])
+    valoraciomedia=fields.Selection([('1', '⭐'), ('2', '⭐⭐'), ('3', '⭐⭐⭐'), ('4', '⭐⭐⭐⭐'), ('5', '⭐⭐⭐⭐⭐')],compute='_calcular_media')
     listaServicios = fields.Many2many("hotels_be_bago.servicis")
+    comentarios = fields.One2many('hotels_be_bago.comentarios','hoteles')
+
+    @api.depends('comentarios')
+    def _calcular_media(self):
+        for record in self:
+
+            print(str(record.name + "tiene "+ str(len(record.comentarios))))
+            if len(record.comentarios) > 0:
+                arrayComentarios=record.comentarios
+                sumaValoracion=0
+                media=0
+                i=0
+                for comentario in arrayComentarios:
+                    sumaValoracion=sumaValoracion+(comentario.valoracion)
+                    i=i+1
+                media=sumaValoracion/i
+                record.valoraciomedia=str(media)
+            else:
+                print("No tiene comentarios por lo que la media se queda en default,1")
+                record.valoraciomedia='1'
 
 class habitacion(models.Model):
     _name = 'hotels_be_bago.habitacion'
@@ -86,5 +110,11 @@ class servicis(models.Model):
     tipo = fields.Selection([('1', 'Higiene personal'), ('2', 'Higiene animal'), ('3', 'Cuidado del vehiculo'),
                                  ('4', 'Descanso'), ('5', 'Comidas y refrigerios')])
     imageser = fields.Binary("Seleccione una foto para el servicio")
+
+class comentarios(models.Model):
+    _name='hotels_be_bago.comentarios'
+    hoteles=fields.Many2one('hotels_be_bago.hotel','Hotel')
+    descripcion=fields.Text(string="Descripcion")
+    valoracion = fields.Selection([('1', '⭐'), ('2', '⭐⭐'), ('3', '⭐⭐⭐'), ('4', '⭐⭐⭐⭐'), ('5', '⭐⭐⭐⭐⭐')],default='5')
 
 

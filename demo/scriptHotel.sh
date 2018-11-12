@@ -16,7 +16,7 @@ i=2;
 
           <field name="listaServicios" eval="[(6,0,[ref('hotels_be_bago.servici1'),ref('hotels_be_bago.servici2')] )]" />
 
-			<field name="valoraciones">5</field>
+			<field name="estrellas">5</field>
 			 <field name="listaServicios" eval="[(6,0,[ref('hotels_be_bago.servici1'),ref('hotels_be_bago.servici2')] )]" />
 		</record>
 		";

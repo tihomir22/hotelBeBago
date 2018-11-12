@@ -1,19 +1,7 @@
 <odoo>
   <data>
 
-    <record model="ir.ui.view" id="yeaboi2">
-        <field name="name">hotels_be_bago.city.search</field>
-        <field name="model">hotels_be_bago.city</field>
-        <field name="arch" type="xml">
-         <search string="Ciudades">
-              <field name="name"></field>
-              <field name="description"></field>
-            </search>
-            <group string="Agrupar por">
-                <filter name="country" string="Pais" context="{'group_by':'country'}"></filter>
-            </group>
-        </field>
-    </record>
+
 
     <record model="ir.ui.view" id="hotels_be_bago.city">
       <field name="name">BeBago City List</field>
@@ -27,6 +15,21 @@
             <field name="hotellist"/>
         </tree>
       </field>
+    </record>
+
+    <record model="ir.ui.view" id="hotels_be_bago_city_search">
+        <field name="name">BeBago City Search</field>
+        <field name="model">hotels_be_bago.city</field>
+        <field name="arch" type="xml">
+           <search string="Ciudades">
+                <field name="name"></field>
+                <field name="description"></field>
+                <group string="Agrupar por">
+                  <filter name="country" string="Pais" context="{'group_by':'country'}"></filter>
+                </group>
+           </search>
+
+        </field>
     </record>
 
 
@@ -44,14 +47,35 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <!--<field name="ciudad"/>-->
+          <field name="ciudad"/>
+            <field name="pais"></field>
           <field name="galeriaFotos"/>
           <field name="description"/>
           <field name="roomlist"/>
-          <field name="valoraciones"/>
+          <field name="estrellas"/>
+            <field name="valoraciomedia"></field>
             <field name="listaServicios"/>
         </tree>
       </field>
+    </record>
+
+      <record model="ir.ui.view" id="hotels_be_bago_hotel_search">
+        <field name="name">BeBago City Hotel</field>
+        <field name="model">hotels_be_bago.hotel</field>
+        <field name="arch" type="xml">
+           <search string="Hotels">
+                <field name="ciudad"></field>
+                <field name="pais"></field>
+               <field name="estrellas"></field>
+
+               <!--
+                <field name="description"></field>
+                <group string="Agrupar por">
+                  <filter name="country" string="Pais" context="{'group_by':'country'}"></filter>
+                </group>-->
+           </search>
+
+        </field>
     </record>
 
     <record model="ir.actions.act_window" id="hotels_be_bago.action_window2">
@@ -178,6 +202,26 @@
       <field name="view_mode">tree,form</field>
     </record>
 
+      <!-- UNA CLASE -->
+
+      <record model="ir.ui.view" id="hotels_be_bago.comentarios">
+      <field name="name">BeBago Room Comentarios</field>
+      <field name="model">hotels_be_bago.comentarios</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="descripcion"/>
+            <field name="valoracion"></field>
+            <field name="hoteles"></field>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="hotels_be_bago.action_window8">
+      <field name="name">BeBago Room Comentarios</field>
+      <field name="res_model">hotels_be_bago.comentarios</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
 
     <!-- Top menu item -->
 
@@ -205,6 +249,8 @@
 
       <menuitem name="List Services" id="hotels_be_bago.menu_1_list6" parent="hotels_be_bago.menu_1"
               action="hotels_be_bago.action_window6"/>
+      <menuitem name="Opinion List" id="hotels_be_bago.menu_1_list8" parent="hotels_be_bago.menu_1"
+              action="hotels_be_bago.action_window8"/>
 
     <!--
     <menuitem name="Server to list" id="nueva_vista" parent="nueva_vista.menu_2"

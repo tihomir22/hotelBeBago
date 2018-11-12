@@ -21,6 +21,7 @@ arrayString=("desagradable" "majestuosa" "primordial" "agradable" "fabulosa" "de
 			<field name="descripcion">Una '${arrayString[$random4]}' habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.</field>
 <field name="fotos" eval="[(6,0,[ref('"'hotels_be_bago.roomfoto$random5'"')] )]" />
 			
+			
 		</record>
 		'
 
