@@ -7,5 +7,41 @@
 			<field name="valoracion">4</field>
 		</record>
 		
+	
+	
+		<record model="hotels_be_bago.comentarios" id="comentario2">
+			<field name="hoteles" ref="hotels_be_bago.hotel1"></field>
+			<field name="descripcion">Una p*** m*****, encontré un pino plantado en la pila del baten, WTF . </field>		
+			<field name="valoracion">1</field>
+		</record>
+
+<record model="hotels_be_bago.comentarios" id="comentario3">
+			<field name="hoteles" ref="hotels_be_bago.hotel2"></field>
+			<field name="descripcion">Me ha gustado la instancia, muy acogedora </field>		
+			<field name="valoracion">4</field>
+		</record>
+<record model="hotels_be_bago.comentarios" id="comentario4">
+			<field name="hoteles" ref="hotels_be_bago.hotel2"></field>
+			<field name="descripcion">Demasiado ruido pero acogedor</field>		
+			<field name="valoracion">3</field>
+		</record>
+<record model="hotels_be_bago.comentarios" id="comentario5">
+			<field name="hoteles" ref="hotels_be_bago.hotel2"></field>
+			<field name="descripcion">Fenomenal! </field>		
+			<field name="valoracion">5</field>
+		</record>
+<record model="hotels_be_bago.comentarios" id="comentario6">
+			<field name="hoteles" ref="hotels_be_bago.hotel3"></field>
+			<field name="descripcion">Algo regular, tenia muchas humedades</field>		
+			<field name="valoracion">2</field>
+		</record>
+
+<record model="hotels_be_bago.comentarios" id="comentario7">
+			<field name="hoteles" ref="hotels_be_bago.hotel4"></field>
+			<field name="descripcion">Yea boi i enjoyed it !</field>		
+			<field name="valoracion">4</field>
+		</record>
+	
+
 	</data>
 </odoo>

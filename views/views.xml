@@ -66,13 +66,11 @@
            <search string="Hotels">
                 <field name="ciudad"></field>
                 <field name="pais"></field>
-               <field name="estrellas"></field>
-
-               <!--
-                <field name="description"></field>
+                <field name="estrellas"></field>
+                <field name="valoraciomedia"></field>
                 <group string="Agrupar por">
                   <filter name="country" string="Pais" context="{'group_by':'country'}"></filter>
-                </group>-->
+                </group>
            </search>
 
         </field>
