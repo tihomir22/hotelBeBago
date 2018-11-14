@@ -69,7 +69,8 @@
                 <field name="estrellas"></field>
                 <field name="valoraciomedia"></field>
                 <group string="Agrupar por">
-                  <filter name="country" string="Pais" context="{'group_by':'country'}"></filter>
+                  <filter name="pais" string="Pais" context="{'group_by':'country'}"></filter>
+                  <filter name="ciudad" string="Ciudad" context="{'group_by':'ciudad'}"></filter>
                 </group>
            </search>
 
@@ -94,8 +95,25 @@
           <field name="camas"/>
           <field name="precios"/>
             <field name="descripcion"/>
+            <!--<field name="reserva"/>-->
+            <field name="disponibilidad"/>
         </tree>
       </field>
+    </record>
+      <record model="ir.ui.view" id="hotels_be_bago_habitacion_search">
+        <field name="name">BeBago City Habitacion</field>
+        <field name="model">hotels_be_bago.habitacion</field>
+        <field name="arch" type="xml">
+           <search string="Habitacion">
+                <field name="hotel"></field>
+                <field name="disponibilidad"></field>
+                <group string="Agrupar por">
+                  <filter name="hotel" string="Hotel" context="{'group_by':'hotel.name'}"></filter>
+                  <filter name="disponibilidad" string="Disponibilidad" context="{'group_by':'disponibilidad'}"></filter>
+                </group>
+           </search>
+
+        </field>
     </record>
 
     <record model="ir.actions.act_window" id="hotels_be_bago.action_window3">

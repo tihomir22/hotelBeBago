@@ -9,7 +9,8 @@
 			<!-- para Many2Many -->
 			<field name="galeriaFotos" eval="[(6,0,[ref('hotels_be_bago.photohotel1')] )]"/>
           		<field name="listaServicios" eval="[(6,0,[ref('hotels_be_bago.servici1'),ref('hotels_be_bago.servici2')] )]" />
-			<field name="roomlist" eval="[(6,0,[ref('hotels_be_bago.habitacion0'),ref('hotels_be_bago.habitacion222'),ref('hotels_be_bago.habitacion120'),ref('hotels_be_bago.habitacion333')] )]" />	
+			<!--
+			<field name="roomlist" eval="[(6,0,[ref('hotels_be_bago.habitacion0'),ref('hotels_be_bago.habitacion222'),ref('hotels_be_bago.habitacion120'),ref('hotels_be_bago.habitacion333')] )]" />	-->
 			<field name="estrellas">5</field>
 			
 		</record>
@@ -19,7 +20,10 @@
 			<!--<field name="ciudad" ref="hotels_be_bago.ciudad2"></field>-->
 			<field name="galeriaFotos" eval="[(6,0,[ref('hotels_be_bago.photohotel2')] )]"/>
             		<field name="listaServicios"  eval="[(6,0,[ref('hotels_be_bago.servici3'),ref('hotels_be_bago.servici2')] )]" />
-			<field name="roomlist" eval="[(6,0,[ref('hotels_be_bago.habitacion10'),ref('hotels_be_bago.habitacion22'),ref('hotels_be_bago.habitacion320'),ref('hotels_be_bago.habitacion33')] )]" />
+<!--
+			<field name="roomlist" eval="[(6,0,[ref('hotels_be_bago.habitacion10'),ref('hotels_be_bago.habitacion22'),ref('hotels_be_bago.habitacion320'),ref('hotels_be_bago.habitacion33')] )]" /
+>
+-->
 			<field name="estrellas">3</field>
 		</record>
 
@@ -29,7 +33,9 @@
 			<!--<field name="ciudad" ref="hotels_be_bago.ciudad1"></field>-->
 			<field name="galeriaFotos" eval="[(6,0,[ref('hotels_be_bago.photohotel3')] )]"/>
             		<field name="listaServicios"  eval="[(6,0,[ref('hotels_be_bago.servici4'),ref('hotels_be_bago.servici2')] )]" />
+<!--
 			<field name="roomlist" eval="[(6,0,[ref('hotels_be_bago.habitacion1'),ref('hotels_be_bago.habitacion272'),ref('hotels_be_bago.habitacion31'),ref('hotels_be_bago.habitacion73')] )]" />
+-->
 			<field name="estrellas">4</field>
 		</record>
 
@@ -40,7 +46,9 @@
 			<field name="galeriaFotos" eval="[(6,0,[ref('hotels_be_bago.photohotel4')] )]"/>
             		<field name="listaServicios"  eval="[(6,0,[ref('hotels_be_bago.servici1')])]" />
 			<field name="estrellas">1</field>
+<!--
 			<field name="roomlist" eval="[(6,0,[ref('hotels_be_bago.habitacion21'),ref('hotels_be_bago.habitacion172'),ref('hotels_be_bago.habitacion51')] )]" />
+-->
 		</record>
 	</data>
 </odoo>

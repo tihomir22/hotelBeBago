@@ -24,7 +24,7 @@ class hotel(models.Model):
     description = fields.Text()
     ciudad=fields.Many2one("hotels_be_bago.city","Ciudad")
     pais=fields.Char(string='Pais del hotel',related='ciudad.country.name')
-    roomlist = fields.Many2many("hotels_be_bago.habitacion")
+    roomlist=fields.One2many("hotels_be_bago.habitacion","hotel")
     estrellas = fields.Selection([('1', '⭐'), ('2', '⭐⭐'), ('3', '⭐⭐⭐'), ('4', '⭐⭐⭐⭐'), ('5', '⭐⭐⭐⭐⭐')])
     valoraciomedia=fields.Selection([('1', '⭐'), ('2', '⭐⭐'), ('3', '⭐⭐⭐'), ('4', '⭐⭐⭐⭐'), ('5', '⭐⭐⭐⭐⭐')],compute='_calcular_media')
     listaServicios = fields.Many2many("hotels_be_bago.servicis")
@@ -51,14 +51,27 @@ class hotel(models.Model):
 
 class habitacion(models.Model):
     _name = 'hotels_be_bago.habitacion'
-    hotel = fields.Many2one("hotels_be_bago.hotel", "Hotel");
+    hotel = fields.Many2one("hotels_be_bago.hotel", "Hotel")
     name = fields.Text()
     camas = fields.Selection([('1', 'Cama Solitaria'), ('2', 'Cama Matrimonio'), ('3', 'Cama Familiar'),
                                   ('4', 'Cama Infantil con matrimonio'), ('5', 'Distribución numerosa')])
     fotos = fields.Many2many("hotels_be_bago.roomfotos")
     precios = fields.Integer(default=20)
+    reserva=fields.One2many("hotels_be_bago.reserva","habitaciones")
+    disponibilidad=fields.Char(string="Estado",compute='_getestado',readOnly=True)
     descripcion = fields.Text(
             default="Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.")
+
+    @api.depends('reserva')
+    def _getestado(self):
+        for record in self:
+            print(len(record.reserva))
+            if(len(record.reserva)>0):
+                record.disponibilidad="Ocupado"
+            else:
+                record.disponibilidad="Libre"
+
+
 
 class reserva(models.Model):
     _name = 'hotels_be_bago.reserva'
