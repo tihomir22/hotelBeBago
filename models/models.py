@@ -21,12 +21,13 @@ class hotel(models.Model):
     _name = 'hotels_be_bago.hotel'
     name = fields.Char()
     galeriaFotos = fields.Many2many("hotels_be_bago.hotelfotos")
+    fotoprincipal=fields.Binary(compute='_recuperar_foto')
     description = fields.Text()
     ciudad=fields.Many2one("hotels_be_bago.city","Ciudad")
     pais=fields.Char(string='Pais del hotel',related='ciudad.country.name')
     roomlist=fields.One2many("hotels_be_bago.habitacion","hotel")
     estrellas = fields.Selection([('1', '⭐'), ('2', '⭐⭐'), ('3', '⭐⭐⭐'), ('4', '⭐⭐⭐⭐'), ('5', '⭐⭐⭐⭐⭐')])
-    valoraciomedia=fields.Selection([('1', '⭐'), ('2', '⭐⭐'), ('3', '⭐⭐⭐'), ('4', '⭐⭐⭐⭐'), ('5', '⭐⭐⭐⭐⭐')],compute='_calcular_media')
+    valoraciomedia=fields.Selection([('1', '⭐'), ('2', '⭐⭐'), ('3', '⭐⭐⭐'), ('4', '⭐⭐⭐⭐'), ('5', '⭐⭐⭐⭐⭐')],compute='_calcular_media',store=True)
     listaServicios = fields.Many2many("hotels_be_bago.servicis")
     comentarios = fields.One2many('hotels_be_bago.comentarios','hoteles')
 
@@ -34,7 +35,7 @@ class hotel(models.Model):
     def _calcular_media(self):
         for record in self:
 
-            print(str(record.name + "tiene "+ str(len(record.comentarios))))
+            #print(str(record.name + "tiene "+ str(len(record.comentarios))))
             if len(record.comentarios) > 0:
                 arrayComentarios=record.comentarios
                 sumaValoracion=0
@@ -49,6 +50,15 @@ class hotel(models.Model):
                 print("No tiene comentarios por lo que la media se queda en default,1")
                 record.valoraciomedia='1'
 
+    @api.depends('galeriaFotos')
+    def _recuperar_foto(self):
+        for record in self:
+            if len(record.galeriaFotos) > 0:
+               record.fotoprincipal=record.galeriaFotos(0).foto
+            else:
+                print("Este hotel no tiene fotos...")
+
+
 class habitacion(models.Model):
     _name = 'hotels_be_bago.habitacion'
     hotel = fields.Many2one("hotels_be_bago.hotel", "Hotel")
@@ -62,12 +72,17 @@ class habitacion(models.Model):
     descripcion = fields.Text(
             default="Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.")
 
+
     @api.depends('reserva')
     def _getestado(self):
         for record in self:
-            print(len(record.reserva))
+            #print(len(record.reserva))
             if(len(record.reserva)>0):
-                record.disponibilidad="Ocupado"
+                for valorreserva in record.reserva:
+                    if(valorreserva.fechaFinal < str(datetime.today())):
+                        record.disponibilidad="Libre"
+                    else:
+                        record.disponibilidad="Ocupado"
             else:
                 record.disponibilidad="Libre"
 
@@ -80,7 +95,7 @@ class reserva(models.Model):
     fechaFinal = fields.Date()
     habitaciones = fields.Many2one("hotels_be_bago.habitacion", "Habitacion a reservar")
     clientes = fields.Many2one("res.partner", "Nombre del cliente")
-    nombrehotel = fields.Many2one(string='Nombre del hotel', related='habitaciones.hotel', readOnly=True,store=False)
+    nombrehotel = fields.Many2one(string='Nombre del hotel', related='habitaciones.hotel', readOnly=True, store=True)
 
 
     @api.depends('habitaciones','fechaInicio','fechaFinal','clientes')
@@ -88,10 +103,6 @@ class reserva(models.Model):
         for record in self:
             if record.habitaciones and record.fechaInicio and record.fechaFinal and record.clientes:
                     record.name=record.habitaciones.name+' '+record.clientes.name+' '+record.fechaInicio+' '+record.fechaFinal
-
-
-
-
 
     @api.constrains('fechaInicio', 'fechaFinal')
     def _comprobar_reserva(self):
@@ -102,9 +113,10 @@ class reserva(models.Model):
                 print(self.name)
                 print(valor.name)
 
-           # print('jerk it m8' + str(variable))
             if variable > 0:
                 raise ValidationError("Se solapan dos habitaciones \n" + self.name + " con  \n"+valor.name)
+
+
 
 
 class hotelfotos(models.Model):

@@ -59,6 +59,46 @@
       </field>
     </record>
 
+      <record model="ir.ui.view" id="hotels_be_bago.hotel_kanban">
+            <field name="name">BeBago Hotel Kanban</field>
+            <field name="model">hotels_be_bago.hotel</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <!--list of field to be loaded -->
+                    <field name="name" />
+                    <field name="ciudad" /> <!-- És important afegir el id per al record.id.value -->
+                    <field name="pais" />
+                    <field name="galeriaFotos"/>
+                    <field name="description"/>
+                    <field name="roomlist"/>
+                    <field name="estrellas"/>
+                    <field name="valoraciomedia"/>
+                    <field name="listaServicios"/>
+                    <templates>
+                    <t t-name="kanban-box">
+                            <div class="oe_product_vignette">
+                                <a type="open">
+                                    <img class="oe_kanban_image"
+                                        t-att-src="kanban_image('hotels_be_bago.hotel', 'fotoprincipal', 'record.id.value')" />
+                                </a>
+                                <div class="oe_product_desc">
+                                    <h4>
+                                        <a type="edit">
+                                            <field name="name"></field>
+                                        </a>
+                                    </h4>
+                                    <ul>
+
+                                       <li>Arrobas: <field name="ciudad"></field></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
       <record model="ir.ui.view" id="hotels_be_bago_hotel_search">
         <field name="name">BeBago City Hotel</field>
         <field name="model">hotels_be_bago.hotel</field>
@@ -108,7 +148,7 @@
                 <field name="hotel"></field>
                 <field name="disponibilidad"></field>
                 <group string="Agrupar por">
-                  <filter name="hotel" string="Hotel" context="{'group_by':'hotel.name'}"></filter>
+                  <filter name="hotel" string="Hotel" context="{'group_by':'hotel'}"></filter>
                   <filter name="disponibilidad" string="Disponibilidad" context="{'group_by':'disponibilidad'}"></filter>
                 </group>
            </search>
@@ -151,6 +191,25 @@
                 </calendar>
             </field>
         </record>
+
+    <record model="ir.ui.view" id="hotels_be_bago.reserva_search">
+        <field name="name">BeBago City Reserva</field>
+        <field name="model">hotels_be_bago.reserva</field>
+        <field name="arch" type="xml">
+           <search string="Reserva">
+                <field name="habitaciones"></field>
+                <field name="nombrehotel"></field>
+                <field name="fechaInicio"></field>
+                <field name="fechaFinal"></field>
+
+                <group string="Agrupar por">
+                  <filter name="nombrehotel" string="Hotel" context="{'group_by':'nombrehotel'}"></filter>
+                  <filter name="clientes" string="Clientes" context="{'group_by':'clientes'}"></filter>
+                </group>
+           </search>
+
+        </field>
+    </record>
 
     <record model="ir.actions.act_window" id="hotels_be_bago.action_window4">
       <field name="name">BeBago Booking Window</field>
