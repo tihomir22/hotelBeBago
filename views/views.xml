@@ -53,6 +53,7 @@
           <field name="description"/>
           <field name="roomlist"/>
           <field name="estrellas"/>
+            <!--<field name="fotoprincipal" widget="image"></field>-->
             <field name="valoraciomedia"></field>
             <field name="listaServicios"/>
         </tree>
@@ -66,6 +67,8 @@
                 <kanban>
                     <!--list of field to be loaded -->
                     <field name="name" />
+                    <field name="id" />
+                    <field name="fotoprincipal" />
                     <field name="ciudad" /> <!-- És important afegir el id per al record.id.value -->
                     <field name="pais" />
                     <field name="galeriaFotos"/>
@@ -79,7 +82,7 @@
                             <div class="oe_product_vignette">
                                 <a type="open">
                                     <img class="oe_kanban_image"
-                                        t-att-src="kanban_image('hotels_be_bago.hotel', 'fotoprincipal', 'record.id.value')" />
+                                        t-att-src="kanban_image('hotels_be_bago.hotel', 'fotoprincipal', record.id.raw_value)" style="height:128px;width:100%"/>
                                 </a>
                                 <div class="oe_product_desc">
                                     <h4>
@@ -88,14 +91,21 @@
                                         </a>
                                     </h4>
                                     <ul>
-
-                                       <li>Arrobas: <field name="ciudad"></field></li>
+                                       <li>Estrellas: <field name="estrellas"></field></li>
+                                        <li>Valoracion Media: <field name="valoraciomedia"></field></li>
+                                        <li>Ciudad: <field name="ciudad"></field></li>
+                                        <li>Descripcion: <field name="description"></field></li>
                                     </ul>
                                 </div>
                             </div>
+                      
                         </t>
+
+
                     </templates>
+
                 </kanban>
+
             </field>
         </record>
 
@@ -120,7 +130,7 @@
     <record model="ir.actions.act_window" id="hotels_be_bago.action_window2">
       <field name="name">BeBago Hotel Window</field>
       <field name="res_model">hotels_be_bago.hotel</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">tree,form,kanban</field>
     </record>
 
 <!-- UNA CLASE -->

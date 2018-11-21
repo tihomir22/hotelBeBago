@@ -21,7 +21,7 @@ class hotel(models.Model):
     _name = 'hotels_be_bago.hotel'
     name = fields.Char()
     galeriaFotos = fields.Many2many("hotels_be_bago.hotelfotos")
-    fotoprincipal=fields.Binary(compute='_recuperar_foto')
+    fotoprincipal=fields.Binary(compute='_recuperar_foto',store=True)
     description = fields.Text()
     ciudad=fields.Many2one("hotels_be_bago.city","Ciudad")
     pais=fields.Char(string='Pais del hotel',related='ciudad.country.name')
@@ -54,9 +54,11 @@ class hotel(models.Model):
     def _recuperar_foto(self):
         for record in self:
             if len(record.galeriaFotos) > 0:
-               record.fotoprincipal=record.galeriaFotos(0).foto
+               record.fotoprincipal=record.galeriaFotos[0].foto
             else:
                 print("Este hotel no tiene fotos...")
+
+
 
 
 class habitacion(models.Model):
