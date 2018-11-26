@@ -85,7 +85,7 @@ class habitacion(models.Model):
             #print(len(record.reserva))
             if(len(record.reserva)>0):
                 for valorreserva in record.reserva:
-                    if(valorreserva.fechaFinal < str(datetime.today())):
+                    if(valorreserva.fechaFinal < str(datetime.datetime.today())):
                         record.disponibilidad="Libre"
                     else:
                         record.disponibilidad="Ocupado"
