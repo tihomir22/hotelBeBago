@@ -4,7 +4,11 @@ from odoo import models, fields, api,tools
 #ver la importación de tools de odoo, arriba importada
 from odoo.exceptions import ValidationError
 import logging
-from datetime import datetime
+#from datetime import datetime, timedelta
+import datetime
+
+
+
 
 _logger = logging.getLogger(__name__)
 
@@ -92,19 +96,49 @@ class habitacion(models.Model):
 
 class reserva(models.Model):
     _name = 'hotels_be_bago.reserva'
-    name=fields.Text(string="Nombre de la reserva",compute='_generar_nombre',readOnly=True)
+    name=fields.Char(string="Nombre de la reserva",compute='_generar_nombre',readonly=False)
     fechaInicio = fields.Date()
     fechaFinal = fields.Date()
     habitaciones = fields.Many2one("hotels_be_bago.habitacion", "Habitacion a reservar")
     clientes = fields.Many2one("res.partner", "Nombre del cliente")
-    nombrehotel = fields.Many2one(string='Nombre del hotel', related='habitaciones.hotel', readOnly=True, store=True)
+    nombrehotel = fields.Many2one(string='Nombre del hotel', related='habitaciones.hotel', readonly=False, store=True)
 
-
+    @api.multi
     @api.depends('habitaciones','fechaInicio','fechaFinal','clientes')
     def _generar_nombre(self):
         for record in self:
             if record.habitaciones and record.fechaInicio and record.fechaFinal and record.clientes:
                     record.name=record.habitaciones.name+' '+record.clientes.name+' '+record.fechaInicio+' '+record.fechaFinal
+
+    @api.onchange('fechaInicio','fechaFinal')
+    def _manyana(self):
+        for record in self:
+            if record.fechaFinal and record.fechaInicio:
+
+                fmt='%Y-%m-%d'
+                dateInicio=datetime.datetime.strptime(str(record.fechaInicio),fmt)
+                dateFinal=datetime.datetime.strptime(str(record.fechaFinal),fmt)
+                if dateFinal < dateInicio:
+                    record.fechaFinal = dateInicio + datetime.timedelta(days=1)
+                    print(record.fechaFinal)
+                    return {
+                        'warning': {
+                            'title': "Algo ha ocurrido mal",
+                            'message': "No puedes insertar un dia antes de la fecha de inicio",
+                        }
+                    }
+
+                else:
+                    print(" No hay error!")
+
+
+            elif record.fechaInicio:
+                fmt = '%Y-%m-%d'
+                data = datetime.datetime.strptime(str(record.fechaInicio), fmt)
+                record.fechaFinal = data + datetime.timedelta(days=1)
+
+
+               # print(data)
 
     @api.constrains('fechaInicio', 'fechaFinal')
     def _comprobar_reserva(self):
@@ -117,6 +151,12 @@ class reserva(models.Model):
 
             if variable > 0:
                 raise ValidationError("Se solapan dos habitaciones \n" + self.name + " con  \n"+valor.name)
+
+
+
+
+
+
 
 
 

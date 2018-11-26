@@ -7,13 +7,13 @@
       <field name="name">BeBago City List</field>
       <field name="model">hotels_be_bago.city</field>
       <field name="arch" type="xml">
-        <tree>
+        <form>
           <field name="name"/>
           <field name="description"/>
           <field name="ubication"/>
           <field name="country"/>
             <field name="hotellist"/>
-        </tree>
+        </form>
       </field>
     </record>
 
@@ -56,6 +56,7 @@
             <!--<field name="fotoprincipal" widget="image"></field>-->
             <field name="valoraciomedia"></field>
             <field name="listaServicios"/>
+            <field name="comentarios"></field>
         </tree>
       </field>
     </record>
@@ -179,7 +180,8 @@
       <field name="model">hotels_be_bago.reserva</field>
       <field name="arch" type="xml">
         <tree  decoration-danger="fechaInicio&lt;current_date and fechaFinal&lt;current_date" decoration-bf="fechaInicio&lt;current_date and fechaFinal&gt;current_date" decoration-info="fechaInicio&gt;current_date">
-          <field name="fechaInicio"/>
+          <field name="name"></field>
+            <field name="fechaInicio"/>
           <field name="fechaFinal"/>
           <field name="habitaciones"/>
           <field name="clientes"/>
