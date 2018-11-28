@@ -105,18 +105,65 @@
 
                       <group>
                           <group>
+                              <h4>Datos principales</h4><hr/>
                               <field name="name"></field>
                               <field name="description"></field>
                           </group>
                           <group>
-                               <img class="oe_kanban_image"
-                                        t-att-src="kanban_image('hotels_be_bago.hotel', 'fotoprincipal', record.id.raw_value)" style="height:128px;width:100%"/>
-
+                              <h4>Localización</h4><hr/>
+                              <field name="ciudad"></field>
+                              <field name="pais"></field>
                           </group>
+                            <group>
+                              <h4>Valoración</h4><hr/>
+                              <field name="estrellas"></field>
+                              <field name="valoraciomedia"></field>
+                          </group>
+
+
+
+                      <group>
+                           <h4>Imagen principal</h4><hr/>
+
+
+                              <kanban>
+                                       <templates>
+                                            <t t-name="kanban-box">
+                                                <field name="fotoprincipal" style="border:1px solid gray;border-radius:1px;" widget="image"/>
+                                            </t>
+                                       </templates>
+                              </kanban>
+                          
+                      </group>
                       </group>
                       <notebook >
-                           <page string="Galeria"><field name="galeriaFotos"></field></page>
 
+                          <page string="Rooms">
+                                 <field name="roomlist">
+
+                                 </field>
+
+                          </page>
+                            <page string="Galeria">
+                               <field name="galeriaFotos">
+                                   <kanban>
+                                       <templates>
+                                            <t t-name="kanban-box">
+                                                    <div class="oe_product_vignette">
+                                                        <a type="open">
+                                                           <field name="foto" widget="image" class="oe_left oe_avatar"/>
+                                                        </a>
+                                                        <p><field name="name" widget="char"></field></p>
+                                                    </div>
+
+                                                </t>
+                                            </templates>
+
+
+                                   </kanban>
+
+                               </field>
+                           </page>
                         </notebook>
                   </sheet>
 
