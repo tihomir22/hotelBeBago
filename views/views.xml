@@ -1,7 +1,45 @@
 <odoo>
   <data>
 
+    <record model="ir.ui.view" id="hotels_be_bago.city_kanban">
+            <field name="name">BeBago City Kanban</field>
+            <field name="model">hotels_be_bago.city</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <!--list of field to be loaded -->
+                    <field name="name" />
+                    <field name="id" />
+                    <field name="description" />
+                    <field name="ubication" /> <!-- És important afegir el id per al record.id.value -->
+                    <field name="country" />
+                    <field name="hotellist"/>
+                    <templates>
+                    <t t-name="kanban-box">
+                            <div class="oe_product_vignette">
+                                <a type="open">
+                                    <h4><field name="name"></field></h4>
+                                     </a>
+                                <div class="oe_product_desc">
 
+                                    <ul>
+                                       <li>Descripcion: <field name="description"></field></li>
+                                        <li>Ubicación : <field name="ubication"></field></li>
+                                        <li>Pais : <field name="country"></field></li>
+                                        <li>Numero hoteles : <field name="hotellist"></field></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+
+                        </t>
+
+
+                    </templates>
+
+                </kanban>
+
+            </field>
+        </record>
 
     <record model="ir.ui.view" id="hotels_be_bago.city">
       <field name="name">BeBago City List</field>
@@ -68,7 +106,7 @@
     <record model="ir.actions.act_window" id="hotels_be_bago.action_window">
       <field name="name">BeBago City Window</field>
       <field name="res_model">hotels_be_bago.city</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">tree,form,kanban</field>
     </record>
 
       <!-- UNA CLASE -->
@@ -119,13 +157,8 @@
                               <field name="estrellas"></field>
                               <field name="valoraciomedia"></field>
                           </group>
-
-
-
                       <group>
                            <h4>Imagen principal</h4><hr/>
-
-
                               <kanban>
                                        <templates>
                                             <t t-name="kanban-box">
@@ -133,16 +166,13 @@
                                             </t>
                                        </templates>
                               </kanban>
-                          
                       </group>
                       </group>
                       <notebook >
-
                           <page string="Rooms">
                                  <field name="roomlist">
 
                                  </field>
-
                           </page>
                             <page string="Galeria">
                                <field name="galeriaFotos">
@@ -155,20 +185,14 @@
                                                         </a>
                                                         <p><field name="name" widget="char"></field></p>
                                                     </div>
-
                                                 </t>
                                             </templates>
-
-
                                    </kanban>
-
                                </field>
                            </page>
                         </notebook>
                   </sheet>
-
               </form>
-
           </field>
       </record>
 
@@ -212,12 +236,8 @@
                             </div>
                       
                         </t>
-
-
                     </templates>
-
                 </kanban>
-
             </field>
         </record>
 
@@ -246,6 +266,110 @@
     </record>
 
 <!-- UNA CLASE -->
+
+      <record model="ir.ui.view" id="hotels_be_bago.rooms_form">
+          <field name="name">BeBago Rooms Form</field>
+          <field name="model">hotels_be_bago.habitacion</field>
+          <field name="arch" type="xml">
+              <form>
+
+                  <sheet>
+                      <h1 style="text-align:center;"><field name="name"></field></h1>
+                        <h2 style="text-align:center;"><field name="hotel"></field></h2>
+                      <group>
+                          <group>
+                              <h4>Datos de la habitacion</h4><hr/>
+
+                              <field name="camas"></field>
+                          </group>
+
+                            <group>
+                              <h4>Precios y estado</h4><hr/>
+                              <field name="precios"></field>
+                              <field name="disponibilidad"></field>
+                          </group>
+
+
+
+                      </group>
+                      <h4>Descripcion</h4>
+                      <field name="descripcion"></field><hr/>
+                      <notebook >
+                            <page string="Galeria">
+                               <field name="fotos">
+                                   <kanban>
+                                       <templates>
+                                            <t t-name="kanban-box">
+                                                    <div class="oe_product_vignette">
+                                                        <a type="open">
+                                                           <field name="foto" widget="image" class="oe_left oe_avatar"/>
+                                                        </a>
+                                                    </div>
+
+                                                </t>
+                                            </templates>
+
+
+                                   </kanban>
+
+                               </field>
+                           </page>
+                          <page string="Reservas">
+                                 <field name="reserva">
+
+                                 </field>
+
+                          </page>
+
+                        </notebook>
+                  </sheet>
+
+              </form>
+
+          </field>
+      </record>
+
+      <record model="ir.ui.view" id="hotels_be_bago.room_kanban">
+            <field name="name">BeBago Rooms Kanban</field>
+            <field name="model">hotels_be_bago.habitacion</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <!--list of field to be loaded -->
+                    <field name="name" />
+                    <field name="id" />
+                    <field name="hotel" />
+                    <field name="camas" /> <!-- És important afegir el id per al record.id.value -->
+                    <field name="fotos" />
+                    <field name="precios"/>
+                    <field name="reserva"/>
+                    <field name="disponibilidad"/>
+                    <field name="descripcion"/>
+                    <templates>
+                    <t t-name="kanban-box">
+                            <div class="oe_product_vignette">
+                                <a type="open">
+                                    <img class="oe_kanban_image"
+                                        t-att-src="kanban_image('hotels_be_bago.habitacion', 'fotoprincipalRoom', record.id.value)" style="height:128px;width:100%"/>
+                                </a>
+                                <div class="oe_product_desc">
+                                    <ul>
+                                        <li>Nombre : <field name="name"></field></li>
+                                        <li>Hoteles : <field name="hotel"></field></li>
+                                        <li>Camas : <field name="camas"></field></li>
+                                        <li>Fotos : <field name="fotos"></field></li>
+                                        <li>Precios : <field name="precios"></field></li>
+                                        <li>Reserva : <field name="reserva"></field></li>
+                                        <li>Disponibilidad : <field name="disponibilidad"></field></li>
+                                        <li>Descripcion : <field name="descripcion"></field></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
 
       <record model="ir.ui.view" id="hotels_be_bago.habitacion">
       <field name="name">BeBago Room</field>
@@ -281,7 +405,7 @@
     <record model="ir.actions.act_window" id="hotels_be_bago.action_window3">
       <field name="name">BeBago Room Window</field>
       <field name="res_model">hotels_be_bago.habitacion</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">tree,form,kanban</field>
     </record>
 
 <!-- UNA CLASE -->
@@ -354,11 +478,74 @@
         </tree>
       </field>
     </record>
+      <record model="ir.ui.view" id="hotels_be_bago.hotelfotos_kanban">
+            <field name="name">BeBago Fotos Hotel Kanban</field>
+            <field name="model">hotels_be_bago.hotelfotos</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <!--list of field to be loaded -->
+                    <field name="name" />
+                    <field name="id" />
+
+                    <templates>
+                    <t t-name="kanban-box">
+                            <div class="oe_product_vignette">
+                                <a type="open">
+                                    <img class="oe_kanban_image"
+                                        t-att-src="kanban_image('hotels_be_bago.hotelfotos', 'foto', record.id.raw_value)" style="height:256px;width:100%"/>
+                                </a>
+                            </div>
+                        </t>
+                    </templates>
+
+                </kanban>
+
+            </field>
+        </record>
+
+      <record model="ir.ui.view" id="hotels_be_bago.hotelfotos_form">
+          <field name="name">BeBago Rooms Form</field>
+          <field name="model">hotels_be_bago.hotelfotos</field>
+          <field name="arch" type="xml">
+              <form>
+                  <sheet>
+                      <group>
+                          <group>
+                              <field name="name"></field>
+                          </group>
+
+                            <group>
+                              <h4>Foto</h4><hr/>
+                                   <kanban>
+                                       <templates>
+                                            <t t-name="kanban-box">
+                                                    <div class="oe_product_vignette">
+                                                        <a type="open">
+                                                           <field name="foto" widget="image" style="width:100%;height:100%;"/>
+                                                        </a>
+                                                    </div>
+
+                                                </t>
+                                            </templates>
+                                   </kanban>
+                          </group>
+
+
+
+                      </group>
+
+
+                  </sheet>
+
+              </form>
+
+          </field>
+      </record>
 
     <record model="ir.actions.act_window" id="hotels_be_bago.action_window5">
       <field name="name">BeBago Hotel Photos Window</field>
       <field name="res_model">hotels_be_bago.hotelfotos</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">tree,form,kanban</field>
     </record>
 
 <!-- UNA CLASE -->

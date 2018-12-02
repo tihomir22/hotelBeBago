@@ -19,7 +19,7 @@ class city(models.Model):
     description = fields.Text()
     ubication = fields.Char(String="Ubication")
     country = fields.Many2one("res.country", "Pais")
-    hotellist = fields.Many2many("hotels_be_bago.hotel")
+    hotellist = fields.One2many("hotels_be_bago.hotel","ciudad")
 
 class hotel(models.Model):
     _name = 'hotels_be_bago.hotel'
@@ -71,6 +71,7 @@ class habitacion(models.Model):
     name = fields.Text()
     camas = fields.Selection([('1', 'Cama Solitaria'), ('2', 'Cama Matrimonio'), ('3', 'Cama Familiar'),
                                   ('4', 'Cama Infantil con matrimonio'), ('5', 'Distribución numerosa')])
+    fotoprincipalRoom = fields.Binary(compute='_recuperar_foto_rooms', store=True)
     fotos = fields.Many2many("hotels_be_bago.roomfotos")
     precios = fields.Integer(default=20)
     reserva=fields.One2many("hotels_be_bago.reserva","habitaciones")
@@ -78,6 +79,13 @@ class habitacion(models.Model):
     descripcion = fields.Text(
             default="Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.")
 
+    @api.depends('fotos')
+    def _recuperar_foto_rooms(self):
+        for record in self:
+            if len(record.fotos) > 0:
+                record.fotoprincipalRoom = record.fotos[0].foto
+            else:
+                print("Este room no tiene fotos...")
 
     @api.depends('reserva')
     def _getestado(self):
