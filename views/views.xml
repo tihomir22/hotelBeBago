@@ -137,7 +137,6 @@
           <field name="model">hotels_be_bago.hotel</field>
           <field name="arch" type="xml">
               <form>
-
                   <sheet>
                       <h1 style="text-align:center;"><field name="name"></field></h1>
 
@@ -157,6 +156,7 @@
                               <field name="estrellas"></field>
                               <field name="valoraciomedia"></field>
                           </group>
+
                       <group>
                            <h4>Imagen principal</h4><hr/>
                               <kanban>
@@ -168,6 +168,24 @@
                               </kanban>
                       </group>
                       </group>
+                      <div class="row" style="text-align:center;">
+                          <div class="col-md-12">
+                            <h4>Lista servicios</h4>
+                              <field name="listaServicios">
+                              <kanban>
+                                       <templates>
+                                            <t t-name="kanban-box">
+                                                    <div class="oe_product_vignette" style="border:none;flex:0;width:auto">
+                                                        <a type="open">
+                                                           <field name="imageser" widget="image"/>
+                                                        </a>
+                                                    </div>
+                                                </t>
+                                            </templates>
+                                   </kanban>
+                              </field>
+                              </div>
+                      </div>
                       <notebook >
                           <page string="Rooms">
                                  <field name="roomlist">
@@ -189,6 +207,29 @@
                                             </templates>
                                    </kanban>
                                </field>
+                           </page>
+                          <page string="Lista Comentarios">
+                              <field name="comentarios">
+                                   <kanban>
+                                       <templates>
+                                            <t t-name="kanban-box">
+                                                    <div class="oe_product_vignette">
+                                                        <a type="open">
+                                                           <field name="fotocliente" widget="image" class="oe_left oe_avatar"/>
+                                                        </a>
+                                                        <group>
+                                                            <h4>Nombre cliente: </h4>
+                                                            <field name="namecliente" widget="char"></field>
+                                                            <h4>Descripcion: </h4>
+                                                            <field name="descripcion" widget="char"></field>
+                                                            <h4>Valoracion: </h4>
+                                                            <field name="valoracion" widget="selection"></field>
+                                                        </group>
+                                                    </div>
+                                                </t>
+                                            </templates>
+                                   </kanban>
+                              </field>
                            </page>
                         </notebook>
                   </sheet>

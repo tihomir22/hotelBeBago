@@ -188,6 +188,9 @@ class servicis(models.Model):
 
 class comentarios(models.Model):
     _name='hotels_be_bago.comentarios'
+    clientes = fields.Many2one("res.partner", "Nombre del cliente")
+    fotocliente=fields.Binary(related='clientes.image')
+    namecliente = fields.Char(related='clientes.name')
     hoteles=fields.Many2one('hotels_be_bago.hotel','Hotel')
     descripcion=fields.Text(string="Descripcion")
     valoracion = fields.Selection([('1', '⭐'), ('2', '⭐⭐'), ('3', '⭐⭐⭐'), ('4', '⭐⭐⭐⭐'), ('5', '⭐⭐⭐⭐⭐')],default='5')
