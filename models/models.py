@@ -67,10 +67,20 @@ class hotel(models.Model):
         reserva=self.env['hotels_be_bago.reserva'].search([('habitaciones.hotel','=',self.id),('fechaFinal','<=',str(datetime.datetime.today()))])
         #el self.env se usa para recuperar una tabla de la bbdd
         #el search es como usn elect
-        #print(reserva)
-        self.env['hotels_be_bago.comentarios'].create({'clientes':reserva[random.randint(0,len(reserva)-1)].clientes.id,'hoteles':self.id,'descripcion':'dembow','valoracion':'1'})
+        comentarios=['Me lo he pasado bien','Buenos efectos audivisuales y atencion al cliente','El baño me ha puesto nervioso', 'J**** donde m***** me he metido tio',"Tocará volver"]
+        cliente={'clientes':reserva[random.randint(0,len(reserva)-1)].clientes.id,'fotocliente':'','hoteles':self.id,'descripcion':comentarios[random.randint(0,len(comentarios)-1)],'valoracion':str(random.randint(1,5))}
+        self.env['hotels_be_bago.comentarios'].create(cliente)
 
-
+    @api.one
+    def anyadir_habitacion(self):
+        hotel=self.env['hotels_be_bago.hotel'].search([('id','=',self.id)])
+        name="Habitacion " + str(hotel.name)
+        camas=str(random.randint(1,5))
+        precios=random.randint(100,1000)
+        
+        habitacion={'name':name,'camas':camas,'precios':precios}
+        hotel.roomlist.create(habitacion)
+        print(habitacion)
 
 
 class habitacion(models.Model):
@@ -190,7 +200,7 @@ class servicis(models.Model):
 class comentarios(models.Model):
     _name='hotels_be_bago.comentarios'
     clientes = fields.Many2one("res.partner", "Nombre del cliente")
-    fotocliente=fields.Binary(related='clientes.image')
+    fotocliente=fields.Binary(related='clientes.image',store=True)
     namecliente = fields.Char(related='clientes.name')
     hoteles=fields.Many2one('hotels_be_bago.hotel','Hotel')
     descripcion=fields.Text(string="Descripcion")

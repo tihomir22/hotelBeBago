@@ -188,6 +188,7 @@
                       </div>
                       <notebook >
                           <page string="Rooms">
+                              <button name="anyadir_habitacion" type="object" string="Añadir habitacion" class="oe_highlight" />
                                  <field name="roomlist">
 
                                  </field>
