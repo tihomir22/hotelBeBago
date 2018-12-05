@@ -209,7 +209,9 @@
                                </field>
                            </page>
                           <page string="Lista Comentarios">
+                              <button name="anyadir_comentario" type="object" string="Añadir comentario" class="oe_highlight" />
                               <field name="comentarios">
+
                                    <kanban>
                                        <templates>
                                             <t t-name="kanban-box">

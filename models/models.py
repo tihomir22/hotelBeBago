@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api,tools
+import random
 #ver la importación de tools de odoo, arriba importada
 from odoo.exceptions import ValidationError
 import logging
@@ -61,6 +62,13 @@ class hotel(models.Model):
                record.fotoprincipal=record.galeriaFotos[0].foto
             else:
                 print("Este hotel no tiene fotos...")
+    @api.one
+    def anyadir_comentario(self):
+        reserva=self.env['hotels_be_bago.reserva'].search([('habitaciones.hotel','=',self.id),('fechaFinal','<=',str(datetime.datetime.today()))])
+        #el self.env se usa para recuperar una tabla de la bbdd
+        #el search es como usn elect
+        #print(reserva)
+        self.env['hotels_be_bago.comentarios'].create({'clientes':reserva[random.randint(0,len(reserva)-1)].clientes.id,'hoteles':self.id,'descripcion':'dembow','valoracion':'1'})
 
 
 
@@ -135,7 +143,6 @@ class reserva(models.Model):
                             'message': "No puedes insertar un dia antes de la fecha de inicio",
                         }
                     }
-
                 else:
                     print(" No hay error!")
 
@@ -159,12 +166,6 @@ class reserva(models.Model):
 
             if variable > 0:
                 raise ValidationError("Se solapan dos habitaciones \n" + self.name + " con  \n"+valor.name)
-
-
-
-
-
-
 
 
 
