@@ -77,8 +77,9 @@ class hotel(models.Model):
         name="Habitacion " + str(hotel.name)
         camas=str(random.randint(1,5))
         precios=random.randint(100,1000)
+        fotos=self.env['hotels_be_bago.roomfotos'].search([('id','=',random.choice([self.env.ref('hotels_be_bago.roomfoto1').id,self.env.ref('hotels_be_bago.roomfoto2').id,self.env.ref('hotels_be_bago.roomfoto3').id,self.env.ref('hotels_be_bago.roomfoto4').id,self.env.ref('hotels_be_bago.roomfoto5').id]))])
         
-        habitacion={'name':name,'camas':camas,'precios':precios}
+        habitacion={'hotel':hotel.id,'name':name,'camas':camas,'precios':precios,'fotos':fotos}
         hotel.roomlist.create(habitacion)
         print(habitacion)
 
@@ -90,7 +91,7 @@ class habitacion(models.Model):
     camas = fields.Selection([('1', 'Cama Solitaria'), ('2', 'Cama Matrimonio'), ('3', 'Cama Familiar'),
                                   ('4', 'Cama Infantil con matrimonio'), ('5', 'Distribución numerosa')])
     fotoprincipalRoom = fields.Binary(compute='_recuperar_foto_rooms', store=True)
-    fotos = fields.Many2many("hotels_be_bago.roomfotos")
+    fotos = fields.Many2many("hotels_be_bago.roomfotos" , store=True)
     precios = fields.Integer(default=20)
     reserva=fields.One2many("hotels_be_bago.reserva","habitaciones")
     disponibilidad=fields.Char(string="Estado",compute='_getestado',readOnly=True)
