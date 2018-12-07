@@ -74,14 +74,14 @@ class hotel(models.Model):
     @api.one
     def anyadir_habitacion(self):
         hotel=self.env['hotels_be_bago.hotel'].search([('id','=',self.id)])
-        name="Habitacion " + str(hotel.name)
+        name="Habitacion " + str(hotel.name) + str(random.randint(1,1000))
         camas=str(random.randint(1,5))
         precios=random.randint(100,1000)
         fotos=self.env['hotels_be_bago.roomfotos'].search([('id','=',random.choice([self.env.ref('hotels_be_bago.roomfoto1').id,self.env.ref('hotels_be_bago.roomfoto2').id,self.env.ref('hotels_be_bago.roomfoto3').id,self.env.ref('hotels_be_bago.roomfoto4').id,self.env.ref('hotels_be_bago.roomfoto5').id]))])
         
-        habitacion={'hotel':hotel.id,'name':name,'camas':camas,'precios':precios,'fotos':fotos}
+        habitacion={'hotel':hotel.id,'name':name,'camas':camas,'precios':precios,'fotos':[(6,0,fotos.ids)]}
         hotel.roomlist.create(habitacion)
-        print(habitacion)
+        #print(habitacion)
 
 
 class habitacion(models.Model):

@@ -471,6 +471,46 @@
       </field>
     </record>
 
+      <record model="ir.ui.view" id="hotels_be_bago.reserva_kanban">
+            <field name="name">BeBago Reserva Kanban</field>
+            <field name="model">hotels_be_bago.reserva</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <!--list of field to be loaded -->
+                    <field name="name" />
+                    <field name="id" />
+                    <field name="fechaInicio" />
+                    <field name="fechaFinal" /> <!-- És important afegir el id per al record.id.value -->
+                    <field name="habitaciones" />
+                    <field name="clientes"/>
+                    <field name="nombrehotel"/>
+                    <templates>
+                    <t t-name="kanban-box">
+                            <div class="oe_product_vignette">
+                                <h4>Nombre reserva : </h4>
+                                <a type="open">
+
+                                    <field name="name"></field>
+                                </a>
+                                
+                                <div class="oe_product_desc">
+                                    <h4>Datos : </h4>
+                                    <ul>
+                                        <li>Hotel : <field name="nombrehotel"></field></li>
+                                        <li>Cliente : <field name="clientes"></field></li>
+                                        <li>Fecha Inicio Reserva : <field name="fechaInicio"></field></li>
+                                        <li>Fecha Final reserva : <field name="fechaFinal"></field></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
      <record model="ir.ui.view" id="calendar1">
             <field name="name">BeBago Calendar</field>
             <field name="model">hotels_be_bago.reserva</field>
@@ -505,7 +545,7 @@
     <record model="ir.actions.act_window" id="hotels_be_bago.action_window4">
       <field name="name">BeBago Booking Window</field>
       <field name="res_model">hotels_be_bago.reserva</field>
-      <field name="view_mode">tree,form,calendar</field>
+      <field name="view_mode">tree,form,calendar,kanban</field>
     </record>
 
 <!-- UNA CLASE -->
