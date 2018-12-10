@@ -126,7 +126,7 @@
         <tree>
           <field name="name"/>
           <field name="ciudad"/>
-            <field name="pais"></field>
+            <field name="country"></field>
           <field name="galeriaFotos"/>
           <field name="description"/>
           <field name="roomlist"/>
@@ -159,7 +159,7 @@
                           <group>
                               <h4>Localización</h4><hr/>
                               <field name="ciudad"></field>
-                              <field name="pais"></field>
+                              <field name="country"></field>
                           </group>
                             <group>
                               <h4>Valoración</h4><hr/>
@@ -262,7 +262,7 @@
                     <field name="id" />
                     <field name="fotoprincipal" />
                     <field name="ciudad" /> <!-- És important afegir el id per al record.id.value -->
-                    <field name="pais" />
+                    <field name="country" />
                     <field name="galeriaFotos"/>
                     <field name="description"/>
                     <field name="roomlist"/>
@@ -303,11 +303,11 @@
         <field name="arch" type="xml">
            <search string="Hotels">
                 <field name="ciudad"></field>
-                <field name="pais"></field>
+                <field name="country"></field>
                 <field name="estrellas"></field>
                 <field name="valoraciomedia"></field>
                 <group string="Agrupar por">
-                  <filter name="pais" string="Pais" context="{'group_by':'country'}"></filter>
+                  <filter name="country" string="Pais" context="{'group_by':'country'}"></filter>
                   <filter name="ciudad" string="Ciudad" context="{'group_by':'ciudad'}"></filter>
                 </group>
            </search>

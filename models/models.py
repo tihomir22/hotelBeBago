@@ -30,7 +30,7 @@ class hotel(models.Model):
     fotoprincipal=fields.Binary(compute='_recuperar_foto',store=True)
     description = fields.Text()
     ciudad=fields.Many2one("hotels_be_bago.city","Ciudad")
-    pais=fields.Char(string='Pais del hotel',related='ciudad.country.name')
+    country=fields.Char(string='Pais del hotel',related='ciudad.country.name',store=True,readOnly=True)
     roomlist=fields.One2many("hotels_be_bago.habitacion","hotel")
     estrellas = fields.Selection([('1', '⭐'), ('2', '⭐⭐'), ('3', '⭐⭐⭐'), ('4', '⭐⭐⭐⭐'), ('5', '⭐⭐⭐⭐⭐')])
     valoraciomedia=fields.Selection([('1', '⭐'), ('2', '⭐⭐'), ('3', '⭐⭐⭐'), ('4', '⭐⭐⭐⭐'), ('5', '⭐⭐⭐⭐⭐')],compute='_calcular_media',store=True)
@@ -179,11 +179,16 @@ class reserva(models.Model):
 
     @api.constrains('fechaInicio', 'fechaFinal')
     def _comprobar_reserva(self):
-        for record in self:
-            variable = self.search_count([('id', '!=', record.id), ('fechaFinal', '>=', record.fechaInicio), ('fechaInicio','<=', record.fechaFinal)])
-            variable2=self.search([('id', '!=', record.id), ('fechaFinal', '>=', record.fechaInicio), ('fechaInicio','<=', record.fechaFinal)])
+
+            for record in self:
+                #print(record.habitaciones.id)
+
+                variable = self.search_count([('id', '!=', record.id),('habitaciones.id', '=', record.habitaciones.id) ,('fechaFinal', '>=', record.fechaInicio), ('fechaInicio','<=', record.fechaFinal)])
+                variable2=self.search([('id', '!=', record.id),('habitaciones.id', '=', record.habitaciones.id), ('fechaFinal', '>=', record.fechaInicio), ('fechaInicio','<=', record.fechaFinal)])
+                print(variable)
+                print(variable2)
             for valor in variable2:
-                print(self.name)
+                #print(self.name)
                 print(valor.name)
 
             if variable > 0:

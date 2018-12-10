@@ -22,8 +22,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/models/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="600">
-                  <caret line="205" column="36" selection-start-line="205" selection-start-column="28" selection-end-line="205" selection-end-column="36" />
+                <state relative-caret-position="1265">
+                  <caret line="188" column="31" selection-start-line="188" selection-start-column="31" selection-end-line="188" selection-end-column="31" />
                 </state>
               </provider>
             </entry>
@@ -62,8 +62,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/views.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="295">
-                  <caret line="698" column="40" lean-forward="true" selection-start-line="698" selection-start-column="40" selection-end-line="698" selection-end-column="40" />
+                <state relative-caret-position="1830">
+                  <caret line="284" column="40" lean-forward="true" selection-start-line="284" selection-start-column="40" selection-end-line="284" selection-end-column="40" />
                 </state>
               </provider>
             </entry>
@@ -85,8 +85,8 @@
       <list>
         <option value="$PROJECT_DIR$/demo/archivoDemoCity.xml" />
         <option value="$PROJECT_DIR$/demo/archivoDemoHotel.xml" />
-        <option value="$PROJECT_DIR$/models/models.py" />
         <option value="$PROJECT_DIR$/views/views.xml" />
+        <option value="$PROJECT_DIR$/models/models.py" />
       </list>
     </option>
   </component>
@@ -133,7 +133,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-1" width="1922" height="1061" extended-state="6" />
+    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.28097346" />
@@ -177,17 +177,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/models.py">
+    <entry file="file://$PROJECT_DIR$/views/views.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="205" column="36" selection-start-line="205" selection-start-column="28" selection-end-line="205" selection-end-column="36" />
+        <state relative-caret-position="1830">
+          <caret line="284" column="40" lean-forward="true" selection-start-line="284" selection-start-column="40" selection-end-line="284" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/views.xml">
+    <entry file="file://$PROJECT_DIR$/models/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="698" column="40" lean-forward="true" selection-start-line="698" selection-start-column="40" selection-end-line="698" selection-end-column="40" />
+        <state relative-caret-position="1265">
+          <caret line="188" column="31" selection-start-line="188" selection-start-column="31" selection-end-line="188" selection-end-column="31" />
         </state>
       </provider>
     </entry>
