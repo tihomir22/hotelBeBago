@@ -337,7 +337,7 @@
                       <group>
                           <group>
                               <h4>Datos de la habitacion</h4><hr/>
-
+                                <field name="active_id"></field>
                               <field name="camas"></field>
                           </group>
 
@@ -484,6 +484,38 @@
         </tree>
       </field>
     </record>
+
+      <record model="ir.ui.view" id="hotels_be_bago.reserva_form">
+          <field name="name">BeBago Reserva Form</field>
+          <field name="model">hotels_be_bago.reserva</field>
+          <field name="arch" type="xml">
+              <form>
+                 <h4 style="opacity:0.5;">Nombre de la reserva</h4>
+                      <h1 style="text-align:center;"><field name="name"></field></h1>
+                      <group>
+                          <group>
+                              <h4>Fechas de la habitacion</h4><hr/>
+                              <field name="fechaInicio"></field>
+                              <field name="fechaFinal"></field>
+                          </group>
+
+                            <group>
+                              <h4>Información de la instancia</h4><hr/>
+
+                              <field name="habitaciones"></field>
+                                <field name="clientes"></field>
+                                <field name="fotocliente" class="oe_read_only" widget="image"></field>
+                          </group>
+
+
+
+                      </group>
+
+
+              </form>
+
+          </field>
+      </record>
 
       <record model="ir.ui.view" id="hotels_be_bago.reserva_kanban">
             <field name="name">BeBago Reserva Kanban</field>

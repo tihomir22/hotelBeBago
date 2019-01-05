@@ -22,6 +22,7 @@ class city(models.Model):
     country = fields.Many2one("res.country", "Pais")
     imagenpais=fields.Binary(related="country.image",store=True)
     hotellist = fields.One2many("hotels_be_bago.hotel","ciudad")
+    active_id_hotel = fields.Id(related='hotellist.id')
 
 class hotel(models.Model):
     _name = 'hotels_be_bago.hotel'
@@ -32,10 +33,12 @@ class hotel(models.Model):
     ciudad=fields.Many2one("hotels_be_bago.city","Ciudad")
     country=fields.Char(string='Pais del hotel',related='ciudad.country.name',store=True,readOnly=True)
     roomlist=fields.One2many("hotels_be_bago.habitacion","hotel")
+    active_id_room = fields.Id(related='roomlist.id')
     estrellas = fields.Selection([('1', '⭐'), ('2', '⭐⭐'), ('3', '⭐⭐⭐'), ('4', '⭐⭐⭐⭐'), ('5', '⭐⭐⭐⭐⭐')])
     valoraciomedia=fields.Selection([('1', '⭐'), ('2', '⭐⭐'), ('3', '⭐⭐⭐'), ('4', '⭐⭐⭐⭐'), ('5', '⭐⭐⭐⭐⭐')],compute='_calcular_media',store=True)
     listaServicios = fields.Many2many("hotels_be_bago.servicis")
     comentarios = fields.One2many('hotels_be_bago.comentarios','hoteles')
+    active_id_coment = fields.Id(related='comentarios.id')
 
     @api.depends('comentarios')
     def _calcular_media(self):
@@ -96,6 +99,7 @@ class hotel(models.Model):
 
 class habitacion(models.Model):
     _name = 'hotels_be_bago.habitacion'
+
     hotel = fields.Many2one("hotels_be_bago.hotel", "Hotel")
     name = fields.Text()
     camas = fields.Selection([('1', 'Cama Solitaria'), ('2', 'Cama Matrimonio'), ('3', 'Cama Familiar'),
@@ -104,6 +108,7 @@ class habitacion(models.Model):
     fotos = fields.Many2many("hotels_be_bago.roomfotos" , store=True)
     precios = fields.Integer(default=20)
     reserva=fields.One2many("hotels_be_bago.reserva","habitaciones")
+    active_id = fields.Id(related='reserva.id')
     disponibilidad=fields.Char(string="Estado",compute='_getestado',readOnly=True)
     descripcion = fields.Text(
             default="Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.")
@@ -139,7 +144,7 @@ class reserva(models.Model):
     habitaciones = fields.Many2one("hotels_be_bago.habitacion", "Habitacion a reservar")
     clientes = fields.Many2one("res.partner", "Nombre del cliente")
     nombrehotel = fields.Many2one(string='Nombre del hotel', related='habitaciones.hotel', readonly=False, store=True)
-    fotocliente=fields.Binary(related='clientes.image',store=True)
+    fotocliente=fields.Binary(compute='_get_imagen_cliente',store=True)
 
     @api.multi
     @api.depends('habitaciones','fechaInicio','fechaFinal','clientes')
@@ -147,6 +152,16 @@ class reserva(models.Model):
         for record in self:
             if record.habitaciones and record.fechaInicio and record.fechaFinal and record.clientes:
                     record.name=record.habitaciones.name+' '+record.clientes.name+' '+record.fechaInicio+' '+record.fechaFinal
+
+    @api.depends('clientes')
+    def _get_imagen_cliente(self):
+        if self.clientes:
+            if(self.clientes.image):
+                self.fotocliente = self.clientes.image
+            if(self.clientes.image_small):
+                self.fotocliente = self.clientes.image_small
+            if (self.clientes.image_medium):
+                self.fotocliente = self.clientes.image_medium
 
     @api.onchange('fechaInicio','fechaFinal')
     def _manyana(self):
