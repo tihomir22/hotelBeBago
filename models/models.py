@@ -135,6 +135,18 @@ class habitacion(models.Model):
                 record.disponibilidad="Libre"
 
 
+class reserva_heredada(models.Model):
+    _name='sale.order.line'
+    _inherit='sale.order.line'
+    reserva=fields.Many2one("hotels_be_bago.reserva","Reservas",store=True)
+    habitacion=fields.Many2one(string="Nombre de la habitacion",related="reserva.habitaciones",store=True)
+    hotel=fields.Many2one(string="Nombre del hotel",related="reserva.nombrehotel",store=True)
+    fechaInicioHeredada=fields.Date(string="Fecha de inicio reserva heredada",related="reserva.fechaInicio",store=True)
+    fechaFinalHeredada=fields.Date(string="Fecha de final reserva heredada",related="reserva.fechaFinal",store=True)
+
+
+
+
 
 class reserva(models.Model):
     _name = 'hotels_be_bago.reserva'
@@ -145,6 +157,7 @@ class reserva(models.Model):
     clientes = fields.Many2one("res.partner", "Nombre del cliente")
     nombrehotel = fields.Many2one(string='Nombre del hotel', related='habitaciones.hotel', readonly=False, store=True)
     fotocliente=fields.Binary(compute='_get_imagen_cliente',store=True)
+    reserva_heredada=fields.One2many("sale.order.line","reserva")
 
     @api.multi
     @api.depends('habitaciones','fechaInicio','fechaFinal','clientes')

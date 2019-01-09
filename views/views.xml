@@ -468,7 +468,19 @@
 
 <!-- UNA CLASE -->
 
-      <record model="ir.ui.view" id="hotels_be_bago.reserva">
+
+      <record model="ir.ui.view" id="hotels_be_bago.reserva_heredada">
+      <field name="name">BeBago Booking</field>
+      <field name="model">sale.order.line</field>                                                                                       
+      <field name="arch" type="xml">
+       <tree>
+            <field name="fechaInicioHeredada"></field>
+
+        </tree>
+      </field>
+    </record>
+<!--
+        <record model="ir.ui.view" id="hotels_be_bago.reserva">
       <field name="name">BeBago Booking</field>
       <field name="model">hotels_be_bago.reserva</field>
       <field name="arch" type="xml">
@@ -479,11 +491,12 @@
           <field name="habitaciones"/>
           <field name="clientes"/>
             <field name="nombrehotel"/>
-         <!-- <field name="ciudad"/>-->
+
 
         </tree>
       </field>
     </record>
+
 
       <record model="ir.ui.view" id="hotels_be_bago.reserva_form">
           <field name="name">BeBago Reserva Form</field>
@@ -522,11 +535,11 @@
             <field name="model">hotels_be_bago.reserva</field>
             <field name="arch" type="xml">
                 <kanban>
-                    <!--list of field to be loaded -->
+
                     <field name="name" />
                     <field name="id" />
                     <field name="fechaInicio" />
-                    <field name="fechaFinal" /> <!-- És important afegir el id per al record.id.value -->
+                    <field name="fechaFinal" />
                     <field name="habitaciones" />
                     <field name="clientes"/>
                     <field name="nombrehotel"/>
@@ -538,7 +551,7 @@
 
                                     <field name="name"></field>
                                 </a>
-                                
+
                                 <div class="oe_product_desc">
                                     <h4>Datos : </h4>
                                     <ul>
@@ -588,12 +601,27 @@
         </field>
     </record>
 
+-->
     <record model="ir.actions.act_window" id="hotels_be_bago.action_window4">
       <field name="name">BeBago Booking Window</field>
-      <field name="res_model">hotels_be_bago.reserva</field>
-      <field name="view_mode">tree,form,calendar,kanban</field>
+      <field name="res_model">sale.order.line</field>
+      <field name="view_mode">tree</field>
     </record>
 
+      <record model="ir.actions.act_window.view" id="hotels_be_bago.action_window4_tree">
+    <field eval="1" name="sequence"/>
+    <field name="view_mode">tree</field>
+    <field name="view_id" ref="hotels_be_bago.reserva_heredada"/>
+    <field name="act_window_id" ref="hotels_be_bago.action_window4"/>
+</record>
+ <!--
+<record model="ir.actions.act_window.view" id="hotels_be_bago.action_window4_form">
+    <field eval="2" name="sequence"/>
+    <field name="view_mode">form</field>
+    <field name="view_id" ref="your_form_view_id"/>
+    <field name="act_window_id" ref="hotels_be_bago.action_window4"/>
+</record>
+-->
 <!-- UNA CLASE -->
 
       <record model="ir.ui.view" id="hotels_be_bago.hotelfotos">
