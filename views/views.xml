@@ -468,18 +468,19 @@
 
 <!-- UNA CLASE -->
 
-
+<!--
       <record model="ir.ui.view" id="hotels_be_bago.reserva_heredada">
       <field name="name">BeBago Booking</field>
       <field name="model">sale.order.line</field>                                                                                       
       <field name="arch" type="xml">
        <tree>
+           <field name="name"></field>
             <field name="fechaInicioHeredada"></field>
 
         </tree>
       </field>
     </record>
-<!--
+-->
         <record model="ir.ui.view" id="hotels_be_bago.reserva">
       <field name="name">BeBago Booking</field>
       <field name="model">hotels_be_bago.reserva</field>
@@ -601,28 +602,38 @@
         </field>
     </record>
 
--->
+<!--
     <record model="ir.actions.act_window" id="hotels_be_bago.action_window4">
       <field name="name">BeBago Booking Window</field>
       <field name="res_model">sale.order.line</field>
-      <field name="view_mode">tree</field>
+      <field name="view_mode">tree,form</field>
     </record>
 
       <record model="ir.actions.act_window.view" id="hotels_be_bago.action_window4_tree">
-    <field eval="1" name="sequence"/>
-    <field name="view_mode">tree</field>
-    <field name="view_id" ref="hotels_be_bago.reserva_heredada"/>
-    <field name="act_window_id" ref="hotels_be_bago.action_window4"/>
-</record>
- <!--
-<record model="ir.actions.act_window.view" id="hotels_be_bago.action_window4_form">
-    <field eval="2" name="sequence"/>
-    <field name="view_mode">form</field>
-    <field name="view_id" ref="your_form_view_id"/>
-    <field name="act_window_id" ref="hotels_be_bago.action_window4"/>
-</record>
--->
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="hotels_be_bago.reserva_heredada"/>
+        <field name="act_window_id" ref="hotels_be_bago.action_window4"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="hotels_be_bago.action_window4_form">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="hotels_be_bago.reserva_heredada"/>
+            <field name="act_window_id" ref="hotels_be_bago.action_window4"/>
+        </record>
+        -->
+
 <!-- UNA CLASE -->
+
+      <record model="ir.actions.act_window" id="hotels_be_bago.action_window4">
+      <field name="name">BeBago Booking Window</field>
+      <field name="res_model">hotels_be_bago.reserva</field>
+      <field name="view_mode">tree,form,kanban,calendar,search</field>
+    </record>
+
+
+
 
       <record model="ir.ui.view" id="hotels_be_bago.hotelfotos">
       <field name="name">BeBago Hotel Photos</field>
@@ -938,6 +949,58 @@
     </record>
 
 
+      <!-- OTRA CLASE -->
+
+      <record model="ir.ui.view" id="hotels_be_bago.clientes">
+      <field name="name">BeBago Clientes</field>
+      <field name="model">res.partner</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="display_name"></field>
+
+        </tree>
+      </field>
+    </record>
+
+      <record model="ir.ui.view" id="hotels_be_bago.clientes_form">
+          <field name="name">BeBago Clientes Form</field>
+          <field name="model">res.partner</field>
+          <field name="inherit_id" ref="base.view_partner_form" />
+          <field name="arch" type="xml">
+
+                  <xpath expr="//page[@name='internal_notes']" position='after'>
+                      <page string='Reservas'>
+                        <field name="reservasCli"></field>
+                      </page>
+                      <page string='Valoraciones'>
+                          <field name="comentariosCli"></field>
+                      </page>
+                  </xpath>
+
+          </field>
+      </record>
+
+      <record model="ir.actions.act_window" id="hotels_be_bago.action_window9">
+      <field name="name">BeBago Room Clientes</field>
+      <field name="res_model">res.partner</field>
+      <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+      <record model="ir.actions.act_window.view" id="hotels_be_bago.action_window4_tree">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="hotels_be_bago.clientes"/>
+        <field name="act_window_id" ref="hotels_be_bago.action_window9"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="hotels_be_bago.action_window4_form">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="hotels_be_bago.clientes_form"/>
+            <field name="act_window_id" ref="hotels_be_bago.action_window9"/>
+        </record>
+
+
     <!-- Top menu item -->
 
     <menuitem name="beBago" id="hotels_be_bago.menu_root"/>
@@ -966,6 +1029,8 @@
               action="hotels_be_bago.action_window6"/>
       <menuitem name="Opinion List" id="hotels_be_bago.menu_1_list8" parent="hotels_be_bago.menu_1"
               action="hotels_be_bago.action_window8"/>
+      <menuitem name="Clientes List" id="hotels_be_bago.menu_1_list9" parent="hotels_be_bago.menu_1"
+              action="hotels_be_bago.action_window9"/>
 
     <!--
     <menuitem name="Server to list" id="nueva_vista" parent="nueva_vista.menu_2"

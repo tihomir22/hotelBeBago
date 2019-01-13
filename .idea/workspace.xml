@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2c42d4d4-c9e4-4c08-81c6-f8d14e0fb6bb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__manifest__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/views.xml" afterDir="false" />
     </list>
@@ -23,8 +22,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/models/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="395">
-                  <caret line="140" column="74" selection-start-line="140" selection-start-column="74" selection-end-line="140" selection-end-column="74" />
+                <state relative-caret-position="626">
+                  <caret line="257" column="54" lean-forward="true" selection-start-line="257" selection-start-column="54" selection-end-line="257" selection-end-column="54" />
                   <folding>
                     <element signature="e#25#67#0" expanded="true" />
                   </folding>
@@ -66,8 +65,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/views.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="214">
-                  <caret line="473" column="49" selection-start-line="473" selection-start-column="49" selection-end-line="473" selection-end-column="49" />
+                <state relative-caret-position="665">
+                  <caret line="975" column="53" selection-start-line="975" selection-start-column="53" selection-end-line="975" selection-end-column="53" />
                 </state>
               </provider>
             </entry>
@@ -142,7 +141,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <frame x="0" y="0" width="1920" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.28097346" />
@@ -188,8 +187,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="140" column="74" selection-start-line="140" selection-start-column="74" selection-end-line="140" selection-end-column="74" />
+        <state relative-caret-position="626">
+          <caret line="257" column="54" lean-forward="true" selection-start-line="257" selection-start-column="54" selection-end-line="257" selection-end-column="54" />
           <folding>
             <element signature="e#25#67#0" expanded="true" />
           </folding>
@@ -198,8 +197,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/views.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="473" column="49" selection-start-line="473" selection-start-column="49" selection-end-line="473" selection-end-column="49" />
+        <state relative-caret-position="665">
+          <caret line="975" column="53" selection-start-line="975" selection-start-column="53" selection-end-line="975" selection-end-column="53" />
         </state>
       </provider>
     </entry>

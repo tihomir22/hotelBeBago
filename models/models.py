@@ -14,6 +14,11 @@ import datetime
 _logger = logging.getLogger(__name__)
 
 
+
+
+
+
+
 class city(models.Model):
     _name = 'hotels_be_bago.city'
     name = fields.Char()
@@ -139,11 +144,13 @@ class reserva_heredada(models.Model):
     _name='sale.order.line'
     _inherit='sale.order.line'
     reserva=fields.Many2one("hotels_be_bago.reserva","Reservas",store=True)
+    nombre = fields.Char(related="reserva.name", store=True)
     habitacion=fields.Many2one(string="Nombre de la habitacion",related="reserva.habitaciones",store=True)
     hotel=fields.Many2one(string="Nombre del hotel",related="reserva.nombrehotel",store=True)
     fechaInicioHeredada=fields.Date(string="Fecha de inicio reserva heredada",related="reserva.fechaInicio",store=True)
     fechaFinalHeredada=fields.Date(string="Fecha de final reserva heredada",related="reserva.fechaFinal",store=True)
-
+    cliente=fields.Many2one(related="reserva.clientes",store=True)
+    fotocliente=fields.Binary(related="reserva.fotocliente",store=True)
 
 
 
@@ -158,6 +165,8 @@ class reserva(models.Model):
     nombrehotel = fields.Many2one(string='Nombre del hotel', related='habitaciones.hotel', readonly=False, store=True)
     fotocliente=fields.Binary(compute='_get_imagen_cliente',store=True)
     reserva_heredada=fields.One2many("sale.order.line","reserva")
+
+
 
     @api.multi
     @api.depends('habitaciones','fechaInicio','fechaFinal','clientes')
@@ -251,4 +260,8 @@ class comentarios(models.Model):
     descripcion=fields.Text(string="Descripcion")
     valoracion = fields.Selection([('1', '⭐'), ('2', '⭐⭐'), ('3', '⭐⭐⭐'), ('4', '⭐⭐⭐⭐'), ('5', '⭐⭐⭐⭐⭐')],default='5')
 
-
+class clientes(models.Model):
+    _name = "res.partner"
+    _inherit = "res.partner"
+    comentariosCli=fields.One2many("hotels_be_bago.comentarios","clientes")
+    reservasCli=fields.One2many("hotels_be_bago.reserva","clientes")
