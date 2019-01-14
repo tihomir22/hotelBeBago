@@ -44,6 +44,30 @@ class hotel(models.Model):
     listaServicios = fields.Many2many("hotels_be_bago.servicis")
     comentarios = fields.One2many('hotels_be_bago.comentarios','hoteles')
     active_id_coment = fields.Id(related='comentarios.id')
+    reservas=fields.One2many('hotels_be_bago.reserva','nombrehotel')
+    reservaPasadas=fields.Many2many(compute='_clasificar_reservas')
+
+    @api.depends('reservas')
+    def _clasificar_reservas(self):
+        print("entramos")
+        pasadas=[]
+        presentes=[]
+        futuras=[]
+        for record in self:
+            for reserva in record.reservas:
+                fmt = '%Y-%m-%d'
+                dateInicio = datetime.datetime.strptime(str(reserva.fechaInicio), fmt)
+                dateFinal = datetime.datetime.strptime(str(reserva.fechaFinal), fmt)
+                hoy=datetime.datetime.today().strptime(fmt)
+
+                if(dateInicio < hoy and dateFinal < hoy ):
+                    pasadas.append(reserva)
+                    record.reservaPasadas=pasadas
+                elif(dateInicio < hoy and dateFinal > hoy):
+                    presentes.append(reserva)
+                elif(dateInicio > hoy and dateFinal >hoy):
+                    futuras.append(reserva)
+
 
     @api.depends('comentarios')
     def _calcular_media(self):

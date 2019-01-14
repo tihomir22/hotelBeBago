@@ -131,6 +131,8 @@
           <field name="description"/>
           <field name="roomlist"/>
           <field name="estrellas"/>
+            <field name="reservas"></field>
+            <field name="reservaPasadas"></field>
             <!--<field name="fotoprincipal" widget="image"></field>-->
             <field name="valoraciomedia"></field>
             <field name="listaServicios"/>
@@ -199,9 +201,7 @@
                       <notebook >
                           <page string="Rooms">
                                 <a type="open">
-                                 <field name="roomlist">
-
-                                 </field>
+                                 <field name="roomlist"> </field>
                                 </a>
                               <button name="anyadir_habitacion" type="object" string="Añadir habitacion aleatoria" class="btn btn-info" />
                           </page>
@@ -221,6 +221,11 @@
                                    </kanban>
                                </field>
                            </page>
+
+                          <page string="Reservas">
+                               <field name="reservas"></field>
+                           </page>
+
                           <page string="Lista Comentarios">
                               <field name="comentarios">
                                    <kanban>
@@ -269,6 +274,7 @@
                     <field name="estrellas"/>
                     <field name="valoraciomedia"/>
                     <field name="listaServicios"/>
+                    <field name="reservas"></field>
                     <templates>
                     <t t-name="kanban-box">
                             <div class="oe_product_vignette">
@@ -290,7 +296,7 @@
                                     </ul>
                                 </div>
                             </div>
-                      
+
                         </t>
                     </templates>
                 </kanban>
@@ -471,7 +477,7 @@
 <!--
       <record model="ir.ui.view" id="hotels_be_bago.reserva_heredada">
       <field name="name">BeBago Booking</field>
-      <field name="model">sale.order.line</field>                                                                                       
+      <field name="model">sale.order.line</field>
       <field name="arch" type="xml">
        <tree>
            <field name="name"></field>
@@ -957,7 +963,8 @@
       <field name="arch" type="xml">
         <tree>
           <field name="display_name"></field>
-
+            <field name="comentariosCli"></field>
+            <field name="reservasCli"></field>
         </tree>
       </field>
     </record>
