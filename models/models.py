@@ -45,35 +45,46 @@ class hotel(models.Model):
     comentarios = fields.One2many('hotels_be_bago.comentarios','hoteles')
     active_id_coment = fields.Id(related='comentarios.id')
     reservas=fields.One2many('hotels_be_bago.reserva','nombrehotel')
-    reservaPasadas=fields.One2many(compute='_clasificar_reservas')
-    reservaPresentes = fields.One2many(compute='_clasificar_reservas')
-    reservaFuturas = fields.One2many(compute='_clasificar_reservas')
+
+    reservaPasadas=fields.One2many(related='reservas', compute='_get_reservas_pasadas')
+    #reservaPresentes = fields.One2many(compute='_get_reservas_pasadas')
+   # reservaFuturas = fields.One2many(compute='_get_reservas_pasadas')
+
+    @api.multi
+    def _get_reservas_pasadas(self):
+        for record in self:
+            now=datetime.datetime.now()
+            print("mi id es "+str(record.id))
+
+            record.reservaPasadas  = self.env['hotels_be_bago.reserva'].search([('nombrehotel.id', '=', record.id),
+                                                                   ('fechaInicio','<',now),
+                                                                   ('fechaFinal','<',now)])
+
+
+
+
 
     @api.depends('reservas')
     def _clasificar_reservas(self):
         print("entramos")
-        pasadas=[]
-        presentes=[]
-        futuras=[]
         for record in self:
-            print(record.name)
+            pasadas = []
+            presentes = []
+            futuras = []
             if record.reservas:
+                print(record.name)
                 for reserva in record.reservas:
-                    fmt = '%Y-%m-%d'
-                    hoyFecha=datetime.datetime.today().strftime(fmt)
-                    dateInicio = datetime.datetime.strptime(str(reserva.fechaInicio), fmt)
-                    dateFinal = datetime.datetime.strptime(str(reserva.fechaFinal), fmt)
-                    hoy=datetime.datetime.strptime(str(hoyFecha),fmt)
 
-                    if(dateInicio < hoy and dateFinal < hoy ):
-                        pasadas.append(reserva)
-                        record.reservaPasadas=pasadas
-                    elif(dateInicio < hoy and dateFinal > hoy):
-                        presentes.append(reserva)
-                        record.reservaPresentes = presentes
-                    elif(dateInicio > hoy and dateFinal > hoy):
-                        futuras.append(reserva)
-                        record.reservaFuturas=futuras
+                    print("hehehe")
+                    #if(dateInicio < hoy and dateFinal < hoy ):
+                      #  pasadas.append(reserva)
+                     #   record.reservaPasadas=pasadas
+                   # elif(dateInicio < hoy and dateFinal > hoy):
+                    #    presentes.append(reserva)
+                    #    record.reservaPresentes = presentes
+                   # elif(dateInicio > hoy and dateFinal > hoy):
+                    #    futuras.append(reserva)
+                    #    record.reservaFuturas=futuras
 
 
 

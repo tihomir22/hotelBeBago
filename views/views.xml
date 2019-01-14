@@ -133,8 +133,6 @@
           <field name="estrellas"/>
             <field name="reservas"></field>
             <field name="reservaPasadas"></field>
-            <field name="reservaPresentes"></field>
-            <field name="reservaFuturas"></field>
             <!--<field name="fotoprincipal" widget="image"></field>-->
             <field name="valoraciomedia"></field>
             <field name="listaServicios"/>
@@ -227,8 +225,6 @@
                           <page string="Reservas">
                                <field name="reservaPasadas" >
                                </field>
-                              <field name="reservaPresentes" ></field>
-                              <field name="reservaFuturas" ></field>
                            </page>
 
                           <page string="Lista Comentarios">
