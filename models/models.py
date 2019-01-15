@@ -46,45 +46,36 @@ class hotel(models.Model):
     active_id_coment = fields.Id(related='comentarios.id')
     reservas=fields.One2many('hotels_be_bago.reserva','nombrehotel')
 
-    reservaPasadas=fields.One2many(related='reservas', compute='_get_reservas_pasadas')
-    #reservaPresentes = fields.One2many(compute='_get_reservas_pasadas')
-   # reservaFuturas = fields.One2many(compute='_get_reservas_pasadas')
+    reservaPasadas=fields.One2many('hotels_be_bago.reserva','nombrehotel',compute='_get_reservas_pasadas')
+    reservasFuturas = fields.One2many('hotels_be_bago.reserva', 'nombrehotel', compute='_get_reservas_futuras')
+    reservasPresentes = fields.One2many('hotels_be_bago.reserva', 'nombrehotel', compute='_get_reservas_presentes')
 
-    @api.multi
+    @api.one
+    @api.depends('reservas')
     def _get_reservas_pasadas(self):
-        for record in self:
-            now=datetime.datetime.now()
-            print("mi id es "+str(record.id))
-
-            record.reservaPasadas  = self.env['hotels_be_bago.reserva'].search([('nombrehotel.id', '=', record.id),
+        now=datetime.datetime.now()
+        #print("mi id es "+str(self.id))
+        self.reservaPasadas  = self.env['hotels_be_bago.reserva'].search([('nombrehotel.id', '=', self.id),
                                                                    ('fechaInicio','<',now),
                                                                    ('fechaFinal','<',now)])
-
-
-
-
-
+    @api.one
     @api.depends('reservas')
-    def _clasificar_reservas(self):
-        print("entramos")
-        for record in self:
-            pasadas = []
-            presentes = []
-            futuras = []
-            if record.reservas:
-                print(record.name)
-                for reserva in record.reservas:
+    def _get_reservas_futuras(self):
+        now = datetime.datetime.now()
+        # print("mi id es "+str(self.id))
+        self.reservasFuturas = self.env['hotels_be_bago.reserva'].search([('nombrehotel.id', '=', self.id),
+                                                                         ('fechaInicio', '>', now),
+                                                                         ('fechaFinal', '>', now)])
 
-                    print("hehehe")
-                    #if(dateInicio < hoy and dateFinal < hoy ):
-                      #  pasadas.append(reserva)
-                     #   record.reservaPasadas=pasadas
-                   # elif(dateInicio < hoy and dateFinal > hoy):
-                    #    presentes.append(reserva)
-                    #    record.reservaPresentes = presentes
-                   # elif(dateInicio > hoy and dateFinal > hoy):
-                    #    futuras.append(reserva)
-                    #    record.reservaFuturas=futuras
+    @api.one
+    @api.depends('reservas')
+    def _get_reservas_presentes(self):
+        now = datetime.datetime.now()
+        # print("mi id es "+str(self.id))
+        self.reservasPresentes = self.env['hotels_be_bago.reserva'].search([('nombrehotel.id', '=', self.id),
+                                                                          ('fechaInicio', '<', now),
+                                                                          ('fechaFinal', '>', now)])
+
 
 
 
@@ -187,13 +178,10 @@ class reserva_heredada(models.Model):
     _name='sale.order.line'
     _inherit='sale.order.line'
     reserva=fields.Many2one("hotels_be_bago.reserva","Reservas",store=True)
-    nombre = fields.Char(related="reserva.name", store=True)
-    habitacion=fields.Many2one(string="Nombre de la habitacion",related="reserva.habitaciones",store=True)
-    hotel=fields.Many2one(string="Nombre del hotel",related="reserva.nombrehotel",store=True)
-    fechaInicioHeredada=fields.Date(string="Fecha de inicio reserva heredada",related="reserva.fechaInicio",store=True)
-    fechaFinalHeredada=fields.Date(string="Fecha de final reserva heredada",related="reserva.fechaFinal",store=True)
-    cliente=fields.Many2one(related="reserva.clientes",store=True)
-    fotocliente=fields.Binary(related="reserva.fotocliente",store=True)
+    nombreHabitacion=fields.Text(related='reserva.habitaciones.name')
+    hotel=fields.Many2one(related='reserva.nombrehotel')
+    fechaFinalHeredada=fields.Date(related='reserva.fechaFinal')
+    fechaInicioHeredada=fields.Date(related='reserva.fechaInicio')
 
 
 

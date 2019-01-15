@@ -14,6 +14,7 @@
                     <field name="country" />
                     <field name="imagenpais" />
                     <field name="hotellist"/>
+
                     <templates>
                     <t t-name="kanban-box">
                             <div class="oe_product_vignette">
@@ -131,8 +132,10 @@
           <field name="description"/>
           <field name="roomlist"/>
           <field name="estrellas"/>
-            <field name="reservas"></field>
+            <!--<field name="reservas"></field>-->
             <field name="reservaPasadas"></field>
+            <field name="reservasPresentes"></field>
+            <field name="reservasFuturas"></field>
             <!--<field name="fotoprincipal" widget="image"></field>-->
             <field name="valoraciomedia"></field>
             <field name="listaServicios"/>
@@ -223,8 +226,18 @@
                            </page>
 
                           <page string="Reservas">
-                               <field name="reservaPasadas" >
-                               </field>
+                              <div attrs="{'invisible':[('reservaPasadas', '=', [])]}">
+                                  <h4 style="text-align:center;">Reservas pasadas</h4>
+                                   <field name="reservaPasadas" widget="one2many"></field>
+                              </div>
+                              <div attrs="{'invisible':[('reservasPresentes', '=', [])]}">
+                                   <h4 style="text-align:center;">Reservas Presentes</h4>
+                                   <field name="reservasPresentes" widget="one2many"></field>
+                              </div>
+                              <div attrs="{'invisible':[('reservasFuturas', '=', [])]}">
+                                  <h4 style="text-align:center;">Reservas Futuras</h4>
+                                   <field name="reservasFuturas" widget="one2many"></field>
+                              </div>
                            </page>
 
                           <page string="Lista Comentarios">
@@ -275,7 +288,8 @@
                     <field name="estrellas"/>
                     <field name="valoraciomedia"/>
                     <field name="listaServicios"/>
-                    <field name="reservas"></field>
+
+
                     <templates>
                     <t t-name="kanban-box">
                             <div class="oe_product_vignette">
@@ -295,6 +309,7 @@
                                         <li>Ciudad: <field name="ciudad"></field></li>
                                         <li>Descripcion: <field name="description"></field></li>
                                     </ul>
+
                                 </div>
                             </div>
 
@@ -1007,6 +1022,50 @@
             <field name="view_id" ref="hotels_be_bago.clientes_form"/>
             <field name="act_window_id" ref="hotels_be_bago.action_window9"/>
         </record>
+
+      <!-- OTRA CLASE -->
+    <!--
+      <record model="ir.ui.view" id="hotels_be_bago.order_line_tree">
+      <field name="name">BeBago Sales Order Line</field>
+      <field name="model">sale.order</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nombreHabitacion"></field>
+        </tree>
+      </field>
+    </record>-->
+
+      <record model="ir.ui.view" id="hotels_be_bago.order_line_form">
+        <field name="name">BeBago Sales Order</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="/form/sheet/notebook/page/field[@name='order_line']/tree/field[@name='name']" position="after">
+                <field name="reserva" widget="many2one"/>
+            </xpath>
+        </field>
+        </record>
+
+      <record model="ir.actions.act_window" id="hotels_be_bago.action_window10">
+      <field name="name">BeBago Sales Order</field>
+      <field name="res_model">sale.order</field>
+      <field name="view_mode">tree,form,kanban</field>
+    </record>
+    <!--
+      <record model="ir.actions.act_window.view" id="hotels_be_bago.action_window10_tree">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="hotels_be_bago.order_line_tree"/>
+        <field name="act_window_id" ref="hotels_be_bago.action_window10"/>
+        </record>
+-->
+        <record model="ir.actions.act_window.view" id="hotels_be_bago.action_window10_form">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="hotels_be_bago.order_line_form"/>
+            <field name="act_window_id" ref="hotels_be_bago.action_window10"/>
+        </record>
+
 
 
     <!-- Top menu item -->
