@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record model="product.template" id="product1">
+			<field name="name">Valencia Product</field>
+		</record>
+		
+	</data>
+</odoo>
