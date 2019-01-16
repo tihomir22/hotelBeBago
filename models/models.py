@@ -196,7 +196,30 @@ class reserva(models.Model):
     nombrehotel = fields.Many2one(string='Nombre del hotel', related='habitaciones.hotel', readonly=False, store=True)
     fotocliente=fields.Binary(compute='_get_imagen_cliente',store=True)
     reserva_heredada=fields.One2many("sale.order.line","reserva")
+    dias=fields.Float(default=1,compute='_get_number_of_days')
 
+
+    @api.depends('fechaInicio','fechaFinal')
+    def _get_number_of_days(self):
+        for record in self:
+            DATETIME_FORMAT = "%Y-%m-%d"
+            from_dt = datetime.datetime.strptime(record.fechaInicio, DATETIME_FORMAT)
+            to_dt = datetime.datetime.strptime(record.fechaFinal, DATETIME_FORMAT)
+            timedelta = to_dt - from_dt
+            diff_day = timedelta.days + float(timedelta.seconds) / 86400
+            record.dias=diff_day
+
+    @api.one
+    def crear_venta(self):
+        print("creamos venta")
+
+        sale_id = self.env['sale.order'].create({'partner_id': self.clientes.id})
+        venta={'product_id':self.id,'order_id':sale_id,'name':self.name,'reservas':self.id,'product_uom_qty':self.dias,'qty_delivered':1,'qty_invoiced':1,'price_unit':self.habitaciones.precios}
+        print(venta)
+
+    @api.one
+    def crear_venta_todos(self):
+        print("creamos venta para todos")
 
 
     @api.multi
