@@ -34,7 +34,7 @@
 	'demo/archivoDemoCity.xml',
 	'demo/archivoDemoRooms.xml',
 	'demo/archivoDemoComentarios.xml',
-	'demo/demoProducto.xml',
+	'demo/demoProducto.xml'
 	
 	
 	

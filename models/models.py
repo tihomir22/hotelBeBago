@@ -212,9 +212,11 @@ class reserva(models.Model):
     @api.one
     def crear_venta(self):
         print("creamos venta")
-
+        id_producto = self.env['product.template'].search([])[39]
         sale_id = self.env['sale.order'].create({'partner_id': self.clientes.id})
-        venta={'product_id':self.id,'order_id':sale_id,'name':self.name,'reservas':self.id,'product_uom_qty':self.dias,'qty_delivered':1,'qty_invoiced':1,'price_unit':self.habitaciones.precios}
+        venta={'product_id':id_producto.id,'order_id':sale_id,'name':self.name,'reservas':self.id,'product_uom_qty':self.dias,'qty_delivered':1,'qty_invoiced':1,'price_unit':self.habitaciones.precios}
+
+        self.env['sale.order.line'].create(venta)
         print(venta)
 
     @api.one
