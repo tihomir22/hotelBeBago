@@ -211,17 +211,27 @@ class reserva(models.Model):
 
     @api.one
     def crear_venta(self):
-        print("creamos venta")
-        id_producto = self.env['product.template'].search([])[39]
+        id_producto=self.env.ref('hotels_be_bago.product2')
         sale_id = self.env['sale.order'].create({'partner_id': self.clientes.id})
-        venta={'product_id':id_producto.id,'order_id':sale_id,'name':self.name,'reservas':self.id,'product_uom_qty':self.dias,'qty_delivered':1,'qty_invoiced':1,'price_unit':self.habitaciones.precios}
-
+        venta={'product_id':id_producto.id,'order_id':sale_id.id,'name':self.name,'product_uom_qty':self.dias,'qty_delivered':1,'qty_invoiced':1,'price_unit':self.habitaciones.precios}
         self.env['sale.order.line'].create(venta)
-        print(venta)
+
+
 
     @api.one
     def crear_venta_todos(self):
-        print("creamos venta para todos")
+        print("el cliente actual es ")
+        print(self.clientes)
+        reservasCliente=self.clientes.reservasCli
+        print(reservasCliente)
+        id_producto = self.env.ref('hotels_be_bago.product2')
+        sale_id = self.env['sale.order'].create({'partner_id': self.clientes.id})
+        for reserva in reservasCliente:
+            venta = {'product_id': id_producto.id, 'order_id': sale_id.id, 'name': reserva.name,
+                     'product_uom_qty': reserva.dias, 'qty_delivered': 1, 'qty_invoiced': 1,
+                     'price_unit': reserva.habitaciones.precios}
+            
+            self.env['sale.order.line'].create(venta)
 
 
     @api.multi
