@@ -182,6 +182,16 @@ class reserva_heredada(models.Model):
     hotel=fields.Many2one(related='reserva.nombrehotel')
     fechaFinalHeredada=fields.Date(related='reserva.fechaFinal')
     fechaInicioHeredada=fields.Date(related='reserva.fechaInicio')
+    cantidadReservas = fields.Integer(compute='_compute_len_reserva', store=True)
+    fotoHabitacion=fields.Binary(related='reserva.habitaciones.fotoprincipalRoom')
+
+    @api.multi
+    @api.depends('reserva')
+    def _compute_len_reserva(self):
+        for linea in self:
+            linea.cantidadReservas = len(linea.reserva)
+
+
 
 
 
@@ -213,7 +223,7 @@ class reserva(models.Model):
     def crear_venta(self):
         id_producto=self.env.ref('hotels_be_bago.product2')
         sale_id = self.env['sale.order'].create({'partner_id': self.clientes.id})
-        venta={'product_id':id_producto.id,'order_id':sale_id.id,'name':self.name,'product_uom_qty':self.dias,'qty_delivered':1,'qty_invoiced':1,'price_unit':self.habitaciones.precios}
+        venta={'product_id':id_producto.id,'order_id':sale_id.id,'reserva':self.id,'name':self.name,'product_uom_qty':self.dias,'qty_delivered':1,'qty_invoiced':1,'price_unit':self.habitaciones.precios}
         self.env['sale.order.line'].create(venta)
 
 
@@ -227,7 +237,7 @@ class reserva(models.Model):
         id_producto = self.env.ref('hotels_be_bago.product2')
         sale_id = self.env['sale.order'].create({'partner_id': self.clientes.id})
         for reserva in reservasCliente:
-            venta = {'product_id': id_producto.id, 'order_id': sale_id.id, 'name': reserva.name,
+            venta = {'product_id': id_producto.id, 'order_id': sale_id.id, 'name': reserva.name,'reserva':self.id,
                      'product_uom_qty': reserva.dias, 'qty_delivered': 1, 'qty_invoiced': 1,
                      'price_unit': reserva.habitaciones.precios}
             

@@ -1025,7 +1025,7 @@
       <!-- OTRA CLASE -->
 
 
-      <record model="ir.ui.view" id="hotels_be_bago.order_line_form">
+      <record model="ir.ui.view" id="hotels_be_bago.order_form">
         <field name="name">BeBago Sales Order</field>
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
@@ -1045,9 +1045,82 @@
         <record model="ir.actions.act_window.view" id="hotels_be_bago.action_window10_form">
             <field eval="1" name="sequence"/>
             <field name="view_mode">form</field>
-            <field name="view_id" ref="hotels_be_bago.order_line_form"/>
+            <field name="view_id" ref="hotels_be_bago.order_form"/>
             <field name="act_window_id" ref="hotels_be_bago.action_window10"/>
         </record>
+
+      <!-- Relacionado con Sales -->
+
+      <record model="ir.ui.view" id="hotels_be_bago.sales_order_line_tree11">
+      <field name="name">BeBago Room Sales</field>
+      <field name="model">sale.order.line</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nombreHabitacion"/>
+            <field name="hotel"></field>
+            <field name="fechaFinalHeredada"></field>
+            <field name="fechaInicioHeredada"></field>
+            <field name="cantidadReservas"></field>
+            <field name="reserva"></field>
+
+        </tree>
+      </field>
+    </record>
+
+      <record model="ir.ui.view" id="hotels_be_bago.sales_order_line_form11">
+          <field name="name">BeBago Room Sales Form</field>
+          <field name="model">sale.order.line</field>
+          <field name="arch" type="xml">
+              <form>
+
+
+                   <sheet>
+                      <group>
+                     <group>
+                        <field name="nombreHabitacion"/>
+                         <field name="hotel"></field>
+                     </group>
+                      <group>
+                       <field name="fechaInicioHeredada"></field>
+                          <field name="fechaFinalHeredada"></field>
+                     </group>
+                      <group>
+                          <field name="cantidadReservas"></field>
+                          <field name="price_unit"></field>
+
+
+                      </group>
+                          <group>
+                              <field name="fotoHabitacion" widget="image"></field>
+                          </group>
+                          <group>
+                              <field name="reserva"></field>
+                          </group>
+                     </group>
+                    <field name="tax_id"></field>
+
+                  </sheet>
+              </form>
+          </field>
+      </record>
+
+      <record model="ir.ui.view" id="hotels_be_bago.cliente_form_search">
+          <field name="name">Reservas Cliente</field>
+          <field name="model">sale.order.line</field>
+          <field name="arch" type="xml">
+          <search>
+              <filter name="reserva" string="Mostrar reservas facturadas" domain="[('cantidadReservas','&gt;',0)]"></filter>
+          </search>
+          </field>
+      </record>
+
+      <record model="ir.actions.act_window" id="hotels_be_bago.action_window11">
+          <field name="name">BeBago Room Sales</field>
+          <field name="res_model">sale.order.line</field>
+          <field name="context">{'search_default_reserva':1}</field>
+          <field name="view_mode">tree,form,kanban</field>
+    </record>
+
 
 
 
@@ -1081,6 +1154,8 @@
               action="hotels_be_bago.action_window8"/>
       <menuitem name="Clientes List" id="hotels_be_bago.menu_1_list9" parent="hotels_be_bago.menu_1"
               action="hotels_be_bago.action_window9"/>
+      <menuitem name="Sales List" id="hotels_be_bago.menu_1_list11" parent="hotels_be_bago.menu_1"
+              action="hotels_be_bago.action_window11"/>
 
     <!--
     <menuitem name="Server to list" id="nueva_vista" parent="nueva_vista.menu_2"
