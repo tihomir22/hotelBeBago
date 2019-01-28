@@ -212,12 +212,13 @@ class reserva(models.Model):
     @api.depends('fechaInicio','fechaFinal')
     def _get_number_of_days(self):
         for record in self:
-            DATETIME_FORMAT = "%Y-%m-%d"
-            from_dt = datetime.datetime.strptime(record.fechaInicio, DATETIME_FORMAT)
-            to_dt = datetime.datetime.strptime(record.fechaFinal, DATETIME_FORMAT)
-            timedelta = to_dt - from_dt
-            diff_day = timedelta.days + float(timedelta.seconds) / 86400
-            record.dias=diff_day
+            if(record.fechaInicio and record.fechaFinal):
+                DATETIME_FORMAT = "%Y-%m-%d"
+                from_dt = datetime.datetime.strptime(record.fechaInicio, DATETIME_FORMAT)
+                to_dt = datetime.datetime.strptime(record.fechaFinal, DATETIME_FORMAT)
+                timedelta = to_dt - from_dt
+                diff_day = timedelta.days + float(timedelta.seconds) / 86400
+                record.dias=diff_day
 
     @api.one
     def crear_venta(self):
@@ -341,3 +342,31 @@ class clientes(models.Model):
     _inherit = "res.partner"
     comentariosCli=fields.One2many("hotels_be_bago.comentarios","clientes")
     reservasCli=fields.One2many("hotels_be_bago.reserva","clientes")
+    reservasPorPagar=fields.One2many("hotels_be_bago.reserva","clientes" , compute='_generar_reservas_sin_pagar')
+
+    @api.depends('reservasCli')
+    def _generar_reservas_sin_pagar(self):
+        for record in self:
+            for linea in self.env['sale.order.line'].search([]):
+                if len(linea.reserva)>0 :
+                    print("tengo venta")
+                    ventas=linea.reserva
+                    print(ventas)
+
+                    print("Soy el cliente ")
+                    print(linea.reserva.clientes.id)
+
+                    print("Mis reservas son ")
+                    reservas=self.env['hotels_be_bago.reserva'].clientes.browse(linea.reserva.clientes.id).reservasCli
+                    print(reservas)
+
+                    print("Self id ")
+                    print(record.id)
+
+                    #if linea.reserva.clientes.id == record.reservasCli.clientes.id:
+
+
+                    record.reservasPorPagar = reservas - ventas
+
+
+

@@ -980,6 +980,7 @@
           <field name="display_name"></field>
             <field name="comentariosCli"></field>
             <field name="reservasCli"></field>
+            <field name="reservasPorPagar"></field>
         </tree>
       </field>
     </record>
@@ -993,6 +994,7 @@
                   <xpath expr="//page[@name='internal_notes']" position='after'>
                       <page string='Reservas'>
                         <field name="reservasCli"></field>
+                          <field name="reservasPorPagar"></field>
                       </page>
                       <page string='Valoraciones'>
                           <field name="comentariosCli"></field>
