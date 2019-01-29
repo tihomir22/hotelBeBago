@@ -345,28 +345,19 @@ class clientes(models.Model):
     reservasPorPagar=fields.One2many("hotels_be_bago.reserva","clientes" , compute='_generar_reservas_sin_pagar')
 
     @api.depends('reservasCli')
+    @api.multi
     def _generar_reservas_sin_pagar(self):
-        for record in self:
-            for linea in self.env['sale.order.line'].search([]):
-                if len(linea.reserva)>0 :
-                    print("tengo venta")
-                    ventas=linea.reserva
-                    print(ventas)
-
-                    print("Soy el cliente ")
-                    print(linea.reserva.clientes.id)
-
-                    print("Mis reservas son ")
-                    reservas=self.env['hotels_be_bago.reserva'].clientes.browse(linea.reserva.clientes.id).reservasCli
-                    print(reservas)
-
-                    print("Self id ")
-                    print(record.id)
-
-                    #if linea.reserva.clientes.id == record.reservasCli.clientes.id:
-
-
-                    record.reservasPorPagar = reservas - ventas
+        for record in self:# por cada cliente...
+            record.reservasPorPagar=record.reservasCli
+            for reserva in record.reservasCli: #me pongo a analziar cada reserva de un cliente
+                print("Soy la reserva")
+                print(reserva)
+                for reservaPagada in self.env['sale.order.line'].reserva.search([]):
+                    print("soy la reserva pagada")
+                    print(reservaPagada)
+                    if(reserva==reservaPagada):
+                        print("COINCIDENCIA")
+                        record.reservasPorPagar=record.reservasPorPagar-reserva
 
 
 
