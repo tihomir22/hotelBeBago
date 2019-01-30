@@ -348,16 +348,31 @@ class clientes(models.Model):
     @api.multi
     def _generar_reservas_sin_pagar(self):
         for record in self:# por cada cliente...
-            record.reservasPorPagar=record.reservasCli
-            for reserva in record.reservasCli: #me pongo a analziar cada reserva de un cliente
-                print("Soy la reserva")
-                print(reserva)
-                for reservaPagada in self.env['sale.order.line'].reserva.search([]):
-                    print("soy la reserva pagada")
-                    print(reservaPagada)
-                    if(reserva==reservaPagada):
-                        print("COINCIDENCIA")
-                        record.reservasPorPagar=record.reservasPorPagar-reserva
+
+            if(record.reservasCli):
+                reservaPagada = self.env['sale.order.line'].search([]).mapped('reserva')  # obtengo las reservas que tiene una linea de factura
+                record.reservasPorPagar=record.reservasCli
+                for pagada in reservaPagada: # me dispongo a recorrer las reservas que estan pagadas para ver si son todas las que tiene el usuario self.id
+
+                    if(pagada.clientes.id==record.id):
+                        print("Coincidencia")
+                        record.reservasPorPagar=record.reservasPorPagar-pagada
+
+
+          #  clienteDeEsaReserva=
+    @api.one
+    def crear_factura_de_reservas_pendientes(self):
+            id_producto = self.env.ref('hotels_be_bago.product2')
+            sale_id = self.env['sale.order'].create({'partner_id': self.id})
+            for reserva in self.reservasPorPagar:
+                venta = {'product_id': id_producto.id, 'order_id': sale_id.id, 'name': reserva.name, 'reserva': reserva.id,
+                         'product_uom_qty': reserva.dias, 'qty_delivered': 1, 'qty_invoiced': 1,
+                         'price_unit': reserva.habitaciones.precios}
+
+                self.env['sale.order.line'].create(venta)
+                self.reservasPorPagar=self.reservasPorPagar-reserva
+
+
 
 
 

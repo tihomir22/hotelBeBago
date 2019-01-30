@@ -993,12 +993,16 @@
 
                   <xpath expr="//page[@name='internal_notes']" position='after'>
                       <page string='Reservas'>
+                          <h4>Todas Reservas</h4>
                         <field name="reservasCli"></field>
+                          <h4>Las reservas sin facturar</h4>
                           <field name="reservasPorPagar"></field>
+                              <button name="crear_factura_de_reservas_pendientes" type="object" string="Crear factura de todas las reservas sin facturar" class="btn btn-warning oe_read_only" />
+
                       </page>
                       <page string='Valoraciones'>
                           <field name="comentariosCli"></field>
-                      </page>
+                       </page>
                   </xpath>
 
           </field>
