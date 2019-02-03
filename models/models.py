@@ -343,6 +343,18 @@ class clientes(models.Model):
     comentariosCli=fields.One2many("hotels_be_bago.comentarios","clientes")
     reservasCli=fields.One2many("hotels_be_bago.reserva","clientes")
     reservasPorPagar=fields.One2many("hotels_be_bago.reserva","clientes" , compute='_generar_reservas_sin_pagar')
+    tieneReservasPendientes=fields.Boolean(compute='_comprobar_numero_reservas',default=False)
+
+    @api.depends('reservasCli','reservasPorPagar')
+    @api.multi
+    def _comprobar_numero_reservas(self):
+        for record in self:
+            if(len(record.reservasPorPagar) > 0 ):
+                print(len(record.reservasPorPagar))
+                record.tieneReservasPendientes=True
+            else:
+                record.tieneReservasPendientes=False
+
 
     @api.depends('reservasCli')
     @api.multi

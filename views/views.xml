@@ -976,11 +976,12 @@
       <field name="name">BeBago Clientes</field>
       <field name="model">res.partner</field>
       <field name="arch" type="xml">
-        <tree>
+        <tree decoration-info="tieneReservasPendientes" decoration-danger="tieneReservasPendientes == False">
           <field name="display_name"></field>
             <field name="comentariosCli"></field>
             <field name="reservasCli"></field>
             <field name="reservasPorPagar"></field>
+            <field name="tieneReservasPendientes"></field>
         </tree>
       </field>
     </record>
@@ -1110,6 +1111,7 @@
           </field>
       </record>
 
+
       <record model="ir.ui.view" id="hotels_be_bago.cliente_form_search">
           <field name="name">Reservas Cliente</field>
           <field name="model">sale.order.line</field>
@@ -1119,6 +1121,8 @@
           </search>
           </field>
       </record>
+
+
 
       <record model="ir.actions.act_window" id="hotels_be_bago.action_window11">
           <field name="name">BeBago Room Sales</field>
