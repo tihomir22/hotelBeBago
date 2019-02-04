@@ -8,8 +8,7 @@ import logging
 #from datetime import datetime, timedelta
 import datetime
 
-
-
+from odoo.service import model
 
 _logger = logging.getLogger(__name__)
 
@@ -343,6 +342,7 @@ class clientes(models.Model):
     comentariosCli=fields.One2many("hotels_be_bago.comentarios","clientes")
     reservasCli=fields.One2many("hotels_be_bago.reserva","clientes")
     reservasPorPagar=fields.One2many("hotels_be_bago.reserva","clientes" , compute='_generar_reservas_sin_pagar')
+    reservasPagadas=fields.One2many("hotels_be_bago.reserva","clientes",compute='_generar_reservas_pagadas')
     tieneReservasPendientes=fields.Boolean(compute='_comprobar_numero_reservas',default=False)
 
     @api.depends('reservasCli','reservasPorPagar')
@@ -370,8 +370,19 @@ class clientes(models.Model):
                         print("Coincidencia")
                         record.reservasPorPagar=record.reservasPorPagar-pagada
 
+    @api.depends('reservasPorPagar')
+    @api.multi
+    def _generar_reservas_pagadas(self):
+        for record in self:
+            if(record.reservasCli ):
+                    print(len(record.reservasPorPagar))
+                    if (len(record.reservasPorPagar)==0):
+                        print("entro")
+                        record.reservasPagadas=record.reservasCli
+                    else:
+                        record.reservasPagadas=record.reservasCli-record.reservasPorPagar
 
-          #  clienteDeEsaReserva=
+
     @api.one
     def crear_factura_de_reservas_pendientes(self):
             id_producto = self.env.ref('hotels_be_bago.product2')
@@ -383,6 +394,10 @@ class clientes(models.Model):
 
                 self.env['sale.order.line'].create(venta)
                 self.reservasPorPagar=self.reservasPorPagar-reserva
+
+class wizard_seleccion_reservas(models.TransientModel):
+    _name='seleccion.wizard'
+
 
 
 

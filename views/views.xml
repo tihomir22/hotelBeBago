@@ -981,10 +981,43 @@
             <field name="comentariosCli"></field>
             <field name="reservasCli"></field>
             <field name="reservasPorPagar"></field>
+            <field name="reservasPagadas"></field>
             <field name="tieneReservasPendientes"></field>
         </tree>
+        <tree>
+            <field></field>
+        </tree>
+
       </field>
     </record>
+
+       <record model="ir.ui.view" id="wizard_seleccion_reserva">
+            <field name="name">Selecciona reservas a facturar</field>
+            <field name="model">seleccion.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Selecciona reserva">
+                    <group>
+                        <!--<field name="fortress_attacker"/>-->
+
+                    </group>
+                    <footer>
+                        <button name="launch" type="object"
+                                string="Launch" class="oe_highlight"/>
+                        or
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+
+                </form>
+            </field>
+        </record>
+
+        <act_window id="launch_seleccion_wizard"
+                    name="Seleccionar reserva"
+                    src_model="res.partner"
+                    res_model="seleccion.wizard"
+                    view_mode="form"
+                    target="new"
+                    key2="client_action_multi"/>
 
       <record model="ir.ui.view" id="hotels_be_bago.clientes_form">
           <field name="name">BeBago Clientes Form</field>
@@ -995,11 +1028,40 @@
                   <xpath expr="//page[@name='internal_notes']" position='after'>
                       <page string='Reservas'>
                           <h4>Todas Reservas</h4>
-                        <field name="reservasCli"></field>
+                        <field name="reservasCli">
+                            <tree decoration-info="True">
+                                <field name="name"></field>
+                                <field name="clientes"></field>
+                                <field name="nombrehotel"></field>
+                                <field name="fechaInicio"></field>
+                                <field name="fechaFinal"></field>
+                                <field name="dias"></field>
+                            </tree>
+                        </field>
                           <h4>Las reservas sin facturar</h4>
-                          <field name="reservasPorPagar"></field>
+                          <field name="reservasPorPagar">
+                               <tree decoration-danger="True">
+                                <field name="name"></field>
+                                <field name="clientes"></field>
+                                <field name="nombrehotel"></field>
+                                <field name="fechaInicio"></field>
+                                <field name="fechaFinal"></field>
+                                <field name="dias"></field>
+                            </tree>
+                          </field>
+                          <h4>Las reservas facturadas</h4>
+                          <field name="reservasPagadas">
+                               <tree decoration-success="True">
+                                <field name="name"></field>
+                                <field name="clientes"></field>
+                                <field name="nombrehotel"></field>
+                                <field name="fechaInicio"></field>
+                                <field name="fechaFinal"></field>
+                                <field name="dias"></field>
+                            </tree>
+                          </field>
                               <button name="crear_factura_de_reservas_pendientes" type="object" string="Crear factura de todas las reservas sin facturar" class="btn btn-warning oe_read_only" />
-
+                              <button name="%(launch_seleccion_wizard)d" type="action" string="Seleccionar reservas" class="btn btn-light oe_read_only" />
                       </page>
                       <page string='Valoraciones'>
                           <field name="comentariosCli"></field>
@@ -1009,10 +1071,24 @@
           </field>
       </record>
 
+
+
+
+       <record model="ir.ui.view" id="hotels_be_bago.cliente_reservas_form_search">
+          <field name="name">BeBago Clientes Form</field>
+          <field name="model">res.partner</field>
+          <field name="arch" type="xml">
+          <search>
+              <filter name="reservas" string="Mostrar clientes con reservas" domain="[('reservasCli','&gt;',0)]"></filter>
+          </search>
+          </field>
+      </record>
+
       <record model="ir.actions.act_window" id="hotels_be_bago.action_window9">
       <field name="name">BeBago Room Clientes</field>
       <field name="res_model">res.partner</field>
-      <field name="view_mode">tree,form,kanban</field>
+          <field name="context">{'search_default_reservas':1}</field>
+      <field name="view_mode">tree,form,kanban,search</field>
     </record>
 
       <record model="ir.actions.act_window.view" id="hotels_be_bago.action_window4_tree">
@@ -1028,6 +1104,11 @@
             <field name="view_id" ref="hotels_be_bago.clientes_form"/>
             <field name="act_window_id" ref="hotels_be_bago.action_window9"/>
         </record>
+
+
+
+
+
 
       <!-- OTRA CLASE -->
 

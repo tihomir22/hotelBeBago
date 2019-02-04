@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/models/models.py" line="81" />
+    <bookmark url="file://$PROJECT_DIR$/models/models.py" line="80" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c42d4d4-c9e4-4c08-81c6-f8d14e0fb6bb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/views.xml" afterDir="false" />
     </list>
@@ -22,8 +21,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/models/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="710">
-                  <caret line="363" column="33" lean-forward="true" selection-start-line="363" selection-start-column="33" selection-end-line="363" selection-end-column="33" />
+                <state relative-caret-position="650">
+                  <caret line="397" selection-start-line="397" selection-end-line="399" />
                   <folding>
                     <element signature="e#25#67#0" expanded="true" />
                   </folding>
@@ -65,8 +64,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/views.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="245">
-                  <caret line="1106" column="15" lean-forward="true" selection-start-line="1070" selection-end-line="1106" selection-end-column="15" />
+                <state relative-caret-position="395">
+                  <caret line="1053" column="61" selection-start-line="1053" selection-start-column="57" selection-end-line="1053" selection-end-column="61" />
                 </state>
               </provider>
             </entry>
@@ -85,6 +84,7 @@
       <find>booking</find>
       <find>reserva</find>
       <find>record.fecha</find>
+      <find>res.part</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -190,20 +190,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/views.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="1106" column="15" lean-forward="true" selection-start-line="1070" selection-end-line="1106" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="710">
-          <caret line="363" column="33" lean-forward="true" selection-start-line="363" selection-start-column="33" selection-end-line="363" selection-end-column="33" />
+        <state relative-caret-position="650">
+          <caret line="397" selection-start-line="397" selection-end-line="399" />
           <folding>
             <element signature="e#25#67#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/views.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="1053" column="61" selection-start-line="1053" selection-start-column="57" selection-end-line="1053" selection-end-column="61" />
         </state>
       </provider>
     </entry>
