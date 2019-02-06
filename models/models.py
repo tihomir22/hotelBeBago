@@ -222,7 +222,9 @@ class reserva(models.Model):
     @api.one
     def crear_venta(self):
         id_producto=self.env.ref('hotels_be_bago.product2')
+
         sale_id = self.env['sale.order'].create({'partner_id': self.clientes.id})
+
         venta={'product_id':id_producto.id,'order_id':sale_id.id,'reserva':self.id,'name':self.name,'product_uom_qty':self.dias,'qty_delivered':1,'qty_invoiced':1,'price_unit':self.habitaciones.precios}
         self.env['sale.order.line'].create(venta)
 
@@ -397,6 +399,28 @@ class clientes(models.Model):
 
 class wizard_seleccion_reservas(models.TransientModel):
     _name='seleccion.wizard'
+
+    def _default_cliente(self):
+        return self.env['res.partner'].browse(self._context.get('active_id'))
+        # El context conté, entre altre coses, el active_id del model que està obert.
+
+
+    cli = fields.Many2one('res.partner', default=_default_cliente , string="Cliente actual")
+    cliReservasPendientesOne = fields.One2many(related='cli.reservasPorPagar', string="Reservas por pagar")
+    cliReservasPendientesMany = fields.Many2many('hotels_be_bago.reserva',compute='_default_pendientes', string="Reservas por pagar")
+
+    name=fields.Char(name="Nombre de la reserva" , related='cliReservasPendientesOne.name')
+    fechaInicio=fields.Date(nom="Inicio de la reserva",related='cliReservasPendientesOne.fechaInicio')
+    fechaFinal = fields.Date(nom="Final de la reserva", related='cliReservasPendientesOne.fechaFinal')
+    dias=fields.Float(nom="Numero de dias" , related='cliReservasPendientesOne.dias')
+
+
+    @api.depends('cliReservasPendientesOne')
+    @api.multi
+    def _default_pendientes(self):
+        for record in self:
+            record.cliReservasPendientesMany=record.cliReservasPendientesOne
+
 
 
 

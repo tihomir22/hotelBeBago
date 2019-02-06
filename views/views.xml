@@ -984,9 +984,7 @@
             <field name="reservasPagadas"></field>
             <field name="tieneReservasPendientes"></field>
         </tree>
-        <tree>
-            <field></field>
-        </tree>
+
 
       </field>
     </record>
@@ -997,7 +995,11 @@
             <field name="arch" type="xml">
                 <form string="Selecciona reserva">
                     <group>
-                        <!--<field name="fortress_attacker"/>-->
+                        <field name="cli"></field>
+                        <field name="cliReservasPendientesMany">
+
+                        </field>
+                        <field name="cliReservasPendientesOne"></field>
 
                     </group>
                     <footer>
