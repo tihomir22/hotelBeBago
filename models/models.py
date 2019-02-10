@@ -192,6 +192,64 @@ class reserva_heredada(models.Model):
 
 
 
+class reserva_wizard(models.TransientModel):   # La classe és transientModel
+     _name = 'hotels_be_bago.reserva_wizard'
+
+     clientes = fields.Many2one("res.partner", "Nombre del cliente")
+     city=fields.Many2one("hotels_be_bago.city","Ciudad")
+     country=fields.Many2one("res.country","Pais",related='city.country')
+     imagenpais=fields.Binary(related='country.image')
+
+     hotel=fields.Many2one("hotels_be_bago.hotel","Hotel")
+     descripcion=fields.Text(related='hotel.description')
+     fotoprincipalhotel=fields.Binary(related='hotel.fotoprincipal')
+     estrellas = fields.Selection([('1', '⭐'), ('2', '⭐⭐'), ('3', '⭐⭐⭐'), ('4', '⭐⭐⭐⭐'), ('5', '⭐⭐⭐⭐⭐')])
+     camas = fields.Selection([('1', 'Cama Solitaria'), ('2', 'Cama Matrimonio'), ('3', 'Cama Familiar'),
+                                  ('4', 'Cama Infantil con matrimonio'), ('5', 'Distribución numerosa')])
+     precios=fields.Integer()
+     #es posible que alguien queira hacer varias reservas
+     habitacion=fields.Many2many("hotels_be_bago.habitacion","Habitaciones")
+
+     fechaInicio = fields.Date()
+     fechaFinal = fields.Date()
+
+     state = fields.Selection([  # El camp state és per a crear l'assistent.
+         ('localizacion', "Selecciona Localización"),
+         ('hotel', "Selecciona el hotel"),
+         ('habitacion', "Selecciona la habitación"),
+         ('butaca', "butaca Selection"),
+         ('fin', "Fin"),
+     ], default='localizacion')
+
+
+     @api.onchange('clientes','city','estrellas')
+     def _continuar_paso_1(self):
+         if(self.clientes and  self.city and self.estrellas):
+
+            hoteles=self.env['hotels_be_bago.hotel'].search([('ciudad','=',self.city.id),('estrellas','=',self.estrellas)])
+            self.hotel =hoteles
+            if(len(self.hotel) > 0 ):
+                self.state = 'hotel'
+                return {'domain': {'hotel': [('id', 'in', hoteles.ids)]}, }
+
+
+
+     @api.onchange('camas', 'precios')
+     def _continuar_paso_2(self):
+         if (self.camas and self.precios):
+             habitaciones = self.env['hotels_be_bago.habitacion'].search(
+                 [('precios', '<=', self.precios), ('camas', '=', self.camas),('hotel','in',self.hotel.ids)])
+             self.habitacion=habitaciones
+             if(len(self.habitacion)>0):
+                 self.state='habitacion'
+                 return {'domain': {'habitacion': [('id', 'in', habitaciones.ids)]}, }
+
+
+
+
+
+
+
 
 
 
@@ -401,6 +459,7 @@ class wizard_seleccion_reservas(models.TransientModel):
     _name='seleccion.wizard'
 
     def _default_cliente(self):
+        #self._default_pendientes()
         return self.env['res.partner'].browse(self._context.get('active_id'))
         # El context conté, entre altre coses, el active_id del model que està obert.
 
@@ -410,16 +469,18 @@ class wizard_seleccion_reservas(models.TransientModel):
     cliReservasPendientesMany = fields.Many2many('hotels_be_bago.reserva',compute='_default_pendientes', string="Reservas por pagar")
 
     name=fields.Char(name="Nombre de la reserva" , related='cliReservasPendientesOne.name')
-    fechaInicio=fields.Date(nom="Inicio de la reserva",related='cliReservasPendientesOne.fechaInicio')
-    fechaFinal = fields.Date(nom="Final de la reserva", related='cliReservasPendientesOne.fechaFinal')
-    dias=fields.Float(nom="Numero de dias" , related='cliReservasPendientesOne.dias')
+    fechaInicio=fields.Date(name="Inicio de la reserva",related='cliReservasPendientesOne.fechaInicio')
+    fechaFinal = fields.Date(name="Final de la reserva", related='cliReservasPendientesOne.fechaFinal')
+    dias=fields.Float(name="Numero de dias" , related='cliReservasPendientesOne.dias')
 
 
     @api.depends('cliReservasPendientesOne')
     @api.multi
     def _default_pendientes(self):
+        print("me ejecutooo")
         for record in self:
-            record.cliReservasPendientesMany=record.cliReservasPendientesOne
+            print(len(record.cliReservasPendientesOne))
+            record.cliReservasPendientesMany=record.cliReservasPendientesMany+record.cliReservasPendientesOne
 
 
 

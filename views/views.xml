@@ -520,6 +520,69 @@
       </field>
     </record>
 
+            <record model="ir.ui.view" id="hotels_be_bago.reserva_wizard">
+            <field name="name">Wizard Reserva</field>
+            <field name="model">hotels_be_bago.reserva_wizard</field>
+            <field name="arch" type="xml">
+		    <form>
+	             <header>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+
+                <group states="localizacion">
+                    <h4 style="text-align:center;">Localizacion</h4><hr/>
+                    <group>
+			             <field name="clientes"/>
+                         <field name="city"></field>
+                        <field name="estrellas"></field>
+		            </group>
+                    <group>
+                        <field name="country" readonly="1"></field>
+                        <field name="imagenpais" widget="image" readonly="1"></field>
+                    </group>
+                </group>
+
+                <group states="hotel">
+
+                        <group>
+                            <h4 style="text-align:center;">Hotel</h4><hr/>
+                            <field name="hotel" widget="many2one"></field>
+                            <field name="descripcion" readonly="1"></field>
+                            <field name="camas"></field>
+                            <field name="precios"></field>
+                        </group>
+                        <group>
+                              <field name="fotoprincipalhotel" widget="image"></field>
+                        </group>
+
+                </group>
+
+                <group states="habitacion">
+                    <field name="habitacion" ></field>
+                    <field name="fechaInicio"></field>
+                    <field name="fechaFinal"></field>
+                </group>
+
+
+                    <footer>
+			    <button states="fin" name="reserva" type="object"
+					    string="Reserva" class="oe_highlight"/>
+                        or
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+
+                </form>
+            </field>
+        </record>
+
+        <act_window id="hotels_be_bago.reserva_wizard_act"
+                    name="Crear Reserva"
+                    src_model="hotels_be_bago.reserva"
+                    res_model="hotels_be_bago.reserva_wizard"
+                    view_mode="form"
+                    target="new"
+                    key2="client_action_multi"/>
+
 
       <record model="ir.ui.view" id="hotels_be_bago.reserva_form">
           <field name="name">BeBago Reserva Form</field>
@@ -544,6 +607,8 @@
                           </group>
                           <button name="crear_venta" type="object" string="Crear venta de esta reserva" class="btn btn-info oe_read_only" />
                           <button name="crear_venta_todos" type="object" string="Crear venta de todas las reservas del cliente" class="btn btn-success oe_read_only" />
+                          <button name="%(hotels_be_bago.reserva_wizard_act)d" type="action" string="Seleccionar reservas" class="btn btn-light oe_read_only" />
+
                       </group>
 
 
@@ -622,6 +687,9 @@
 
         </field>
     </record>
+
+
+
 
 <!--
     <record model="ir.actions.act_window" id="hotels_be_bago.action_window4">
@@ -996,12 +1064,17 @@
                 <form string="Selecciona reserva">
                     <group>
                         <field name="cli"></field>
-                        <field name="cliReservasPendientesMany">
+
+                         <field name="cliReservasPendientesOne" invisible="1">
+                         </field>
+                    </group>
+
+                     <field name="cliReservasPendientesMany" widget="many2many">
+                         <tree create="true" delete="true">
+                             <field name="name"></field>
+                         </tree>
 
                         </field>
-                        <field name="cliReservasPendientesOne"></field>
-
-                    </group>
                     <footer>
                         <button name="launch" type="object"
                                 string="Launch" class="oe_highlight"/>
