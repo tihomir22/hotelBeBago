@@ -195,15 +195,28 @@ class reserva_heredada(models.Model):
 class reserva_wizard(models.TransientModel):   # La classe és transientModel
      _name = 'hotels_be_bago.reserva_wizard'
 
+     def _default_servicios(self):
+         return self.env['hotels_be_bago.servicis'].search([])
+
+     def default_hoteles(self):
+         return self.env['hotels_be_bago.hotel'].search([])
+
+     def default_paises_con_hoteles(self):
+        return self.env['hotels_be_bago.hotel'].search([]).mapped('ciudad').mapped('country')
+
+
+
      clientes = fields.Many2one("res.partner", "Nombre del cliente")
      city=fields.Many2one("hotels_be_bago.city","Ciudad")
      country=fields.Many2one("res.country","Pais",related='city.country')
      imagenpais=fields.Binary(related='country.image')
 
-     hotel=fields.Many2one("hotels_be_bago.hotel","Hotel")
+     hotel=fields.Many2many("hotels_be_bago.hotel","Hotel",default=default_hoteles)
      descripcion=fields.Text(related='hotel.description')
      fotoprincipalhotel=fields.Binary(related='hotel.fotoprincipal')
-     estrellas = fields.Selection([('1', '⭐'), ('2', '⭐⭐'), ('3', '⭐⭐⭐'), ('4', '⭐⭐⭐⭐'), ('5', '⭐⭐⭐⭐⭐')])
+     servicis=fields.Many2many("hotels_be_bago.servicis", default=_default_servicios)
+     estrellasMax = fields.Selection([('1', '⭐'), ('2', '⭐⭐'), ('3', '⭐⭐⭐'), ('4', '⭐⭐⭐⭐'), ('5', '⭐⭐⭐⭐⭐')],string ="Maximo estrellas")
+     estrellasMin = fields.Selection([('1', '⭐'), ('2', '⭐⭐'), ('3', '⭐⭐⭐'), ('4', '⭐⭐⭐⭐'), ('5', '⭐⭐⭐⭐⭐')], string="Minimo estrellas")
      camas = fields.Selection([('1', 'Cama Solitaria'), ('2', 'Cama Matrimonio'), ('3', 'Cama Familiar'),
                                   ('4', 'Cama Infantil con matrimonio'), ('5', 'Distribución numerosa')])
      precios=fields.Integer()
@@ -217,17 +230,20 @@ class reserva_wizard(models.TransientModel):   # La classe és transientModel
          ('localizacion', "Selecciona Localización"),
          ('hotel', "Selecciona el hotel"),
          ('habitacion', "Selecciona la habitación"),
-         ('butaca', "butaca Selection"),
          ('fin', "Fin"),
      ], default='localizacion')
 
 
-     @api.onchange('clientes','city','estrellas')
-     def _continuar_paso_1(self):
-         if(self.clientes and  self.city and self.estrellas):
 
-            hoteles=self.env['hotels_be_bago.hotel'].search([('ciudad','=',self.city.id),('estrellas','=',self.estrellas)])
+
+
+     @api.onchange('clientes','city','estrellasMin','estrellasMax')
+     def _continuar_paso_1(self):
+         if(self.clientes and  self.city and self.estrellasMin and self.estrellasMax):
+
+            hoteles=self.env['hotels_be_bago.hotel'].search([('ciudad','=',self.city.id),('estrellas','<=',self.estrellasMax),('estrellas','>=',self.estrellasMin)])
             self.hotel =hoteles
+            print(hoteles)
             if(len(self.hotel) > 0 ):
                 self.state = 'hotel'
                 return {'domain': {'hotel': [('id', 'in', hoteles.ids)]}, }
@@ -244,7 +260,7 @@ class reserva_wizard(models.TransientModel):   # La classe és transientModel
                  self.state='habitacion'
                  return {'domain': {'habitacion': [('id', 'in', habitaciones.ids)]}, }
 
-
+    # hotel > tiene ciudad > tiene pais
 
 
 
@@ -455,36 +471,38 @@ class clientes(models.Model):
                 self.env['sale.order.line'].create(venta)
                 self.reservasPorPagar=self.reservasPorPagar-reserva
 
+
 class wizard_seleccion_reservas(models.TransientModel):
     _name='seleccion.wizard'
 
     def _default_cliente(self):
-        #self._default_pendientes()
         return self.env['res.partner'].browse(self._context.get('active_id'))
-        # El context conté, entre altre coses, el active_id del model que està obert.
+
+    def _default_pendientes(self):
+        return self.env['res.partner'].browse(self._context.get('active_id')).reservasPorPagar
 
 
     cli = fields.Many2one('res.partner', default=_default_cliente , string="Cliente actual")
-    cliReservasPendientesOne = fields.One2many(related='cli.reservasPorPagar', string="Reservas por pagar")
-    cliReservasPendientesMany = fields.Many2many('hotels_be_bago.reserva',compute='_default_pendientes', string="Reservas por pagar")
+    cliReservasPendientesMany = fields.Many2many('hotels_be_bago.reserva',default=_default_pendientes, string="Reservas por pagar")
+    name=fields.Char(name="Nombre de la reserva" , related='cliReservasPendientesMany.name')
+    fechaInicio=fields.Date(name="Inicio de la reserva",related='cliReservasPendientesMany.fechaInicio')
+    fechaFinal = fields.Date(name="Final de la reserva", related='cliReservasPendientesMany.fechaFinal')
+    dias=fields.Float(name="Numero de dias" , related='cliReservasPendientesMany.dias')
 
-    name=fields.Char(name="Nombre de la reserva" , related='cliReservasPendientesOne.name')
-    fechaInicio=fields.Date(name="Inicio de la reserva",related='cliReservasPendientesOne.fechaInicio')
-    fechaFinal = fields.Date(name="Final de la reserva", related='cliReservasPendientesOne.fechaFinal')
-    dias=fields.Float(name="Numero de dias" , related='cliReservasPendientesOne.dias')
-
-
-    @api.depends('cliReservasPendientesOne')
     @api.multi
-    def _default_pendientes(self):
-        print("me ejecutooo")
-        for record in self:
-            print(len(record.cliReservasPendientesOne))
-            record.cliReservasPendientesMany=record.cliReservasPendientesMany+record.cliReservasPendientesOne
+    def launch(self):
+        #print("betweeen")
+        id_producto = self.env.ref('hotels_be_bago.product2')
+        sale_id = self.env['sale.order'].create({'partner_id': self.cli.id})
 
+        for reserva in self.cliReservasPendientesMany:
+            venta = {'product_id': id_producto.id, 'order_id': sale_id.id, 'name': reserva.name, 'reserva': reserva.id,
+                     'product_uom_qty': reserva.dias, 'qty_delivered': 1, 'qty_invoiced': 1,
+                     'price_unit': reserva.habitaciones.precios}
 
-
-
+            self.env['sale.order.line'].create(venta)
+            self.cliReservasPendientesMany = self.cliReservasPendientesMany - reserva
+        return {}
 
 
 

@@ -534,7 +534,8 @@
                     <group>
 			             <field name="clientes"/>
                          <field name="city"></field>
-                        <field name="estrellas"></field>
+                        <field name="estrellasMax"></field>
+                        <field name="estrellasMin"></field>
 		            </group>
                     <group>
                         <field name="country" readonly="1"></field>
@@ -543,10 +544,8 @@
                 </group>
 
                 <group states="hotel">
-
                         <group>
                             <h4 style="text-align:center;">Hotel</h4><hr/>
-                            <field name="hotel" widget="many2one"></field>
                             <field name="descripcion" readonly="1"></field>
                             <field name="camas"></field>
                             <field name="precios"></field>
@@ -555,6 +554,17 @@
                               <field name="fotoprincipalhotel" widget="image"></field>
                         </group>
 
+
+                    <div class="row" style="width:900px;padding:20px;margin-left:10px;">
+                            <field name="servicis">
+                                <tree>
+                                    <field name="imageser" widget="image"></field>
+                                    <field name="name"></field>
+                                </tree>
+                            </field>
+                    </div>
+
+
                 </group>
 
                 <group states="habitacion">
@@ -562,6 +572,15 @@
                     <field name="fechaInicio"></field>
                     <field name="fechaFinal"></field>
                 </group>
+
+                    <field name="hotel" style="width:900px;padding:20px;margin-left:10px;" >
+                        <tree>
+                            <field name="fotoprincipal" widget="image" style="height:64px;width:64px;"></field>
+                            <field name="name"></field>
+                            <field name="valoraciomedia"></field>
+                            <field name="estrellas"></field>
+                        </tree>
+                    </field>
 
 
                     <footer>
@@ -606,7 +625,7 @@
                                 <field name="fotocliente" class="oe_read_only" widget="image"></field>
                           </group>
                           <button name="crear_venta" type="object" string="Crear venta de esta reserva" class="btn btn-info oe_read_only" />
-                          <button name="crear_venta_todos" type="object" string="Crear venta de todas las reservas del cliente" class="btn btn-success oe_read_only" />
+                          <!--<button name="crear_venta_todos" type="object" string="Crear venta de todas las reservas del cliente" class="btn btn-success oe_read_only" />-->
                           <button name="%(hotels_be_bago.reserva_wizard_act)d" type="action" string="Seleccionar reservas" class="btn btn-light oe_read_only" />
 
                       </group>
@@ -1064,14 +1083,14 @@
                 <form string="Selecciona reserva">
                     <group>
                         <field name="cli"></field>
-
-                         <field name="cliReservasPendientesOne" invisible="1">
-                         </field>
                     </group>
 
                      <field name="cliReservasPendientesMany" widget="many2many">
                          <tree create="true" delete="true">
                              <field name="name"></field>
+                             <field name="fechaInicio"></field>
+                             <field name="fechaFinal"></field>
+                             <field name="dias"></field>
                          </tree>
 
                         </field>
