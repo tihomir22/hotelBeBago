@@ -202,22 +202,23 @@ class reserva_wizard(models.TransientModel):   # La classe és transientModel
          return self.env['hotels_be_bago.hotel'].search([])
 
      def default_paises_con_hoteles(self):
-        return self.env['hotels_be_bago.hotel'].search([]).mapped('ciudad').mapped('country')
+        return self.env['hotels_be_bago.hotel'].search([]).mapped('ciudad').mapped('country').ids
 
 
 
      clientes = fields.Many2one("res.partner", "Nombre del cliente")
      city=fields.Many2one("hotels_be_bago.city","Ciudad")
-     country=fields.Many2one("res.country","Pais",related='city.country')
+     countries=fields.Many2many("res.country",default=default_paises_con_hoteles)
+     country=fields.Many2one("res.country")
      imagenpais=fields.Binary(related='country.image')
 
      hotel=fields.Many2many("hotels_be_bago.hotel","Hotel",default=default_hoteles)
      descripcion=fields.Text(related='hotel.description')
      fotoprincipalhotel=fields.Binary(related='hotel.fotoprincipal')
      servicis=fields.Many2many("hotels_be_bago.servicis", default=_default_servicios)
-     estrellasMax = fields.Selection([('1', '⭐'), ('2', '⭐⭐'), ('3', '⭐⭐⭐'), ('4', '⭐⭐⭐⭐'), ('5', '⭐⭐⭐⭐⭐')],string ="Maximo estrellas")
-     estrellasMin = fields.Selection([('1', '⭐'), ('2', '⭐⭐'), ('3', '⭐⭐⭐'), ('4', '⭐⭐⭐⭐'), ('5', '⭐⭐⭐⭐⭐')], string="Minimo estrellas")
-     camas = fields.Selection([('1', 'Cama Solitaria'), ('2', 'Cama Matrimonio'), ('3', 'Cama Familiar'),
+     estrellasMax = fields.Selection([('1', '⭐'), ('2', '⭐⭐'), ('3', '⭐⭐⭐'), ('4', '⭐⭐⭐⭐'), ('5', '⭐⭐⭐⭐⭐')],string ="Maximo estrellas",default='5')
+     estrellasMin = fields.Selection([('1', '⭐'), ('2', '⭐⭐'), ('3', '⭐⭐⭐'), ('4', '⭐⭐⭐⭐'), ('5', '⭐⭐⭐⭐⭐')], string="Minimo estrellas",default='1')
+     camas = fields.Selection([('1', 'Cama Solit    aria'), ('2', 'Cama Matrimonio'), ('3', 'Cama Familiar'),
                                   ('4', 'Cama Infantil con matrimonio'), ('5', 'Distribución numerosa')])
      precios=fields.Integer()
      #es posible que alguien queira hacer varias reservas
@@ -237,18 +238,38 @@ class reserva_wizard(models.TransientModel):   # La classe és transientModel
 
 
 
-     @api.onchange('clientes','city','estrellasMin','estrellasMax')
+     @api.onchange('city','clientes')
+     def _oc_city(self):
+         if (self.city and self.clientes):
+             self.aplicar_filtros()
+             #self.state
+             return {}
+
+     @api.onchange('country')
+     def _oc_country(self):
+         if (self.country):
+             self.aplicar_filtros()
+             # self.state
+             return {}
+
+     @api.onchange('city', 'country','clientes')
      def _continuar_paso_1(self):
-         if(self.clientes and  self.city and self.estrellasMin and self.estrellasMax):
-
-            hoteles=self.env['hotels_be_bago.hotel'].search([('ciudad','=',self.city.id),('estrellas','<=',self.estrellasMax),('estrellas','>=',self.estrellasMin)])
-            self.hotel =hoteles
-            print(hoteles)
-            if(len(self.hotel) > 0 ):
-                self.state = 'hotel'
-                return {'domain': {'hotel': [('id', 'in', hoteles.ids)]}, }
+         if (self.city and self.country and self.clientes):
+            self.state='hotel'
 
 
+
+
+     def aplicar_filtros(self):
+        domains=[]
+        if len(self.city)!=0:
+            domains.append(('ciudad.id','=',str(self.city.id)))
+
+        if len(self.country)!=0:
+            domains.append(('ciudad.country.id','=',str(self.country.id)))
+
+        print(domains)
+        self.hotel=self.env['hotels_be_bago.hotel'].search(domains)
 
      @api.onchange('camas', 'precios')
      def _continuar_paso_2(self):

@@ -538,7 +538,8 @@
                         <field name="estrellasMin"></field>
 		            </group>
                     <group>
-                        <field name="country" readonly="1"></field>
+                        <field name="countries" invisible="1"></field>
+                        <field name="country" domain="[('id','in',countries)]"></field>
                         <field name="imagenpais" widget="image" readonly="1"></field>
                     </group>
                 </group>
