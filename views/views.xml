@@ -529,7 +529,7 @@
                         <field name="state" widget="statusbar"/>
                     </header>
 
-                <group states="localizacion">
+                <group>
                     <h4 style="text-align:center;">Localizacion</h4><hr/>
                     <group>
 			             <field name="clientes"/>
@@ -545,14 +545,12 @@
                 </group>
 
                 <group states="hotel">
+                        <h4 style="text-align:center;">Filtros del hotel</h4><hr/>
                         <group>
-                            <h4 style="text-align:center;">Hotel</h4><hr/>
-                            <field name="descripcion" readonly="1"></field>
                             <field name="camas"></field>
-                            <field name="precios"></field>
                         </group>
                         <group>
-                              <field name="fotoprincipalhotel" widget="image"></field>
+                            <field name="precios" string="Precios maximos"></field>
                         </group>
 
 
@@ -573,7 +571,7 @@
                     <field name="fechaInicio"></field>
                     <field name="fechaFinal"></field>
                 </group>
-
+                    <h4>Lista hoteles filtrados</h4>
                     <field name="hotel" style="width:900px;padding:20px;margin-left:10px;" >
                         <tree>
                             <field name="fotoprincipal" widget="image" style="height:64px;width:64px;"></field>
@@ -585,7 +583,8 @@
 
 
                     <footer>
-			    <button states="fin" name="reserva" type="object"
+                     <button name="siguiente_paso" type="object" string="Siguiente paso" class="btn btn-info oe_read_only" />
+			        <button name="reserva" type="object"
 					    string="Reserva" class="oe_highlight"/>
                         or
                         <button special="cancel" string="Cancel"/>
@@ -1096,7 +1095,7 @@
 
                         </field>
                     <footer>
-                        <button name="launch" type="object"
+                       <button name="launch" type="object"
                                 string="Launch" class="oe_highlight"/>
                         or
                         <button special="cancel" string="Cancel"/>

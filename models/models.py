@@ -212,20 +212,19 @@ class reserva_wizard(models.TransientModel):   # La classe és transientModel
      country=fields.Many2one("res.country")
      imagenpais=fields.Binary(related='country.image')
 
-     hotel=fields.Many2many("hotels_be_bago.hotel","Hotel",default=default_hoteles)
-     descripcion=fields.Text(related='hotel.description')
-     fotoprincipalhotel=fields.Binary(related='hotel.fotoprincipal')
+     hotel=fields.Many2many("hotels_be_bago.hotel",default=default_hoteles)
      servicis=fields.Many2many("hotels_be_bago.servicis", default=_default_servicios)
      estrellasMax = fields.Selection([('1', '⭐'), ('2', '⭐⭐'), ('3', '⭐⭐⭐'), ('4', '⭐⭐⭐⭐'), ('5', '⭐⭐⭐⭐⭐')],string ="Maximo estrellas",default='5')
      estrellasMin = fields.Selection([('1', '⭐'), ('2', '⭐⭐'), ('3', '⭐⭐⭐'), ('4', '⭐⭐⭐⭐'), ('5', '⭐⭐⭐⭐⭐')], string="Minimo estrellas",default='1')
      camas = fields.Selection([('1', 'Cama Solit    aria'), ('2', 'Cama Matrimonio'), ('3', 'Cama Familiar'),
                                   ('4', 'Cama Infantil con matrimonio'), ('5', 'Distribución numerosa')])
      precios=fields.Integer()
-     #es posible que alguien queira hacer varias reservas
-     habitacion=fields.Many2many("hotels_be_bago.habitacion","Habitaciones")
+     habitacion=fields.Many2many("hotels_be_bago.habitacion")
 
      fechaInicio = fields.Date()
      fechaFinal = fields.Date()
+
+
 
      state = fields.Selection([  # El camp state és per a crear l'assistent.
          ('localizacion', "Selecciona Localización"),
@@ -233,6 +232,8 @@ class reserva_wizard(models.TransientModel):   # La classe és transientModel
          ('habitacion', "Selecciona la habitación"),
          ('fin', "Fin"),
      ], default='localizacion')
+
+
 
 
 
@@ -252,11 +253,23 @@ class reserva_wizard(models.TransientModel):   # La classe és transientModel
              # self.state
              return {}
 
-     @api.onchange('city', 'country','clientes')
-     def _continuar_paso_1(self):
-         if (self.city and self.country and self.clientes):
-            self.state='hotel'
+     @api.onchange('camas')
+     def _oc_beds(self):
+         if(self.camas):
+             self.aplicar_filtros()
+             return {}
 
+     @api.onchange('precios')
+     def _oc_prices(self):
+         if (self.precios):
+             self.aplicar_filtros()
+             return {}
+
+     @api.onchange('servicis')
+     def _oc_servicis(self):
+         if (self.servicis):
+             self.aplicar_filtros()
+             return {}
 
 
 
@@ -268,22 +281,34 @@ class reserva_wizard(models.TransientModel):   # La classe és transientModel
         if len(self.country)!=0:
             domains.append(('ciudad.country.id','=',str(self.country.id)))
 
+        if self.camas:
+            domains.append(('roomlist.camas','=',str(self.camas)))
+
+        if self.precios != 0:
+            domains.append(('roomlist.precios','<',self.precios))
+
+        if len(self.servicis)!=0:
+            domains.append(('listaServicios','=',self.servicis.ids))
+
+
+
+
         print(domains)
         self.hotel=self.env['hotels_be_bago.hotel'].search(domains)
 
-     @api.onchange('camas', 'precios')
-     def _continuar_paso_2(self):
-         if (self.camas and self.precios):
-             habitaciones = self.env['hotels_be_bago.habitacion'].search(
-                 [('precios', '<=', self.precios), ('camas', '=', self.camas),('hotel','in',self.hotel.ids)])
-             self.habitacion=habitaciones
-             if(len(self.habitacion)>0):
-                 self.state='habitacion'
-                 return {'domain': {'habitacion': [('id', 'in', habitaciones.ids)]}, }
-
-    # hotel > tiene ciudad > tiene pais
 
 
+     @api.multi
+     def siguiente_paso(self):
+        if (self.state == "localizacion") :
+            self.state="hotel"
+            return {"type": "ir.actions.do_nothing", }
+        elif(self.state == "hotel"):
+            self.state="habitacion"
+            return {"type": "ir.actions.do_nothing", }
+        elif(self.state=="habitacion"):
+            self.state="fin"
+            return {"type": "ir.actions.do_nothing", }
 
 
 
