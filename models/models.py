@@ -135,11 +135,13 @@ class hotel(models.Model):
         #print(habitacion)
 
 
+
 class habitacion(models.Model):
     _name = 'hotels_be_bago.habitacion'
 
     hotel = fields.Many2one("hotels_be_bago.hotel", "Hotel")
     name = fields.Text()
+    nombrehotel=fields.Char(related='hotel.name',store=True)
     camas = fields.Selection([('1', 'Cama Solitaria'), ('2', 'Cama Matrimonio'), ('3', 'Cama Familiar'),
                                   ('4', 'Cama Infantil con matrimonio'), ('5', 'Distribución numerosa')])
     fotoprincipalRoom = fields.Binary(compute='_recuperar_foto_rooms', store=True)
@@ -147,7 +149,7 @@ class habitacion(models.Model):
     precios = fields.Integer(default=20)
     reserva=fields.One2many("hotels_be_bago.reserva","habitaciones")
     active_id = fields.Id(related='reserva.id')
-    disponibilidad=fields.Char(string="Estado",compute='_getestado',readOnly=True)
+    disponibilidad=fields.Char(string="Estado",compute='_getestado',readOnly=True,store=True)
     descripcion = fields.Text(
             default="Una agradable habitación presidencial. Perfecta para descansar y hacer todo tipo de travesuras.")
 
@@ -216,7 +218,7 @@ class reserva_wizard(models.TransientModel):   # La classe és transientModel
 
      hotel=fields.Many2many("hotels_be_bago.hotel",default=default_hoteles)
 
-     habitaciones=fields.Many2many("hotels_be_bago.habitacion",default=default_habitaciones)
+     habitaciones=fields.Many2many("hotels_be_bago.habitacion",default=default_habitaciones,limit=10)
      habitacion=fields.Many2one("hotels_be_bago.habitacion")
 
      servicis=fields.Many2many("hotels_be_bago.servicis")

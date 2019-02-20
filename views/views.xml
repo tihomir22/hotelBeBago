@@ -569,16 +569,31 @@
                 </group>
 
                 <group states="reserva">
-                    <group>
+                    <h4>Elige inicio y final de reserva</h4>
+                    <div>
                         <field name="fechaInicio"></field>
-                    </group>
-                    <group>
                         <field name="fechaFinal"></field>
-                    </group>
+                    </div>
 
-                    <field name="habitaciones" invisible="1"></field>
-                    <field name="habitacion" domain="[('id','in',habitaciones)]"></field>
+
                 </group>
+                 <div states="reserva">
+                     <p>Estas habitaciones son las resultantes de los hoteles filtrados, se reservará la primera de todas</p>
+
+                     <field name="habitaciones" readonly="1" domain="[('ids','in',habitaciones.ids)]" widget="many2many" options="{'limit': 10, 'create': false, 'create_edit': false}" >
+                         <tree limit="10">
+                            <field name="nombrehotel"></field>
+                            <field name="name"></field>
+                               <button name="reservar_habitacion" type="object" string="Reservar habitación" class="btn btn-info" />
+
+                        </tree>
+                    </field>
+
+                    <field name="habitacion" domain="[('id','in',habitaciones)]"  invisible="1">
+                    </field>
+                </div>
+
+
                     <h4>Lista hoteles filtrados</h4>
                     <field name="hotel" style="width:900px;padding:20px;margin-left:10px;" >
                         <tree>
@@ -616,6 +631,7 @@
           <field name="model">hotels_be_bago.reserva</field>
           <field name="arch" type="xml">
               <form>
+                  <sheet>
                  <h4 style="opacity:0.5;">Nombre de la reserva</h4>
                       <h1 style="text-align:center;"><field name="name"></field></h1>
                       <group>
@@ -634,11 +650,12 @@
                           </group>
                           <button name="crear_venta" type="object" string="Crear venta de esta reserva" class="btn btn-info oe_read_only" />
                           <!--<button name="crear_venta_todos" type="object" string="Crear venta de todas las reservas del cliente" class="btn btn-success oe_read_only" />-->
+                          <!--
                           <button name="%(hotels_be_bago.reserva_wizard_act)d" type="action" string="Seleccionar reservas" class="btn btn-light oe_read_only" />
-
+                            -->
                       </group>
 
-
+                </sheet>
               </form>
 
           </field>
@@ -718,27 +735,7 @@
 
 
 
-<!--
-    <record model="ir.actions.act_window" id="hotels_be_bago.action_window4">
-      <field name="name">BeBago Booking Window</field>
-      <field name="res_model">sale.order.line</field>
-      <field name="view_mode">tree,form</field>
-    </record>
 
-      <record model="ir.actions.act_window.view" id="hotels_be_bago.action_window4_tree">
-        <field eval="1" name="sequence"/>
-        <field name="view_mode">tree</field>
-        <field name="view_id" ref="hotels_be_bago.reserva_heredada"/>
-        <field name="act_window_id" ref="hotels_be_bago.action_window4"/>
-        </record>
-
-        <record model="ir.actions.act_window.view" id="hotels_be_bago.action_window4_form">
-            <field eval="2" name="sequence"/>
-            <field name="view_mode">form</field>
-            <field name="view_id" ref="hotels_be_bago.reserva_heredada"/>
-            <field name="act_window_id" ref="hotels_be_bago.action_window4"/>
-        </record>
-        -->
 
 <!-- UNA CLASE -->
 
@@ -1338,9 +1335,10 @@
               action="hotels_be_bago.action_window3"/>
       <menuitem name="Room Photos List" id="hotels_be_bago.menu_1_list7" parent="hotels_be_bago.menu_1"
               action="hotels_be_bago.action_window7"/>
-       <menuitem name="List Bookings" id="hotels_be_bago.menu_1_list4" parent="hotels_be_bago.menu_1"
+      <menuitem name="List Bookings" id="hotels_be_bago.menu_1_list4" parent="hotels_be_bago.menu_1"
               action="hotels_be_bago.action_window4"/>
-
+    <menuitem name="Wizard Booking" id="hotels_be_bago.menu_1_list4_1" parent="hotels_be_bago.menu_1_list4"
+              action="hotels_be_bago.reserva_wizard_act"/>
       <menuitem name="List Services" id="hotels_be_bago.menu_1_list6" parent="hotels_be_bago.menu_1"
               action="hotels_be_bago.action_window6"/>
       <menuitem name="Opinion List" id="hotels_be_bago.menu_1_list8" parent="hotels_be_bago.menu_1"
