@@ -544,7 +544,7 @@
                     </group>
                 </group>
 
-                <group states="hotel">
+                <group states="habitacion">
                         <h4 style="text-align:center;">Filtros del hotel</h4><hr/>
                         <group>
                             <field name="camas"></field>
@@ -555,7 +555,9 @@
 
 
                     <div class="row" style="width:900px;padding:20px;margin-left:10px;">
+                         <h4>Servicios para elegir</h4>
                             <field name="servicis">
+
                                 <tree>
                                     <field name="imageser" widget="image"></field>
                                     <field name="name"></field>
@@ -566,10 +568,16 @@
 
                 </group>
 
-                <group states="habitacion">
-                    <field name="habitacion" ></field>
-                    <field name="fechaInicio"></field>
-                    <field name="fechaFinal"></field>
+                <group states="reserva">
+                    <group>
+                        <field name="fechaInicio"></field>
+                    </group>
+                    <group>
+                        <field name="fechaFinal"></field>
+                    </group>
+
+                    <field name="habitaciones" invisible="1"></field>
+                    <field name="habitacion" domain="[('id','in',habitaciones)]"></field>
                 </group>
                     <h4>Lista hoteles filtrados</h4>
                     <field name="hotel" style="width:900px;padding:20px;margin-left:10px;" >

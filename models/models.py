@@ -204,6 +204,8 @@ class reserva_wizard(models.TransientModel):   # La classe és transientModel
      def default_paises_con_hoteles(self):
         return self.env['hotels_be_bago.hotel'].search([]).mapped('ciudad').mapped('country').ids
 
+     def default_habitaciones(self):
+         return self.hotel.search([]).mapped('roomlist').ids
 
 
      clientes = fields.Many2one("res.partner", "Nombre del cliente")
@@ -213,13 +215,16 @@ class reserva_wizard(models.TransientModel):   # La classe és transientModel
      imagenpais=fields.Binary(related='country.image')
 
      hotel=fields.Many2many("hotels_be_bago.hotel",default=default_hoteles)
-     servicis=fields.Many2many("hotels_be_bago.servicis", default=_default_servicios)
+
+     habitaciones=fields.Many2many("hotels_be_bago.habitacion",default=default_habitaciones)
+     habitacion=fields.Many2one("hotels_be_bago.habitacion")
+
+     servicis=fields.Many2many("hotels_be_bago.servicis")
      estrellasMax = fields.Selection([('1', '⭐'), ('2', '⭐⭐'), ('3', '⭐⭐⭐'), ('4', '⭐⭐⭐⭐'), ('5', '⭐⭐⭐⭐⭐')],string ="Maximo estrellas",default='5')
      estrellasMin = fields.Selection([('1', '⭐'), ('2', '⭐⭐'), ('3', '⭐⭐⭐'), ('4', '⭐⭐⭐⭐'), ('5', '⭐⭐⭐⭐⭐')], string="Minimo estrellas",default='1')
-     camas = fields.Selection([('1', 'Cama Solit    aria'), ('2', 'Cama Matrimonio'), ('3', 'Cama Familiar'),
+     camas = fields.Selection([('1', 'Cama Solitaria'), ('2', 'Cama Matrimonio'), ('3', 'Cama Familiar'),
                                   ('4', 'Cama Infantil con matrimonio'), ('5', 'Distribución numerosa')])
      precios=fields.Integer()
-     habitacion=fields.Many2many("hotels_be_bago.habitacion")
 
      fechaInicio = fields.Date()
      fechaFinal = fields.Date()
@@ -228,8 +233,8 @@ class reserva_wizard(models.TransientModel):   # La classe és transientModel
 
      state = fields.Selection([  # El camp state és per a crear l'assistent.
          ('localizacion', "Selecciona Localización"),
-         ('hotel', "Selecciona el hotel"),
-         ('habitacion', "Selecciona la habitación"),
+         ('habitacion', "Detalles de la habitacion"),
+         ('reserva', "Selecciona la habitación"),
          ('fin', "Fin"),
      ], default='localizacion')
 
@@ -265,11 +270,30 @@ class reserva_wizard(models.TransientModel):   # La classe és transientModel
              self.aplicar_filtros()
              return {}
 
-     @api.onchange('servicis')
-     def _oc_servicis(self):
-         if (self.servicis):
+     @api.onchange('estrellasMin')
+     def _oc_min_stars(self):
+         if(self.estrellasMin):
+            self.aplicar_filtros()
+            return {}
+
+     @api.onchange('estrellasMax')
+     def _oc_max_stars(self):
+         if (self.estrellasMax):
              self.aplicar_filtros()
              return {}
+
+     @api.onchange('fechaInicio','fechaFinal')
+     def _on_dates(self):
+         if(self.fechaFinal and self.fechaFinal):
+             self.aplicar_filtros()
+             return {}
+
+
+     #@api.onchange('servicis')
+    # def _oc_servicis(self):
+       #  if (self.servicis):
+      #       self.aplicar_filtros()
+        #     return {}
 
 
 
@@ -287,26 +311,37 @@ class reserva_wizard(models.TransientModel):   # La classe és transientModel
         if self.precios != 0:
             domains.append(('roomlist.precios','<',self.precios))
 
-        if len(self.servicis)!=0:
-            domains.append(('listaServicios','=',self.servicis.ids))
+        if self.estrellasMin!=0:
+            domains.append(('estrellas','>=',self.estrellasMin))
 
-
-
+        if self.estrellasMax!=0:
+            domains.append(('estrellas','<=',self.estrellasMax))
 
         print(domains)
-        self.hotel=self.env['hotels_be_bago.hotel'].search(domains)
+        listaTMPHotel=self.env['hotels_be_bago.hotel'].search(domains)
 
+        if len(self.servicis)>0:
+            servicios=self.servicis
+            listaTMPHotel=listaTMPHotel.filtered(lambda r:len(r.listaServicios & servicios) == len(servicios))
+            print(listaTMPHotel)
+        self.hotel=listaTMPHotel
+
+        if(self.fechaInicio and self.fechaFinal):
+            self.habitaciones=self.env['hotels_be_bago.habitacion'].search([('hotel.id','in',self.hotel.ids)])
+
+
+        print(self.hotel)
 
 
      @api.multi
      def siguiente_paso(self):
         if (self.state == "localizacion") :
-            self.state="hotel"
-            return {"type": "ir.actions.do_nothing", }
-        elif(self.state == "hotel"):
             self.state="habitacion"
             return {"type": "ir.actions.do_nothing", }
-        elif(self.state=="habitacion"):
+        elif(self.state == "habitacion"):
+            self.state="reserva"
+            return {"type": "ir.actions.do_nothing", }
+        elif(self.state=="reserva"):
             self.state="fin"
             return {"type": "ir.actions.do_nothing", }
 
