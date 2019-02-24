@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import json
 
 from odoo import models, fields, api,tools
 import random
@@ -48,6 +49,27 @@ class hotel(models.Model):
     reservaPasadas=fields.One2many('hotels_be_bago.reserva','nombrehotel',compute='_get_reservas_pasadas')
     reservasFuturas = fields.One2many('hotels_be_bago.reserva', 'nombrehotel', compute='_get_reservas_futuras')
     reservasPresentes = fields.One2many('hotels_be_bago.reserva', 'nombrehotel', compute='_get_reservas_presentes')
+
+
+    grafico=fields.Float(compute='calcular_porcentaje',string='Ocupacion')
+    ocupacionsemanal=fields.Char(compute='calcular_ocupacion')
+
+
+    @api.multi
+    def calcular_porcentaje(self):
+        for hotel in self:
+            hotel.grafico=len(hotel.reservasFuturas)+len(hotel.reservasPresentes)
+            hotel.grafico=hotel.grafico/len(hotel.roomlist)
+            hotel.grafico=hotel.grafico*100
+            print(hotel.grafico)
+    @api.multi
+    def calcular_ocupacion(self):
+        valores=[]
+        for valor in self.reservasPresentes:
+            reservas=valor.dias
+            valores.append({'label':str(valor.name),'value':str(reservas)})
+        graph=[{'values':valores,'area':True,'title':'Reservas de esta semana','key':'Reservas','color':'#7c7bad'}]
+        self.ocupacionsemanal=json.dumps(graph)
 
     @api.one
     @api.depends('reservas')
@@ -134,6 +156,23 @@ class hotel(models.Model):
         hotel.roomlist.create(habitacion)
         #print(habitacion)
 
+    @api.multi
+    def reservar_habitacion(self):
+        print(self.env.context)
+        fecha_inicio = self._context.get('fecha_inicio')
+        fecha_final = self._context.get('fecha_final')
+        clienteID = self._context.get('cliente')
+        habitacion = self.roomlist.search([('disponibilidad','=','Libre'),('hotel.id','=',self.id)])[0].id
+
+        reserva = {'clientes': clienteID, 'habitaciones': habitacion, 'fechaInicio': fecha_inicio,
+                   'fechaFinal': fecha_final}
+        self.env['hotels_be_bago.reserva'].create(reserva)
+
+        return {
+            'type': 'ir.actions.client',
+            'tag': 'reload',
+        }
+
 
 
 class habitacion(models.Model):
@@ -174,6 +213,24 @@ class habitacion(models.Model):
             else:
                 record.disponibilidad="Libre"
 
+    @api.multi
+    def reservar_habitacion(self):
+        print(self.env.context)
+        fecha_inicio=self._context.get('fecha_inicio')
+        fecha_final=self._context.get('fecha_final')
+        clienteID=self._context.get('cliente')
+        habitacion=self.id
+
+        reserva={'clientes':clienteID,'habitaciones':habitacion,'fechaInicio':fecha_inicio,'fechaFinal':fecha_final}
+        self.env['hotels_be_bago.reserva'].create(reserva)
+
+        return {
+            'type':'ir.actions.client',
+           'tag':'reload',
+       }
+
+
+
 
 class reserva_heredada(models.Model):
     _name='sale.order.line'
@@ -207,6 +264,7 @@ class reserva_wizard(models.TransientModel):   # La classe és transientModel
         return self.env['hotels_be_bago.hotel'].search([]).mapped('ciudad').mapped('country').ids
 
      def default_habitaciones(self):
+         print(self.hotel.search([]))
          return self.hotel.search([]).mapped('roomlist').ids
 
 
@@ -219,7 +277,8 @@ class reserva_wizard(models.TransientModel):   # La classe és transientModel
      hotel=fields.Many2many("hotels_be_bago.hotel",default=default_hoteles)
 
      habitaciones=fields.Many2many("hotels_be_bago.habitacion",default=default_habitaciones,limit=10)
-     habitacion=fields.Many2one("hotels_be_bago.habitacion")
+     #habitacion=fields.Many2one("hotels_be_bago.habitacion")
+
 
      servicis=fields.Many2many("hotels_be_bago.servicis")
      estrellasMax = fields.Selection([('1', '⭐'), ('2', '⭐⭐'), ('3', '⭐⭐⭐'), ('4', '⭐⭐⭐⭐'), ('5', '⭐⭐⭐⭐⭐')],string ="Maximo estrellas",default='5')
@@ -231,15 +290,12 @@ class reserva_wizard(models.TransientModel):   # La classe és transientModel
      fechaInicio = fields.Date()
      fechaFinal = fields.Date()
 
-
-
      state = fields.Selection([  # El camp state és per a crear l'assistent.
          ('localizacion', "Selecciona Localización"),
          ('habitacion', "Detalles de la habitacion"),
          ('reserva', "Selecciona la habitación"),
          ('fin', "Fin"),
      ], default='localizacion')
-
 
 
 
@@ -286,16 +342,10 @@ class reserva_wizard(models.TransientModel):   # La classe és transientModel
 
      @api.onchange('fechaInicio','fechaFinal')
      def _on_dates(self):
-         if(self.fechaFinal and self.fechaFinal):
-             self.aplicar_filtros()
-             return {}
-
-
-     #@api.onchange('servicis')
-    # def _oc_servicis(self):
-       #  if (self.servicis):
-      #       self.aplicar_filtros()
-        #     return {}
+         print("eh")
+         #if(self.fechaInicio and self.fechaFinal):
+            # self.aplicar_filtros()
+            # return {}
 
 
 
@@ -319,27 +369,37 @@ class reserva_wizard(models.TransientModel):   # La classe és transientModel
         if self.estrellasMax!=0:
             domains.append(('estrellas','<=',self.estrellasMax))
 
-        print(domains)
+
+
         listaTMPHotel=self.env['hotels_be_bago.hotel'].search(domains)
+        self.habitaciones=self.hotel.mapped('roomlist').ids
+
+
 
         if len(self.servicis)>0:
             servicios=self.servicis
             listaTMPHotel=listaTMPHotel.filtered(lambda r:len(r.listaServicios & servicios) == len(servicios))
-            print(listaTMPHotel)
+
         self.hotel=listaTMPHotel
 
-        if(self.fechaInicio and self.fechaFinal):
-            self.habitaciones=self.env['hotels_be_bago.habitacion'].search([('hotel.id','in',self.hotel.ids)])
 
+        if self.fechaInicio and self.fechaFinal:
+            habitacionesLibres=self.habitaciones.search([('disponibilidad','=','Libre')])
+            if self.camas != '0':
+                habitacionesLibres=habitacionesLibres.filtered(lambda r:r.camas==self.camas)
+            self.hotel=habitacionesLibres.mapped('hotel').sorted(key=lambda r: r.estrellas,reverse=True).ids
 
-        print(self.hotel)
+            if self.precios != 0:
+                habitacionesLibres=habitacionesLibres.filtered(lambda r:r.precios <= self.precios)
+            self.habitaciones=habitacionesLibres
 
 
      @api.multi
      def siguiente_paso(self):
         if (self.state == "localizacion") :
-            self.state="habitacion"
+            self.state = "habitacion"
             return {"type": "ir.actions.do_nothing", }
+
         elif(self.state == "habitacion"):
             self.state="reserva"
             return {"type": "ir.actions.do_nothing", }
@@ -348,8 +408,10 @@ class reserva_wizard(models.TransientModel):   # La classe és transientModel
             return {"type": "ir.actions.do_nothing", }
 
 
-
-
+     @api.constrains('hotel')
+     def _comprobar_reserva(self):
+        if len(self.hotel) == 0:
+            raise ValidationError("No se puede continuar, ningun hotel coincide con los filtros aplicados \n Modifique los campos y pruebe de nuevo")
 
 
 class reserva(models.Model):

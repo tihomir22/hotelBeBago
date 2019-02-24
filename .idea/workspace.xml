@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/models/models.py" line="80" />
+    <bookmark url="file://$PROJECT_DIR$/models/models.py" line="102" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c42d4d4-c9e4-4c08-81c6-f8d14e0fb6bb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/views.xml" afterDir="false" />
     </list>
@@ -15,15 +16,16 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.48236775">
+    <splitter split-orientation="horizontal" split-proportion="0.2653309">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/models/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="150">
-                  <caret line="135" lean-forward="true" selection-start-line="135" selection-end-line="135" />
+                <state relative-caret-position="615">
+                  <caret line="60" column="81" selection-start-line="60" selection-start-column="81" selection-end-line="60" selection-end-column="81" />
                   <folding>
+                    <element signature="e#24#35#0" expanded="true" />
                     <element signature="e#362#735#0" />
                     <element signature="e#2215#2575#0" />
                     <element signature="e#2357#2574#0" />
@@ -45,12 +47,6 @@
                     <element signature="e#5443#5669#0" />
                     <element signature="e#5472#5655#0" />
                     <element signature="e#5725#6434#0" />
-                    <element signature="e#6625#6805#0" />
-                    <element signature="e#7423#7615#0" />
-                    <element signature="e#7455#7615#0" />
-                    <element signature="e#9044#9097#0" />
-                    <element signature="e#9140#9190#0" />
-                    <element signature="e#9243#9332#0" />
                   </folding>
                 </state>
               </provider>
@@ -63,8 +59,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/views.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="334">
-                  <caret line="573" column="53" lean-forward="true" selection-start-line="573" selection-start-column="53" selection-end-line="573" selection-end-column="53" />
+                <state relative-caret-position="523">
+                  <caret line="203" column="68" selection-start-line="203" selection-start-column="68" selection-end-line="203" selection-end-column="68" />
                 </state>
               </provider>
             </entry>
@@ -79,14 +75,15 @@
       <find>action_window4</find>
       <find>hotels</find>
       <find>ho</find>
-      <find>hotel</find>
       <find>booking</find>
       <find>reserva</find>
       <find>record.fecha</find>
       <find>res.part</find>
       <find>cliReservasPendientes</find>
-      <find>wizard</find>
       <find>country</find>
+      <find>fechaFinal</find>
+      <find>wizard</find>
+      <find>hotel</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -100,8 +97,8 @@
       <list>
         <option value="$PROJECT_DIR$/demo/archivoDemoCity.xml" />
         <option value="$PROJECT_DIR$/demo/archivoDemoHotel.xml" />
-        <option value="$PROJECT_DIR$/views/views.xml" />
         <option value="$PROJECT_DIR$/models/models.py" />
+        <option value="$PROJECT_DIR$/views/views.xml" />
       </list>
     </option>
   </component>
@@ -171,10 +168,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <frame x="-1" y="-1" width="1922" height="1061" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13224044" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13178703" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -224,9 +221,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="135" lean-forward="true" selection-start-line="135" selection-end-line="135" />
+        <state relative-caret-position="615">
+          <caret line="60" column="81" selection-start-line="60" selection-start-column="81" selection-end-line="60" selection-end-column="81" />
           <folding>
+            <element signature="e#24#35#0" expanded="true" />
             <element signature="e#362#735#0" />
             <element signature="e#2215#2575#0" />
             <element signature="e#2357#2574#0" />
@@ -248,20 +246,14 @@
             <element signature="e#5443#5669#0" />
             <element signature="e#5472#5655#0" />
             <element signature="e#5725#6434#0" />
-            <element signature="e#6625#6805#0" />
-            <element signature="e#7423#7615#0" />
-            <element signature="e#7455#7615#0" />
-            <element signature="e#9044#9097#0" />
-            <element signature="e#9140#9190#0" />
-            <element signature="e#9243#9332#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/views.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="573" column="53" lean-forward="true" selection-start-line="573" selection-start-column="53" selection-end-line="573" selection-end-column="53" />
+        <state relative-caret-position="523">
+          <caret line="203" column="68" selection-start-line="203" selection-start-column="68" selection-end-line="203" selection-end-column="68" />
         </state>
       </provider>
     </entry>

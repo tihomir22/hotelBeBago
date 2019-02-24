@@ -184,7 +184,7 @@
                       </group>
                       </group>
                       <div class="row" style="text-align:center;">
-                          <div class="col-md-12">
+                          <div class="col-md-6">
                             <h4>Lista servicios</h4>
                               <field name="listaServicios">
                               <kanban>
@@ -200,7 +200,15 @@
                                    </kanban>
                               </field>
                               </div>
+                          <div class="col-md-6">
+                                 <field name="grafico" widget="gauge" style="width:350px;height:310px;" options="{'levelcolors':['#a9d70b','#f9c802','#ff0000'],'action_jump':'357'}" string="Grafico ocupacion">grafico ocupacion</field>
+                          </div>
                       </div>
+                       <div>
+                            <h4>Grafico Ocupación Semanal</h4>
+                            <field name="ocupacionsemanal" widget="dashboard_graph" graph_type="bar"></field>
+                      </div><br></br>
+
                       <notebook >
                           <page string="Rooms">
                                 <a type="open">
@@ -265,6 +273,10 @@
                               <button name="anyadir_comentario" type="object" string="Añadir comentario aleatorio" class="btn btn-info" />
 
                            </page>
+
+
+
+
                         </notebook>
                   </sheet>
               </form>
@@ -569,47 +581,50 @@
                 </group>
 
                 <group states="reserva">
-                    <h4>Elige inicio y final de reserva</h4>
-                    <div>
+                    <group>
+                        <h4>Elige inicio de reserva</h4>
                         <field name="fechaInicio"></field>
+                    </group>
+                    <group>
+                        <h4>Elige final de reserva</h4>
                         <field name="fechaFinal"></field>
-                    </div>
+                    </group>
 
 
                 </group>
-                 <div states="reserva">
-                     <p>Estas habitaciones son las resultantes de los hoteles filtrados, se reservará la primera de todas</p>
-
-                     <field name="habitaciones" readonly="1" domain="[('ids','in',habitaciones.ids)]" widget="many2many" options="{'limit': 10, 'create': false, 'create_edit': false}" >
+                <div states="fin">
+                    <h2>Elige tu habitación con una de las siguientes formas:</h2>
+                </div>
+                 <div states="fin">
+                    <h4>Lista de habitaciones de hoteles filtrados</h4>
+                     <field name="habitaciones" widget="many2many"  options="{'limit': 10, 'create': false, 'create_edit': false}" style="width:900px;padding:20px;margin-left:10px;">
                          <tree limit="10">
                             <field name="nombrehotel"></field>
                             <field name="name"></field>
-                               <button name="reservar_habitacion" type="object" string="Reservar habitación" class="btn btn-info" />
+                             <button name="reservar_habitacion" type="object" context="{'fecha_inicio':parent.fechaInicio,'fecha_final':parent.fechaFinal,'cliente':parent.clientes}" string="Reservar esta habitación" class="btn btn-info" />
 
                         </tree>
                     </field>
 
-                    <field name="habitacion" domain="[('id','in',habitaciones)]"  invisible="1">
-                    </field>
+
+
                 </div>
 
-
-                    <h4>Lista hoteles filtrados</h4>
-                    <field name="hotel" style="width:900px;padding:20px;margin-left:10px;" >
-                        <tree>
-                            <field name="fotoprincipal" widget="image" style="height:64px;width:64px;"></field>
-                            <field name="name"></field>
-                            <field name="valoraciomedia"></field>
-                            <field name="estrellas"></field>
-                        </tree>
-                    </field>
-
+                    <div states="fin">
+                        <h4>Lista hoteles filtrados</h4>
+                        <field name="hotel" style="width:900px;padding:20px;margin-left:10px;" >
+                            <tree>
+                                <field name="fotoprincipal" widget="image" style="height:64px;width:64px;"></field>
+                                <field name="name"></field>
+                                <field name="valoraciomedia"></field>
+                                <field name="estrellas"></field>
+                                <button name="reservar_habitacion"   type="object" context="{'fecha_inicio':parent.fechaInicio,'fecha_final':parent.fechaFinal,'cliente':parent.clientes}" string="Reservar una habitacion de este hotel" class="btn btn-success" />
+                            </tree>
+                        </field>
+                    </div>
 
                     <footer>
                      <button name="siguiente_paso" type="object" string="Siguiente paso" class="btn btn-info oe_read_only" />
-			        <button name="reserva" type="object"
-					    string="Reserva" class="oe_highlight"/>
-                        or
                         <button special="cancel" string="Cancel"/>
                     </footer>
 
