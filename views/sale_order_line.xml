@@ -1,0 +1,68 @@
+<data>
+
+       <record model="ir.ui.view" id="hotels_be_bago.sales_order_line_tree11">
+      <field name="name">BeBago Room Sales</field>
+      <field name="model">sale.order.line</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nombreHabitacion"/>
+            <field name="hotel"></field>
+            <field name="fechaFinalHeredada"></field>
+            <field name="fechaInicioHeredada"></field>
+            <field name="cantidadReservas"></field>
+            <field name="reserva"></field>
+
+        </tree>
+      </field>
+    </record>
+
+      <record model="ir.ui.view" id="hotels_be_bago.sales_order_line_form11">
+          <field name="name">BeBago Room Sales Form</field>
+          <field name="model">sale.order.line</field>
+          <field name="arch" type="xml">
+              <form>
+
+
+                   <sheet>
+                      <group>
+                     <group>
+                        <field name="nombreHabitacion"/>
+                         <field name="hotel"></field>
+                     </group>
+                      <group>
+                       <field name="fechaInicioHeredada"></field>
+                          <field name="fechaFinalHeredada"></field>
+                     </group>
+                      <group>
+                          <field name="cantidadReservas"></field>
+                          <field name="price_unit"></field>
+
+
+                      </group>
+                          <group>
+                              <field name="fotoHabitacion" widget="image"></field>
+                          </group>
+                          <group>
+                              <field name="reserva"></field>
+                          </group>
+                     </group>
+                    <field name="tax_id"></field>
+
+                  </sheet>
+              </form>
+          </field>
+      </record>
+
+
+      <record model="ir.ui.view" id="hotels_be_bago.cliente_form_search">
+          <field name="name">Reservas Cliente</field>
+          <field name="model">sale.order.line</field>
+          <field name="arch" type="xml">
+          <search>
+              <filter name="reserva" string="Mostrar reservas facturadas" domain="[('cantidadReservas','&gt;',0)]"></filter>
+          </search>
+          </field>
+      </record>
+
+
+</data>

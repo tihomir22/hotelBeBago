@@ -1,0 +1,68 @@
+<data>
+       <record model="ir.ui.view" id="hotels_be_bago.servicis">
+      <field name="name">BeBago Services</field>
+      <field name="model">hotels_be_bago.servicis</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="tipo"/>
+          <field name="imageser" widget="image" class="oe_left oe_avatar"/>
+        </tree>
+      </field>
+    </record>
+
+       <record model="ir.ui.view" id="hotels_be_bago.services_form">
+          <field name="name">BeBago Services Form</field>
+          <field name="model">hotels_be_bago.servicis</field>
+          <field name="arch" type="xml">
+          <form>
+                  <sheet>
+                      <group>
+                     <group>
+                        <field name="imageser" widget="image" style="width:100%;height:100%;"/>
+                     </group>
+                      <group>
+                       <field name="name"></field>
+                          <field name="tipo"></field>
+                     </group>
+
+                     </group>
+                  </sheet>
+              </form>
+          </field>
+      </record>
+
+       <record model="ir.ui.view" id="hotels_be_bago.services_kanban">
+            <field name="name">BeBago Rooms Opinion Kanban</field>
+            <field name="model">hotels_be_bago.servicis</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <!--list of field to be loaded -->
+                    <field name="id" />
+                    <field name="name"></field>
+                    <field name="tipo"></field>
+                    <field name="imageser"></field>
+                    <templates>
+                        <t t-name="kanban-box">
+                                <div class="oe_product_vignette">
+                                    <a type="open">
+                                        <img  class="oe_kanban_image"
+                                            t-att-src="kanban_image('hotels_be_bago.servicis', 'imageser', record.id.raw_value)" />
+                                    </a>
+                                    <div class="oe_product_desc">
+                                    <ul>
+                                        <li><field name="name"></field></li>
+                                        <li><field name="tipo"></field></li>
+                                    </ul>
+                                        <button type="open" class="btn btn-secondary">Ver más detalles</button>
+                                </div>
+                                </div>
+
+                        </t>
+                    </templates>
+
+                </kanban>
+
+            </field>
+        </record>
+</data>

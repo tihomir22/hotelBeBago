@@ -1,0 +1,138 @@
+<data>
+      <record model="ir.ui.view" id="hotels_be_bago.rooms_form">
+          <field name="name">BeBago Rooms Form</field>
+          <field name="model">hotels_be_bago.habitacion</field>
+          <field name="arch" type="xml">
+              <form>
+
+                  <sheet>
+                      <h4 style="opacity:0.5;">Nombre de la habitacion</h4>
+                      <h1 style="text-align:center;"><field name="name"></field></h1>
+                      <h4 style="opacity:0.5;">Nombre del hotel al que pertenece</h4>
+                        <h2 style="text-align:center;"><field name="hotel"></field></h2>
+                      <group>
+                          <group>
+                              <h4>Datos de la habitacion</h4><hr/>
+                                <field name="active_id"></field>
+                              <field name="camas"></field>
+                          </group>
+
+                            <group>
+                              <h4>Precios y estado</h4><hr/>
+                              <field name="precios"></field>
+                              <field name="disponibilidad"></field>
+                          </group>
+
+
+
+                      </group>
+                      <h4>Descripcion</h4>
+                      <field name="descripcion"></field><hr/>
+                      <notebook >
+                            <page string="Galeria">
+                               <field name="fotos">
+                                   <kanban>
+                                       <templates>
+                                            <t t-name="kanban-box">
+                                                    <div class="oe_product_vignette">
+                                                        <a type="open">
+                                                           <field name="foto" widget="image" class="oe_left oe_avatar"/>
+                                                        </a>
+                                                    </div>
+
+                                                </t>
+                                            </templates>
+
+
+                                   </kanban>
+
+                               </field>
+                           </page>
+                          <page string="Reservas">
+                                 <field name="reserva">
+
+                                 </field>
+
+                          </page>
+
+                        </notebook>
+                  </sheet>
+
+              </form>
+
+          </field>
+      </record>
+
+      <record model="ir.ui.view" id="hotels_be_bago.room_kanban">
+            <field name="name">BeBago Rooms Kanban</field>
+            <field name="model">hotels_be_bago.habitacion</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <!--list of field to be loaded -->
+                    <field name="name" />
+                    <field name="id" />
+                    <field name="hotel" />
+                    <field name="camas" /> <!-- És important afegir el id per al record.id.value -->
+                    <field name="fotos" />
+                    <field name="precios"/>
+                    <field name="reserva"/>
+                    <field name="disponibilidad"/>
+                    <field name="descripcion"/>
+                    <templates>
+                    <t t-name="kanban-box">
+                            <div class="oe_product_vignette">
+                                <a type="open">
+                                    <img class="oe_kanban_image"
+                                        t-att-src="kanban_image('hotels_be_bago.habitacion', 'fotoprincipalRoom', record.id.value)" style="height:128px;width:100%"/>
+                                </a>
+                                <div class="oe_product_desc">
+                                    <ul>
+                                        <li>Nombre : <field name="name"></field></li>
+                                        <li>Hoteles : <field name="hotel"></field></li>
+                                        <li>Camas : <field name="camas"></field></li>
+                                        <li>Fotos : <field name="fotos"></field></li>
+                                        <li>Precios : <field name="precios"></field></li>
+                                        <li>Reserva : <field name="reserva"></field></li>
+                                        <li>Disponibilidad : <field name="disponibilidad"></field></li>
+                                        <li>Descripcion : <field name="descripcion"></field></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+      <record model="ir.ui.view" id="hotels_be_bago.habitacion">
+      <field name="name">BeBago Room</field>
+      <field name="model">hotels_be_bago.habitacion</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="hotel"/>
+          <field name="name"/>
+          <field name="camas"/>
+          <field name="precios"/>
+            <field name="descripcion"/>
+            <!--<field name="reserva"/>-->
+            <field name="disponibilidad"/>
+        </tree>
+      </field>
+    </record>
+      <record model="ir.ui.view" id="hotels_be_bago_habitacion_search">
+        <field name="name">BeBago City Habitacion</field>
+        <field name="model">hotels_be_bago.habitacion</field>
+        <field name="arch" type="xml">
+           <search string="Habitacion">
+                <field name="hotel"></field>
+                <field name="disponibilidad"></field>
+                <group string="Agrupar por">
+                  <filter name="hotel" string="Hotel" context="{'group_by':'hotel'}"></filter>
+                  <filter name="disponibilidad" string="Disponibilidad" context="{'group_by':'disponibilidad'}"></filter>
+                </group>
+           </search>
+
+        </field>
+    </record>
+    </data>

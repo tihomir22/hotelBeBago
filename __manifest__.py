@@ -24,9 +24,20 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
+        'views/city.xml',
+        'views/hotel.xml',
+        'views/habitacion.xml',
+        'views/reserva.xml',
+        'views/reserva_wizard.xml',
+        'views/hotelfotos.xml',
+        'views/hotelrooms.xml',
+        'views/comentarios.xml',
+        'views/seleccion_wizard.xml',
+        'views/clientes.xml',
+        'views/sale_order_line.xml',
         'views/views.xml',
         'views/templates.xml',
+        'views/servicis.xml',
 	'demo/archivoDemoPhotosHotel.xml',
 	'demo/archivoDemoRoomPhotos.xml',
 	'demo/archivoDemoServicis.xml',

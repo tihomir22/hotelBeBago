@@ -1,0 +1,87 @@
+<data>
+      <record model="ir.ui.view" id="hotels_be_bago.clientes">
+      <field name="name">BeBago Clientes</field>
+      <field name="model">res.partner</field>
+      <field name="arch" type="xml">
+        <tree decoration-info="tieneReservasPendientes" decoration-danger="tieneReservasPendientes == False">
+          <field name="display_name"></field>
+            <field name="comentariosCli"></field>
+            <field name="reservasCli"></field>
+            <field name="reservasPorPagar"></field>
+            <field name="reservasPagadas"></field>
+            <field name="tieneReservasPendientes"></field>
+        </tree>
+
+
+      </field>
+    </record>
+
+
+
+      <record model="ir.ui.view" id="hotels_be_bago.clientes_form">
+          <field name="name">BeBago Clientes Form</field>
+          <field name="model">res.partner</field>
+          <field name="inherit_id" ref="base.view_partner_form" />
+          <field name="arch" type="xml">
+
+                  <xpath expr="//page[@name='internal_notes']" position='after'>
+                      <page string='Reservas'>
+                          <h4>Todas Reservas</h4>
+                        <field name="reservasCli">
+                            <tree decoration-info="True">
+                                <field name="name"></field>
+                                <field name="clientes"></field>
+                                <field name="nombrehotel"></field>
+                                <field name="fechaInicio"></field>
+                                <field name="fechaFinal"></field>
+                                <field name="dias"></field>
+                            </tree>
+                        </field>
+                          <h4>Las reservas sin facturar</h4>
+                          <field name="reservasPorPagar">
+                               <tree decoration-danger="True">
+                                <field name="name"></field>
+                                <field name="clientes"></field>
+                                <field name="nombrehotel"></field>
+                                <field name="fechaInicio"></field>
+                                <field name="fechaFinal"></field>
+                                <field name="dias"></field>
+                            </tree>
+                          </field>
+                          <h4>Las reservas facturadas</h4>
+                          <field name="reservasPagadas">
+                               <tree decoration-success="True">
+                                <field name="name"></field>
+                                <field name="clientes"></field>
+                                <field name="nombrehotel"></field>
+                                <field name="fechaInicio"></field>
+                                <field name="fechaFinal"></field>
+                                <field name="dias"></field>
+                            </tree>
+                          </field>
+                              <button name="crear_factura_de_reservas_pendientes" type="object" string="Crear factura de todas las reservas sin facturar" class="btn btn-warning oe_read_only" />
+                              <button name="%(launch_seleccion_wizard)d" type="action" string="Seleccionar reservas" class="btn btn-light oe_read_only" />
+                      </page>
+                      <page string='Valoraciones'>
+                          <field name="comentariosCli"></field>
+                       </page>
+                  </xpath>
+
+          </field>
+      </record>
+
+
+
+
+       <record model="ir.ui.view" id="hotels_be_bago.cliente_reservas_form_search">
+          <field name="name">BeBago Clientes Form</field>
+          <field name="model">res.partner</field>
+          <field name="arch" type="xml">
+          <search>
+              <filter name="reservas" string="Mostrar clientes con reservas" domain="[('reservasCli','&gt;',0)]"></filter>
+          </search>
+          </field>
+      </record>
+
+
+</data>

@@ -1,0 +1,84 @@
+<data>
+    <record model="ir.ui.view" id="hotels_be_bago.comentarios">
+      <field name="name">BeBago Room Comentarios</field>
+      <field name="model">hotels_be_bago.comentarios</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="descripcion"/>
+            <field name="valoracion"></field>
+            <field name="hoteles"></field>
+        </tree>
+      </field>
+    </record>
+
+
+
+      <record model="ir.ui.view" id="hotels_be_bago.opinion_form">
+          <field name="name">BeBago Opinion Form</field>
+          <field name="model">hotels_be_bago.comentarios</field>
+          <field name="arch" type="xml">
+          <form>
+                  <sheet>
+                      <group>
+                     <group>
+                        <field name="fotocliente" widget="image" style="width:100%;height:100%;"/>
+                     </group>
+                      <group>
+                       <field name="clientes"></field>
+                          <field name="namecliente"></field>
+                     </group>
+                      <group>
+                          <field name="valoracion"></field>
+                      </group>
+                     </group>
+                      <h4>Descripcion del comentario</h4>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <field name="descripcion"></field>
+                            </div>
+                        </div>
+                  </sheet>
+              </form>
+          </field>
+      </record>
+
+       <record model="ir.ui.view" id="hotels_be_bago.opinion_kanban">
+            <field name="name">BeBago Rooms Opinion Kanban</field>
+            <field name="model">hotels_be_bago.comentarios</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <!--list of field to be loaded -->
+                    <field name="id" />
+                    <field name="clientes"></field>
+                    <field name="fotocliente"></field>
+                    <field name="namecliente"></field>
+                    <field name="hoteles"></field>
+                    <field name="descripcion"></field>
+                    <field name="valoracion"></field>
+                    <templates>
+                        <t t-name="kanban-box">
+                                <div class="oe_product_vignette">
+                                    <a type="open">
+                                        <img style="height:100px;" class="oe_kanban_image"
+                                            t-att-src="kanban_image('hotels_be_bago.comentarios', 'fotocliente', record.id.raw_value)" />
+                                    </a>
+                                    <div class="oe_product_desc">
+                                    <ul>
+                                        <li><field name="namecliente"></field></li>
+                                        <li><field name="descripcion"></field></li>
+                                        <li><field name="valoracion"></field></li>
+                                    </ul>
+                                        <button type="open" class="btn btn-primary">Ver más detalles</button>
+                                </div>
+                                </div>
+
+                        </t>
+                    </templates>
+
+                </kanban>
+
+            </field>
+        </record>
+
+
+</data>

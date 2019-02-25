@@ -1,0 +1,38 @@
+<data>
+      <record model="ir.ui.view" id="wizard_seleccion_reserva">
+            <field name="name">Selecciona reservas a facturar</field>
+            <field name="model">seleccion.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Selecciona reserva">
+                    <group>
+                        <field name="cli"></field>
+                    </group>
+
+                     <field name="cliReservasPendientesMany" widget="many2many">
+                         <tree create="true" delete="true">
+                             <field name="name"></field>
+                             <field name="fechaInicio"></field>
+                             <field name="fechaFinal"></field>
+                             <field name="dias"></field>
+                         </tree>
+
+                        </field>
+                    <footer>
+                       <button name="launch" type="object"
+                                string="Launch" class="oe_highlight"/>
+                        or
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+
+                </form>
+            </field>
+        </record>
+
+        <act_window id="launch_seleccion_wizard"
+                    name="Seleccionar reserva"
+                    src_model="res.partner"
+                    res_model="seleccion.wizard"
+                    view_mode="form"
+                    target="new"
+                    key2="client_action_multi"/>
+</data>

@@ -1,0 +1,59 @@
+<data>
+    <record model="ir.ui.view" id="hotels_be_bago.roomfotos">
+     <field name="name">BeBago Room Photos</field>
+      <field name="model">hotels_be_bago.roomfotos</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+            <field name="foto" widget="image" class="oe_left oe_avatar"/>
+
+        </tree>
+      </field>
+    </record>
+
+      <record model="ir.ui.view" id="hotels_be_bago.rooms_fotos_form">
+          <field name="name">BeBago Rooms Fotos Form</field>
+          <field name="model">hotels_be_bago.roomfotos</field>
+          <field name="arch" type="xml">
+              <form>
+                  <sheet>
+                      <div class="row">
+                          <a type="open">
+                          <div class="col-md-12">
+                          <h4 style="opacity:0.5;">Nombre de la habitacion</h4>
+                            <field name="name"></field>
+                                  <field name="foto" widget="image" style="width:100%;height:100%;"/>
+                        </div>
+                         </a>
+                      </div>
+                  </sheet>
+              </form>
+          </field>
+      </record>
+
+      <record model="ir.ui.view" id="hotels_be_bago.hotelfotos_kanban">
+            <field name="name">BeBago Rooms Fotos Kanban</field>
+            <field name="model">hotels_be_bago.roomfotos</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <!--list of field to be loaded -->
+                    <field name="name" />
+                    <field name="id" />
+                    <field name="foto"></field>
+
+                    <templates>
+                    <t t-name="kanban-box">
+                            <div class="oe_product_vignette">
+                                <a type="open">
+                                    <img class="oe_kanban_image"
+                                        t-att-src="kanban_image('hotels_be_bago.roomfotos', 'foto', record.id.raw_value)" style="height:256px;width:100%"/>
+                                </a>
+                            </div>
+                        </t>
+                    </templates>
+
+                </kanban>
+
+            </field>
+        </record>
+</data>

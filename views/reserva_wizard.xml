@@ -1,0 +1,110 @@
+<data>
+        <record model="ir.ui.view" id="hotels_be_bago.reserva_wizard">
+            <field name="name">Wizard Reserva</field>
+            <field name="model">hotels_be_bago.reserva_wizard</field>
+            <field name="arch" type="xml">
+		    <form>
+	             <header>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+
+                <group>
+                    <h4 style="text-align:center;">Localizacion</h4><hr/>
+                    <group>
+			             <field name="clientes"/>
+                         <field name="city"></field>
+                        <field name="estrellasMax"></field>
+                        <field name="estrellasMin"></field>
+		            </group>
+                    <group>
+                        <field name="countries" invisible="1"></field>
+                        <field name="country" domain="[('id','in',countries)]"></field>
+                        <field name="imagenpais" widget="image" readonly="1"></field>
+                    </group>
+                </group>
+
+                <group states="habitacion">
+                        <h4 style="text-align:center;">Filtros del hotel</h4><hr/>
+                        <group>
+                            <field name="camas"></field>
+                        </group>
+                        <group>
+                            <field name="precios" string="Precios maximos"></field>
+                        </group>
+
+
+                    <div class="row" style="width:900px;padding:20px;margin-left:10px;">
+                         <h4>Servicios para elegir</h4>
+                            <field name="servicis">
+
+                                <tree>
+                                    <field name="imageser" widget="image"></field>
+                                    <field name="name"></field>
+                                </tree>
+                            </field>
+                    </div>
+
+
+                </group>
+
+                <group states="reserva">
+                    <group>
+                        <h4>Elige inicio de reserva</h4>
+                        <field name="fechaInicio"></field>
+                    </group>
+                    <group>
+                        <h4>Elige final de reserva</h4>
+                        <field name="fechaFinal"></field>
+                    </group>
+
+
+                </group>
+                <div states="fin">
+                    <h2>Elige tu habitación con una de las siguientes formas:</h2>
+                </div>
+                 <div states="fin">
+                    <h4>Lista de habitaciones de hoteles filtrados</h4>
+                     <field name="habitaciones" widget="many2many"  options="{'limit': 10, 'create': false, 'create_edit': false}" style="width:900px;padding:20px;margin-left:10px;">
+                         <tree limit="10">
+                            <field name="nombrehotel"></field>
+                            <field name="name"></field>
+                             <button name="reservar_habitacion" type="object" context="{'fecha_inicio':parent.fechaInicio,'fecha_final':parent.fechaFinal,'cliente':parent.clientes}" string="Reservar esta habitación" class="btn btn-info" />
+
+                        </tree>
+                    </field>
+
+
+
+                </div>
+
+                    <div states="fin">
+                        <h4>Lista hoteles filtrados</h4>
+                        <field name="hotel" style="width:900px;padding:20px;margin-left:10px;" >
+                            <tree>
+                                <field name="fotoprincipal" widget="image" style="height:64px;width:64px;"></field>
+                                <field name="name"></field>
+                                <field name="valoraciomedia"></field>
+                                <field name="estrellas"></field>
+                                <button name="reservar_habitacion"   type="object" context="{'fecha_inicio':parent.fechaInicio,'fecha_final':parent.fechaFinal,'cliente':parent.clientes}" string="Reservar una habitacion de este hotel" class="btn btn-success" />
+                            </tree>
+                        </field>
+                    </div>
+
+                    <footer>
+                     <button name="siguiente_paso" type="object" string="Siguiente paso" class="btn btn-info oe_read_only" />
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+
+                </form>
+            </field>
+        </record>
+
+        <act_window id="hotels_be_bago.reserva_wizard_act"
+                    name="Crear Reserva"
+                    src_model="hotels_be_bago.reserva"
+                    res_model="hotels_be_bago.reserva_wizard"
+                    view_mode="form"
+                    target="new"
+                    key2="client_action_multi"/>
+
+</data>

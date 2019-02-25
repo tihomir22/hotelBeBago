@@ -1,0 +1,128 @@
+<data>
+         <record model="ir.ui.view" id="hotels_be_bago.reserva">
+      <field name="name">BeBago Booking</field>
+      <field name="model">hotels_be_bago.reserva</field>
+      <field name="arch" type="xml">
+        <tree  decoration-danger="fechaInicio&lt;current_date and fechaFinal&lt;current_date" decoration-bf="fechaInicio&lt;current_date and fechaFinal&gt;current_date" decoration-info="fechaInicio&gt;current_date">
+          <field name="name"></field>
+            <field name="fechaInicio"/>
+          <field name="fechaFinal"/>
+          <field name="habitaciones"/>
+          <field name="clientes"/>
+            <field name="nombrehotel"/>
+            <field name="dias"></field>
+
+        </tree>
+      </field>
+    </record>
+
+
+
+      <record model="ir.ui.view" id="hotels_be_bago.reserva_form">
+          <field name="name">BeBago Reserva Form</field>
+          <field name="model">hotels_be_bago.reserva</field>
+          <field name="arch" type="xml">
+              <form>
+                  <sheet>
+                 <h4 style="opacity:0.5;">Nombre de la reserva</h4>
+                      <h1 style="text-align:center;"><field name="name"></field></h1>
+                      <group>
+                          <group>
+                              <h4>Fechas de la habitacion</h4><hr/>
+                              <field name="fechaInicio"></field>
+                              <field name="fechaFinal"></field>
+                          </group>
+
+                            <group>
+                              <h4>Información de la instancia</h4><hr/>
+                                <field name="dias"></field>
+                              <field name="habitaciones"></field>
+                                <field name="clientes"></field>
+                                <field name="fotocliente" class="oe_read_only" widget="image"></field>
+                          </group>
+                          <button name="crear_venta" type="object" string="Crear venta de esta reserva" class="btn btn-info oe_read_only" />
+                          <!--<button name="crear_venta_todos" type="object" string="Crear venta de todas las reservas del cliente" class="btn btn-success oe_read_only" />-->
+                          <!--
+                          <button name="%(hotels_be_bago.reserva_wizard_act)d" type="action" string="Seleccionar reservas" class="btn btn-light oe_read_only" />
+                            -->
+                      </group>
+
+                </sheet>
+              </form>
+
+          </field>
+      </record>
+
+      <record model="ir.ui.view" id="hotels_be_bago.reserva_kanban">
+            <field name="name">BeBago Reserva Kanban</field>
+            <field name="model">hotels_be_bago.reserva</field>
+            <field name="arch" type="xml">
+                <kanban>
+
+                    <field name="name" />
+                    <field name="id" />
+                    <field name="fechaInicio" />
+                    <field name="fechaFinal" />
+                    <field name="habitaciones" />
+                    <field name="clientes"/>
+                    <field name="nombrehotel"/>
+                    <templates>
+                    <t t-name="kanban-box">
+                            <div class="oe_product_vignette">
+                                <h4>Nombre reserva : </h4>
+                                <a type="open">
+
+                                    <field name="name"></field>
+                                </a>
+
+                                <div class="oe_product_desc">
+                                    <h4>Datos : </h4>
+                                    <ul>
+                                        <li>Hotel : <field name="nombrehotel"></field></li>
+                                        <li>Cliente : <field name="clientes"></field></li>
+                                        <li>Fecha Inicio Reserva : <field name="fechaInicio"></field></li>
+                                        <li>Fecha Final reserva : <field name="fechaFinal"></field></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+     <record model="ir.ui.view" id="calendar1">
+            <field name="name">BeBago Calendar</field>
+            <field name="model">hotels_be_bago.reserva</field>
+            <field name="arch" type="xml">
+                <calendar string="Booking Calendar" date_start="fechaInicio"
+                          date_stop="fechaFinal" color="nombrehotel"
+                          >
+                    <field name="name"/>
+                </calendar>
+            </field>
+        </record>
+
+    <record model="ir.ui.view" id="hotels_be_bago.reserva_search">
+        <field name="name">BeBago City Reserva</field>
+        <field name="model">hotels_be_bago.reserva</field>
+        <field name="arch" type="xml">
+           <search string="Reserva">
+                <field name="habitaciones"></field>
+                <field name="nombrehotel"></field>
+                <field name="fechaInicio"></field>
+                <field name="fechaFinal"></field>
+
+                <group string="Agrupar por">
+                  <filter name="nombrehotel" string="Hotel" context="{'group_by':'nombrehotel'}"></filter>
+                  <filter name="clientes" string="Clientes" context="{'group_by':'clientes'}"></filter>
+                </group>
+           </search>
+
+        </field>
+    </record>
+
+
+</data>

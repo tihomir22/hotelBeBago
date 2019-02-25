@@ -1,0 +1,113 @@
+<data>
+
+<record model="ir.ui.view" id="hotels_be_bago.city_kanban">
+            <field name="name">BeBago City Kanban</field>
+            <field name="model">hotels_be_bago.city</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <!--list of field to be loaded -->
+                    <field name="name" />
+                    <field name="id" />
+                    <field name="description" />
+                    <field name="ubication" /> <!-- És important afegir el id per al record.id.value -->
+                    <field name="country" />
+                    <field name="imagenpais" />
+                    <field name="hotellist"/>
+
+                    <templates>
+                    <t t-name="kanban-box">
+                            <div class="oe_product_vignette">
+                                <a type="open">
+                                         <field name="imagenpais" class="img-fluid" style="border:1px solid gray;border-radius:1px;" widget="image"/>
+                                     </a>
+                                <div class="oe_product_desc">
+                                        <h4><field name="name"></field></h4>
+                                    <ul>
+                                       <li>Descripcion: <field name="description"></field></li>
+                                        <li>Ubicación : <field name="ubication"></field></li>
+                                        <li>Pais : <field name="country"></field></li>
+                                        <li>Numero hoteles : <field name="hotellist"></field></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+
+                        </t>
+
+
+                    </templates>
+
+                </kanban>
+
+            </field>
+        </record>
+
+    <record model="ir.ui.view" id="hotels_be_bago.city">
+      <field name="name">BeBago City List</field>
+      <field name="model">hotels_be_bago.city</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="description"/>
+            <field name="ubication"/>
+            <field name="country"/>
+            <field name="hotellist"/>
+        </tree>
+      </field>
+    </record>
+
+      <record model="ir.ui.view" id="hotels_be_bago.city_form">
+          <field name="name">BeBago City Form</field>
+          <field name="model">hotels_be_bago.city</field>
+          <field name="arch" type="xml">
+              <form>
+
+                  <sheet>
+                       <div class="row">
+                        <div class="col-md-12">
+                            <h4 style="opacity:0.5;">Nombre de la ciudad</h4>
+                                          <h1 style="text-align:center;"><field name="name"></field></h1>
+                        </div>
+                    </div>
+                      <group>
+                          <group>
+                              <field name="imagenpais" class="img-fluid" style="border:1px solid gray;border-radius:1px;" widget="image"/>
+                          </group>
+                          <group>
+                              <field name="name"></field>
+                              <field name="description"></field>
+                          </group>
+                          <group>
+                              <field name="ubication"></field>
+                              <field name="country"></field>
+                          </group>
+                      </group>
+                      <notebook >
+                           <page string="Hoteles"><field name="hotellist"></field></page>
+
+                        </notebook>
+                  </sheet>
+
+              </form>
+
+          </field>
+      </record>
+
+
+
+    <record model="ir.ui.view" id="hotels_be_bago_city_search">
+        <field name="name">BeBago City Search</field>
+        <field name="model">hotels_be_bago.city</field>
+        <field name="arch" type="xml">
+           <search string="Ciudades">
+                <field name="name"></field>
+                <field name="description"></field>
+                <group string="Agrupar por">
+                  <filter name="country" string="Pais" context="{'group_by':'country'}"></filter>
+                </group>
+           </search>
+
+        </field>
+    </record>
+
+    </data>

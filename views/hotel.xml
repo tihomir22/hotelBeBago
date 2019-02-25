@@ -1,0 +1,235 @@
+<data>
+
+      <record model="ir.ui.view" id="hotels_be_bago.hotel">
+      <field name="name">BeBago Hotel</field>
+      <field name="model">hotels_be_bago.hotel</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="ciudad"/>
+            <field name="country"></field>
+          <field name="galeriaFotos"/>
+          <field name="description"/>
+          <field name="roomlist"/>
+          <field name="estrellas"/>
+            <!--<field name="reservas"></field>-->
+            <field name="reservaPasadas"></field>
+            <field name="reservasPresentes"></field>
+            <field name="reservasFuturas"></field>
+            <!--<field name="fotoprincipal" widget="image"></field>-->
+            <field name="valoraciomedia"></field>
+            <field name="listaServicios"/>
+            <field name="comentarios"></field>
+        </tree>
+      </field>
+    </record>
+
+
+      <record model="ir.ui.view" id="hotels_be_bago.hotel_form">
+          <field name="name">BeBago Hotel Form</field>
+          <field name="model">hotels_be_bago.hotel</field>
+          <field name="arch" type="xml">
+              <form>
+                  <sheet>
+                      <h5 style="text-align:center;opacity:0.5">Nombre del hotel</h5>
+                      <h1 style="text-align:center;"><field name="name"></field></h1>
+
+                      <group>
+                          <group>
+                              <h4>Datos principales</h4><hr/>
+                              <field name="name"></field>
+                              <field name="description"></field>
+                          </group>
+
+                          <group>
+                              <h4>Localización</h4><hr/>
+                              <field name="ciudad"></field>
+                              <field name="country"></field>
+                          </group>
+                            <group>
+                              <h4>Valoración</h4><hr/>
+                              <field name="estrellas"></field>
+                              <field name="valoraciomedia"></field>
+                          </group>
+
+                      <group>
+                           <h4>Imagen principal</h4><hr/>
+                              <kanban>
+                                       <templates>
+                                            <t t-name="kanban-box">
+                                                <field name="fotoprincipal" style="border:1px solid gray;border-radius:1px;width:100%;" widget="image"/>
+                                            </t>
+                                       </templates>
+                              </kanban>
+                      </group>
+                      </group>
+                      <div class="row" style="text-align:center;">
+                          <div class="col-md-6">
+                            <h4>Lista servicios</h4>
+                              <field name="listaServicios">
+                              <kanban>
+                                       <templates>
+                                            <t t-name="kanban-box">
+                                                    <div class="oe_product_vignette" style="border:none;flex:0;width:auto">
+                                                        <a type="open">
+                                                           <field name="imageser" widget="image"/>
+                                                        </a>
+                                                    </div>
+                                                </t>
+                                            </templates>
+                                   </kanban>
+                              </field>
+                              </div>
+                          <div class="col-md-6">
+                                 <field name="grafico" widget="gauge" style="width:350px;height:310px;" options="{'levelcolors':['#a9d70b','#f9c802','#ff0000'],'action_jump':'357'}" string="Grafico ocupacion">grafico ocupacion</field>
+                          </div>
+                      </div>
+                       <div>
+                            <h4>Grafico Ocupación Semanal</h4>
+                            <field name="ocupacionsemanal" widget="dashboard_graph" graph_type="bar"></field>
+                      </div><br></br>
+
+                      <notebook >
+                          <page string="Rooms">
+                                <a type="open">
+                                 <field name="roomlist"> </field>
+                                </a>
+                              <button name="anyadir_habitacion" type="object" string="Añadir habitacion aleatoria" class="btn btn-info" />
+                          </page>
+                            <page string="Galeria">
+                               <field name="galeriaFotos">
+                                   <kanban>
+                                       <templates>
+                                            <t t-name="kanban-box">
+                                                    <div class="oe_product_vignette">
+                                                        <a type="open">
+                                                           <field name="foto" widget="image" class="oe_left oe_avatar"/>
+                                                        </a>
+                                                        <p><field name="name" widget="char"></field></p>
+                                                    </div>
+                                                </t>
+                                            </templates>
+                                   </kanban>
+                               </field>
+                           </page>
+
+                          <page string="Reservas">
+                              <div attrs="{'invisible':[('reservaPasadas', '=', [])]}">
+                                  <h4 style="text-align:center;">Reservas pasadas</h4>
+                                   <field name="reservaPasadas" widget="one2many"></field>
+                              </div>
+                              <div attrs="{'invisible':[('reservasPresentes', '=', [])]}">
+                                   <h4 style="text-align:center;">Reservas Presentes</h4>
+                                   <field name="reservasPresentes" widget="one2many"></field>
+                              </div>
+                              <div attrs="{'invisible':[('reservasFuturas', '=', [])]}">
+                                  <h4 style="text-align:center;">Reservas Futuras</h4>
+                                   <field name="reservasFuturas" widget="one2many"></field>
+                              </div>
+                           </page>
+
+                          <page string="Lista Comentarios">
+                              <field name="comentarios">
+                                   <kanban>
+                                       <templates>
+                                            <t t-name="kanban-box">
+                                                    <div class="oe_product_vignette">
+                                                        <a type="open">
+                                                           <field name="fotocliente" widget="image" class="oe_left oe_avatar"/>
+                                                        </a>
+                                                        <group>
+                                                            <h4>Nombre cliente: </h4>
+                                                            <field name="namecliente" widget="char"></field>
+                                                            <h4>Descripcion: </h4>
+                                                            <field name="descripcion" widget="char"></field>
+                                                            <h4>Valoracion: </h4>
+                                                            <field name="valoracion" widget="selection"></field>
+                                                        </group>
+                                                    </div>
+                                                </t>
+                                            </templates>
+                                   </kanban>
+                              </field>
+                              <button name="anyadir_comentario" type="object" string="Añadir comentario aleatorio" class="btn btn-info" />
+
+                           </page>
+
+
+
+
+                        </notebook>
+                  </sheet>
+              </form>
+          </field>
+      </record>
+
+      <record model="ir.ui.view" id="hotels_be_bago.hotel_kanban">
+            <field name="name">BeBago Hotel Kanban</field>
+            <field name="model">hotels_be_bago.hotel</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <!--list of field to be loaded -->
+                    <field name="name" />
+                    <field name="id" />
+                    <field name="fotoprincipal" />
+                    <field name="ciudad" /> <!-- És important afegir el id per al record.id.value -->
+                    <field name="country" />
+                    <field name="galeriaFotos"/>
+                    <field name="description"/>
+                    <field name="roomlist"/>
+                    <field name="estrellas"/>
+                    <field name="valoraciomedia"/>
+                    <field name="listaServicios"/>
+
+
+                    <templates>
+                    <t t-name="kanban-box">
+                            <div class="oe_product_vignette">
+                                <a type="open">
+                                    <img class="oe_kanban_image"
+                                        t-att-src="kanban_image('hotels_be_bago.hotel', 'fotoprincipal', record.id.raw_value)" style="height:128px;width:100%"/>
+                                </a>
+                                <div class="oe_product_desc">
+                                    <h4>
+                                        <a type="edit">
+                                            <field name="name"></field>
+                                        </a>
+                                    </h4>
+                                    <ul>
+                                       <li>Estrellas: <field name="estrellas"></field></li>
+                                        <li>Valoracion Media: <field name="valoraciomedia"></field></li>
+                                        <li>Ciudad: <field name="ciudad"></field></li>
+                                        <li>Descripcion: <field name="description"></field></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+      <record model="ir.ui.view" id="hotels_be_bago_hotel_search">
+        <field name="name">BeBago City Hotel</field>
+        <field name="model">hotels_be_bago.hotel</field>
+        <field name="arch" type="xml">
+           <search string="Hotels">
+                <field name="ciudad"></field>
+                <field name="country"></field>
+                <field name="estrellas"></field>
+                <field name="valoraciomedia"></field>
+                <group string="Agrupar por">
+                  <filter name="country" string="Pais" context="{'group_by':'country'}"></filter>
+                  <filter name="ciudad" string="Ciudad" context="{'group_by':'ciudad'}"></filter>
+                </group>
+           </search>
+
+        </field>
+    </record>
+
+
+
+
+</data>
